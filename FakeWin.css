@@ -1,0 +1,178 @@
+body
+{
+    background: url("D:/Users/Robbie/Pictures/Blender Renders/DrumMachine.png") center;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 12px;
+    overflow:hidden;
+}
+
+.window
+{
+    background-color: white;
+    border: solid 1px #7c9fa5;
+    position: absolute;
+    box-shadow: 0 0 16px rgba(0,0,0,.2);
+    resize: both;
+    overflow:auto;
+    min-width: 320px;
+    min-height: 240px;
+}
+
+.winactive
+{
+    border: solid 1px #18bbc5;
+}
+
+.titlebar
+{
+    background-color: #white;
+    width: 100%;
+    height: 30px;
+    -webkit-user-select:none;
+    cursor:default;
+}
+
+.tbactive
+{
+    background-color: rgba(0,183,195,1);
+}
+
+.tbicon
+{
+    margin-top:6px;
+    margin-bottom:8px;
+    margin-left:8px;
+    margin-right:4px;
+    float: left;
+}
+
+.tbtext
+{
+    float:left;
+    padding-top:6px;
+}
+
+.tbbutt
+{
+    width:45;
+    height:29;
+    float:right;
+    border: none;
+    transition: background-color 0.2s;
+    border-left: solid 1px rgba(0,0,0,0);
+}
+
+.tbbutt:focus
+{
+    outline: none;
+}
+
+/* ---------- close button ---------- */
+
+.closebutt
+{
+    background-color: rgba(232,17,35,0);
+    padding-left:18px;
+}
+
+.closebutt:hover
+{
+    background-color: rgba(232,17,35,1);
+}
+
+.closebutt:active
+{
+    background-color: rgba(232,17,35,.6);
+}
+
+.cbicontainer
+{
+    width:10px;
+    height:10px;
+    overflow:hidden;
+}
+
+.closebutticon
+{
+    position:relative;
+    width:17px;
+    height:1px;
+    left:-4px;
+    top:4px;
+    background-color:black;
+    transform:rotate(45deg);
+}
+
+.closebutticonother
+{
+    position:relative;
+    width:17px;
+    height:1px;
+    left:-4px;
+    top:4px;
+    background-color:black;
+    transform: rotate(315deg);
+}
+
+/* ---------- maxi button ---------- */
+
+.maxibutt
+{
+    background-color: rgba(0,0,0,0);
+    padding-left:18px;
+}
+
+.maxibutt:hover
+{
+    background-color: rgba(0,0,0,.1);
+}
+
+.maxibutt:active
+{
+    background-color: rgba(0,0,0,.2);
+}
+
+.maxibutticon
+{
+    width: 8;
+    height: 8;
+    border: solid 1px black;
+}
+
+/* ---------- mini button ---------- */
+
+.minibutt
+{
+   background-color: rgba(0,0,0,0);
+    padding-left:18px;
+}
+
+.minibutt:hover
+{
+    background-color: rgba(0,0,0,.1);
+}
+
+.minibutt:active
+{
+    background-color: rgba(0,0,0,.2);
+}
+
+.minibutticon
+{
+    width: 10;
+    height: 1;
+    background-color: black;
+}
+
+/* ---------- taskbar ---------- */
+
+.taskbar
+{
+    width: 100%;
+    height: 30px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    background-color: #004a4f;
+    z-index:10;
+}

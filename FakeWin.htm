@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="FakeWin.css">
+<script src="FakeWin.js" type="text/javascript"></script>
+<title>Fake Windows!</title>
+</head>
+
+<body id="bod" onmouseup="unGrab()">
+
+<div class="window winactive" style="width:400;height:300;" onmousedown="focusWindow(this)">
+
+<div class="titlebar tbactive" onmousedown="setOrigin(this);">
+<img class="tbicon" src="wx.png">
+<span class="tbtext">win.com</span>
+<button class="tbbutt closebutt" onmouseover="recolorIcon(this,'white')" onmouseout="recolorIcon(this,'black')" onclick="closeWindow(this)"><div class="cbicontainer"><div class="closebutticon"></div><div class="closebutticonother"></div></div></button>
+<button class="tbbutt maxibutt" onclick="maxiWindow(this)"><div class="maxibutticon"></div></button>
+<button class="tbbutt minibutt" onmousedown="console.log('poop')"><div class="minibutticon"></div></button>
+</div>
+<button onclick="addNewWin()">Add Window</button>
+</div>
+
+
+<div class="taskbar"></div>
+</body>
+
+
+</html>
