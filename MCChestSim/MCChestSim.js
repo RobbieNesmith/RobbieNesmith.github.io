@@ -162,10 +162,13 @@ function dispContents()
                         it.style.background = "url('./mcitems.png') -1008px 0";
                         break;
                     }
-                    var qty = document.createElement('div');
-                    qty.className = "qty";
-                    qty.innerHTML = items[i].qty;
-                    it.appendChild(qty);
+                    if(items[i].qty > 1)
+                    {
+                        var qty = document.createElement('div');
+                        qty.className = "qty";
+                        qty.innerHTML = items[i].qty;
+                        it.appendChild(qty);
+                    }
                     chest.appendChild(it);
                 }
             }
