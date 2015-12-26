@@ -91,70 +91,70 @@ function dispContents()
                     switch (items[i].name)
                     {
                     case "Bread":
-                        it.style.background = "url('items.png') 0 0";
+                        it.style.background = "url('./items.png') 0 0";
                         break;
                     case "Red Apple":
-                        it.style.background = "url('items.png') -48px 0";
+                        it.style.background = "url('./items.png') -48px 0";
                         break;
                     case "Iron Ingot":
-                        it.style.background = "url('items.png') -96px 0";
+                        it.style.background = "url('./items.png') -96px 0";
                         break;
                     case "Iron Sword":
-                        it.style.background = "url('items.png') -144px 0";
+                        it.style.background = "url('./items.png') -144px 0";
                         break;
                     case "Iron Pickaxe":
-                        it.style.background = "url('items.png') -196px 0";
+                        it.style.background = "url('./items.png') -196px 0";
                         break;
                     case "Iron Helmet":
-                        it.style.background = "url('items.png') -240px 0";
+                        it.style.background = "url('./items.png') -240px 0";
                         break;
                     case "Iron Chestplate":
-                        it.style.background = "url('items.png') -288px 0";
+                        it.style.background = "url('./items.png') -288px 0";
                         break;
                     case "Iron Leggings":
-                        it.style.background = "url('items.png') -336px 0";
+                        it.style.background = "url('./items.png') -336px 0";
                         break;
                     case "Iron Boots":
-                        it.style.background = "url('items.png') -384px 0";
+                        it.style.background = "url('./items.png') -384px 0";
                         break;
                     case "Oak Sapling":
-                        it.style.background = "url('items.png') -432px 0";
+                        it.style.background = "url('./items.png') -432px 0";
                         break;
                     case "Obsidian":
-                        it.style.background = "url('items.png') -480px 0";
+                        it.style.background = "url('./items.png') -480px 0";
                         break;
                     case "Gold Ingot":
-                        it.style.background = "url('items.png') -528px 0";
+                        it.style.background = "url('./items.png') -528px 0";
                         break;
                     case "Diamond":
-                        it.style.background = "url('items.png') -576px 0";
+                        it.style.background = "url('./items.png') -576px 0";
                         break;
                     case "Saddle":
-                        it.style.background = "url('items.png') -624px 0";
+                        it.style.background = "url('./items.png') -624px 0";
                         break;
                     case "Wheat":
-                        it.style.background = "url('items.png') -672px 0";
+                        it.style.background = "url('./items.png') -672px 0";
                         break;
                     case "Gunpowder":
-                        it.style.background = "url('items.png') -720px 0";
+                        it.style.background = "url('./items.png') -720px 0";
                         break;
                     case "String":
-                        it.style.background = "url('items.png') -768px 0";
+                        it.style.background = "url('./items.png') -768px 0";
                         break;
                     case "Bucket":
-                        it.style.background = "url('items.png') -816px 0";
+                        it.style.background = "url('./items.png') -816px 0";
                         break;
                     case "Cocoa Beans":
-                        it.style.background = "url('items.png') -864px 0";
+                        it.style.background = "url('./items.png') -864px 0";
                         break;
                     case "Redstone Dust":
-                        it.style.background = "url('items.png') -912px 0";
+                        it.style.background = "url('./items.png') -912px 0";
                         break;
                     case "Music Discs":
-                        it.style.background = "url('items.png') -960px 0";
+                        it.style.background = "url('./items.png') -960px 0";
                         break;
                     case "Golden Apple":
-                        it.style.background = "url('items.png') -1008px 0";
+                        it.style.background = "url('./items.png') -1008px 0";
                         break;
                     }
                     var qty = document.createElement('div');
