@@ -1,0 +1,31 @@
+body
+{
+
+}
+
+div.chest
+{
+    position: relative;
+    width: 528px;
+    height: 501px;
+    background: url("InventoryBG.png");
+    -webkit-user-select:none;
+    user-select:none;
+}
+
+div.item
+{
+    position: absolute;
+    width: 48;
+    height: 48;
+}
+div.qty
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: white;
+    font-family: "sans-serif";
+    font-size: 24px;
+    text-shadow: 0 3px #3f3f3f;
+}
