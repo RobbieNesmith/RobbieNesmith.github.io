@@ -7,6 +7,12 @@ function Item(name, chance, min, max)
     this.qty = 0;
 }
 
+function ItemFinal(name, qty)
+{
+    this.name = name;
+    this.qty = qty;
+}
+
 function ChestFiller(t) //0 village, 1 dungeon
 {
     this.items = [new Item("nothing",0,0,0)];
@@ -27,33 +33,34 @@ function getRandomItem()
     with (this)
     {
         var item;
-        var num = Math.floor(Math.random() * items.length);
+        num = Math.floor(Math.random() * items.length);
         chance = Math.random();
         qtyMult = Math.random();
         var qty;
         
         if(chance < items[num].chance)
         {
+            console.log("------------------------------------")
+            console.log("num: " + num + "\nchance: " + chance + "\nqtyMult: " + qtyMult);
             item = items[num]
-            qty = Math.floor(qtyMult * (item.max - item.min) + item.min);
-            item.qty = qty;
+            qty = Math.floor(qtyMult * (item.max - item.min)) + item.min;
         }
         else
         {
             return getRandomItem();
         }
-        return item;
+        return new ItemFinal(items[num].name, qty);
     }
 }
 
 function Chest(type) //0 village, 1 dungeon
 {
-    this.items = [new Item("nothing",0,0,0)];
+    this.items = [new ItemFinal("nothing",0)];
     var i;
     var pos;
     for(i = 0; i < 27; i++)
     {
-        this.items[i] = new Item("nothing",0,0,0);
+        this.items[i] = new ItemFinal("nothing",0);
     }
     
     var c = new ChestFiller(type)
@@ -71,7 +78,6 @@ function dispContents()
     with (this)
     {
         var i;
-        console.log("-----------------------------------------------------");
         var chest = document.getElementById("chest");
         while(chest.hasChildNodes())
         {
@@ -79,11 +85,10 @@ function dispContents()
         }
         for(i = 0; i < 27; i++)
         {
-            if(items[i] instanceof Item)
+            if(items[i] instanceof ItemFinal)
             {
                 if(!(items[i].name == "nothing"))
                 {
-                    console.log(i + ": " + items[i].qty + "x " + items[i].name);
                     var it = document.createElement("div");
                     it.className = "item";
                     it.style.left = (24 + (i % 9) * 54 ) + "px";
