@@ -30,6 +30,11 @@ div.header
     background: url("img/grafiti.jpg");
 }
 
+.amazon
+{
+    background: url("img/amazon.jpg");
+}
+
 div.sidebarTop
 {
     position:fixed;
