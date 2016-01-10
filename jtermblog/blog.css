@@ -35,6 +35,11 @@ div.header
     background: url("img/amazon.jpg");
 }
 
+.amtrak
+{
+    background: url("img/amtrak.jpg");
+}
+
 div.sidebarTop
 {
     position:fixed;
