@@ -26,7 +26,7 @@ var ccList = [
 [[0,0,1,1,2,3,2,3,4,5,7],"Infinite stamina",""],
 [[1,1,1,1,4,3,1,3,4],"Gives repair robot",""],
 [[3,3,1,0,3,4],"Gives extra speed for a limited time",""],
-[[1,1,2,3,1,4],"Gives extra damage for a limited time",""],
+[[1,1,2,3,1,4],"Gives powerful blasters",""],
 [[4,4,4,3,2,5,5,5],"Random studs dropped near you",""],
 [[-1],"-Play as characters-",""],
 [[7,7,2,1,1,1,1,3],"Play as Super Battle Droid",""],
