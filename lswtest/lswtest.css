@@ -1,0 +1,71 @@
+body
+{
+    color: white;
+    background-color: black;
+}
+
+div.cheatcode
+{
+    display:inline-block;
+    width: 238;
+    height: 66;
+    background: url("img/blank.png");
+}
+
+div.cheatpart
+{
+    display:inline-block;
+    width: 34;
+    height: 33;
+    background: url("img/blank.png");
+}
+
+div.chleft
+{
+    background: url("img/left.png");
+}
+
+div.chright
+{
+    background: url("img/right.png");
+}
+
+div.chup
+{
+    background: url("img/up.png");
+}
+
+div.chdown
+{
+    background: url("img/down.png");
+}
+
+div.chl
+{
+    background: url("img/L.png");
+}
+
+div.chr
+{
+    background: url("img/R.png");
+}
+
+div.chstart
+{
+    background: url("img/start.png");
+}
+
+div.chselect
+{
+    background: url("img/select.png");
+}
+
+select.ccc
+{
+    color: white;
+    width: 238px;
+    height: 33px;
+    background-color: #00599c;
+    border-color: 2f8fd3;
+    border-radius: 2px;
+}
