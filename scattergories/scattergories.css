@@ -2,27 +2,27 @@ body
 {
   background-color: #a1d3f7;
   margin: 0;
-  font-size: 6vmin;
+  font-size: 6vw;
 }
 
 .maincont
 {
   width: 78%;
-  margin-left:10vmin;
+  margin-left:10vw;
 }
 
 .textin
 {
   width:90%;
-  font-size: 6vmin;
-  border-radius: 2vmin;
-  border: solid .5vmin grey;
-  padding-left: 1vmin;
+  font-size: 6vw;
+  border-radius: 2vw;
+  border: solid .5vw grey;
+  padding-left: 1vw;
 }
 
 .textin:focus
 {
-  border: solid .5vmin blue;
+  border: solid .5vw blue;
 }
 
 .letterDisp
@@ -30,12 +30,12 @@ body
   position: fixed;
   top:0;
   right:0;
-  width: 10vmin;
-  height: 10vmin;
+  width: 10vw;
+  height: 10vw;
   background-color: white;
-  border: solid .5vmin grey;
-  border-radius: 2vmin;
-  font-size: 10vmin;
+  border: solid .5vw grey;
+  border-radius: 2vw;
+  font-size: 10vw;
 }
 
 .timer
@@ -43,11 +43,11 @@ body
   position:fixed;
   bottom:0;
   right:0;
-  width: 10vmin;
-  height: calc(100% - 12vmin);
+  width: 10vw;
+  height: calc(100% - 12vw);
   background-color: lime;
-  border: solid .5vmin grey;
-  border-radius: 2vmin;
+  border: solid .5vw grey;
+  border-radius: 2vw;
   overflow: hidden;
 }
 .timerfill
@@ -57,28 +57,28 @@ body
   height:100%;
   width: 100%;
   background-color:blue;
-  transition: height 180s;
+  transition: height linear 180s;
 }
 .popupBox
 {
   text-align: center;
   position:fixed;
   display:block;
-  top: -40vmin;
-  left: 5vmin;
-  width:90vmin;
-  height:30vmin;
+  top: -40vw;
+  left: 5vw;
+  width:90vw;
+  height:30vw;
   background-color:white;
-  border: solid .5vmin grey;
-  border-radius: 2vmin;
+  border: solid .5vw grey;
+  border-radius: 2vw;
   transition: top .5s;
 }
 .startButt
 {
   
   width:80%;
-  font-size: 6vmin;
-  border-radius: 2vmin;
-  border: solid .5vmin grey;
-  padding-left: 1vmin;
+  font-size: 6vw;
+  border-radius: 2vw;
+  border: solid .5vw grey;
+  padding-left: 1vw;
 }

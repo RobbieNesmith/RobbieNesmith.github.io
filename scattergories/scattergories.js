@@ -14,13 +14,13 @@ letters="ABCDEFGHIJKLMNOPRSTW";
 function populateQuestions()
 {
   sp = document.getElementById("startPrompt");
-  sp.style.top = "-40vmin";
+  sp.style.top = "-40vw";
   cardNum = Math.floor(Math.random() * cards.length);
   letter = letters.charAt(Math.floor(Math.random() * 20));
   ltr = document.getElementById("letterDisp");
   ltr.innerHTML = letter;
   tmr = document.getElementById("fill");
-  tmr.style.transition="height 180s"
+  tmr.style.transition="height linear 180s"
   tmr.style.height = 0;
   lst = document.getElementById("lst");
   for(i = 0; i < lst.children.length; i++)
@@ -35,8 +35,8 @@ function populateQuestions()
 function promptStart()
 {
   sp = document.getElementById("startPrompt");
-  sp.style.top = "20vmin";
+  sp.style.top = "20vw";
   tmr = document.getElementById("fill");
-  tmr.style.transition = "height 0";
+  tmr.style.transition = "height 0s";
   tmr.style.height = "100%";
 }
