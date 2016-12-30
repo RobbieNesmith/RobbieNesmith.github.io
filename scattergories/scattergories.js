@@ -14,7 +14,7 @@ letters="ABCDEFGHIJKLMNOPRSTW";
 function populateQuestions()
 {
   sp = document.getElementById("startPrompt");
-  sp.style.top = "-40vw";
+  sp.style.top = "-40vmin";
   cardNum = Math.floor(Math.random() * cards.length);
   letter = letters.charAt(Math.floor(Math.random() * 20));
   ltr = document.getElementById("letterDisp");
@@ -35,7 +35,7 @@ function populateQuestions()
 function promptStart()
 {
   sp = document.getElementById("startPrompt");
-  sp.style.top = "20vw";
+  sp.style.top = "20vmin";
   tmr = document.getElementById("fill");
   tmr.style.transition = "height 0";
   tmr.style.height = "100%";
