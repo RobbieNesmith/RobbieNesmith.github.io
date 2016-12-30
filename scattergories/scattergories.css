@@ -1,0 +1,84 @@
+body
+{
+  background-color: #a1d3f7;
+  margin: 0;
+  font-size: 6vmin;
+}
+
+.maincont
+{
+  width: 78%;
+  margin-left:10vmin;
+}
+
+.textin
+{
+  width:90%;
+  font-size: 6vmin;
+  border-radius: 2vmin;
+  border: solid .5vmin grey;
+  padding-left: 1vmin;
+}
+
+.textin:focus
+{
+  border: solid .5vmin blue;
+}
+
+.letterDisp
+{
+  position: fixed;
+  top:0;
+  right:0;
+  width: 10vmin;
+  height: 10vmin;
+  background-color: white;
+  border: solid .5vmin grey;
+  border-radius: 2vmin;
+  font-size: 10vmin;
+}
+
+.timer
+{
+  position:fixed;
+  bottom:0;
+  right:0;
+  width: 10vmin;
+  height: calc(100% - 12vmin);
+  background-color: lime;
+  border: solid .5vmin grey;
+  border-radius: 2vmin;
+  overflow: hidden;
+}
+.timerfill
+{
+  position:absolute;
+  bottom: 0;
+  height:100%;
+  width: 100%;
+  background-color:blue;
+  transition: height 180s;
+}
+.popupBox
+{
+  text-align: center;
+  position:fixed;
+  display:block;
+  top: -40vmin;
+  left: 5vmin;
+  width:90vmin;
+  height:30vmin;
+  background-color:white;
+  border: solid .5vmin grey;
+  border-radius: 2vmin;
+  transition: top .5s;
+}
+.startButt
+{
+  
+  width:80%;
+  font-size: 6vmin;
+  border-radius: 2vmin;
+  border: solid .5vmin grey;
+  padding-left: 1vmin;
+}
