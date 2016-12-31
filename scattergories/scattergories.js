@@ -7,6 +7,14 @@ cards = [
 ["Nicknames","Things in the sky","Things with windows","Universities","Fish","Things you add water to","Things that have spots","Things that smell bad","Things you're afraid of","Terms of measurement","Items in this room","Book titles"],
 ["Fictional characters","Places to go on a date","Magazines","Famous landmarks","Sweet things","Things you save up to buy","Footwear","Something you keep hidden","Items in a suitcase","Things with tails","Sports equipment","Crimes"],
 ["Famous females","Medicines/Drugs","Machines","Hobbies","Things you do in the morning","Things you plug in","Animals","Languages","Things you grab on the way out the door","Junk foods","Things that grow","Things in an arcade"]
+["Restaurants","Notorious People","Fruits","Weapons","Toys","Household chores","Bodies of water","Authors","Halloween costumes","Funny movies","Things that are round","Things in a pet store"],
+["Types of sports","Song titles", "Parts of the body","Spicy foods","Things you shout","A girl's name","Ways to get here from there","Cooking ingredients","Villains/Monsters","Flowers","Things that weigh less than one pound"],
+["Things that need to be cleaned","Famous duos and trios","Things found in a desk","Island hot spots","Things at a hospital","Words associated with money","Items in a vending machine","Movie titles","Games","Things that you wear","Beers","Things at a circus"],
+["Vegetables","Things that make you scream","Things you throw away","Careers","Things you celebrate","Cartoon characters","Types of drinks","Musical groups","Science things","Things to do on a rainy day","Trees","Personality traits"],
+["Things you can tie in a knot","things that are soft","Things in a sci-fi movie","Words with four different vowels","Things that kids play with","Things at a wedding","Hot places","Things in outer space","Sounds","Things that are cute","Famous Singers","Things at an amusement park"],
+["Things that are worn above the waist","Things that are bright","Things that have numbers","Things found in a gym/health club","Chain stores","Ways to say hi and bye","Things in a garden","Things people use to decorate their houses","Items in an office","Things in pairs or sets","Artists","Cruise ship destinations"],
+["Things at a zoo","Things smaller than your fist","Things that fly","Things you eat on a diet","Words ending with \"ly\"","Things found under the table","Things in a hotel","Things you can do in five minutes or less","Things with claws","Party things","Reasons to skip school/work","Titles people have"],
+["Things that go well with chocolate","Things in a mystery novel","Websites","Loud things","Things you eat with a spoon","Famous sayings","Underground things","Things that are wet","Things in an airport","Words with double letters","Things a baby uses","Things in fairy tales"]
 ];
 
 letters="ABCDEFGHIJKLMNOPRSTW";
