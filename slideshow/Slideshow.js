@@ -1,4 +1,4 @@
-var numImages = 2;
+var numImages = 3;
 var curImage = 0;
 
 function foobar(e)
