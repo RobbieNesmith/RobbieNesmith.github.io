@@ -41,7 +41,6 @@ function recolorIcon(e,color)
     for(i = 0; i < grandchildren.length; i++)
     {
         var gc = grandchildren[i];
-        console.log(gc);
         gc.style.backgroundColor=color;
     }
 }
@@ -62,9 +61,7 @@ function maxiWindow(e)
     win.style.height = window.innerHeight;
 }
 
-function addNewWin()
-{
-    f = document.getElementById("bod");
+function createWindow() {
     var win = document.createElement('div');
     var hb = document.createElement('div');
     var mn = document.createElement('button');
@@ -100,8 +97,44 @@ function addNewWin()
     hb.appendChild(mx);
     hb.appendChild(mn);
     win.appendChild(hb);
+    return win;
+}
+
+function addNewWin()
+{
+    f = document.getElementById("bod");
+    win = createWindow();
     f.appendChild(win);
     focusWindow(win);
+}
+
+function addBrowserWindow() {
+    f = document.getElementById("bod");
+    win = createWindow();
+    content = document.createElement('iframe');
+    sbholder = document.createElement('div');
+    sbinput = document.createElement('input');
+    sbsearch = document.createElement('button');
+    sbholder.className = 'sbholder';
+    sbinput.className = 'sbinput';
+    sbsearch.className = 'sbsearch';
+    sbsearch.innerHTML = 'GO';
+    sbsearch.onclick = function(){loadPage(this)};
+    content.src = "http://www.wikipedia.org";
+    content.className = "browser";
+    win.appendChild(sbholder);
+    sbholder.appendChild(sbinput);
+    sbholder.appendChild(sbsearch);
+    win.appendChild(content);
+    content.width = "100%";
+    content.height = "100%";
+    win.style.height = '240px';
+    f.appendChild(win);
+    focusWindow(win);
+}
+
+function loadPage(e) {
+  e.parentElement.parentElement.getElementsByTagName('iframe')[0].src = e.parentElement.children[0].value;
 }
 
 function focusWindow(e)
@@ -122,7 +155,6 @@ function unfocusWindow(e)
 {
     e.className = e.className.replace( /(?:^|\s)winactive(?!\S)/g , '' );
     f = e.getElementsByClassName("titlebar")[0];
-    console.log(f);
     f.className = f.className.replace( /(?:^|\s)tbactive(?!\S)/g , '' );
     e.style.zIndex = 0;
 }
