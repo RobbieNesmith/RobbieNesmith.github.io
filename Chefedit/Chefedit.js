@@ -5,7 +5,11 @@ var isDraggingRc = false;
 
 function setup() {
   tp = document.getElementById('tilepalette');
-  ws = document.getElementById('workspace');
+  wsb = document.getElementById('workspace');
+  wsf = document.getElementById('workspacefg');
+  ed = document.getElementById('editing');
+  ed.innerText = "Editing: Foreground:";
+  ed.style.backgroundColor="red";
   for (i = 0; i < 256; i++) {
     e = document.createElement('div');
     im = document.createElement('div');
@@ -29,12 +33,22 @@ function setup() {
   for (i = 0; i < 20 * 15; i++) {
     tl = document.createElement('div');
     tl.className = "tileimage";
-    ws.appendChild(tl);
+    wsb.appendChild(tl);
   }
-  ws.setAttribute('onmousedown', 'wsMouseDown(this, event)');
-  ws.setAttribute('onmouseup', 'wsMouseUp()');
-  ws.setAttribute('onmouseleave', 'wsMouseUp()');
-  ws.setAttribute('onmousemove', 'wsMouseMove(this, event)');
+  for (i = 0; i < 20 * 15; i++) {
+    tl = document.createElement('div');
+    tl.className = "tileimage";
+    wsf.appendChild(tl);
+  }
+  wsb.setAttribute('onmousedown', 'wsMouseDown(this, event)');
+  wsb.setAttribute('onmouseup', 'wsMouseUp()');
+  wsb.setAttribute('onmouseleave', 'wsMouseUp()');
+  wsb.setAttribute('onmousemove', 'wsMouseMove(this, event)');
+  
+  wsf.setAttribute('onmousedown', 'wsMouseDown(this, event)');
+  wsf.setAttribute('onmouseup', 'wsMouseUp()');
+  wsf.setAttribute('onmouseleave', 'wsMouseUp()');
+  wsf.setAttribute('onmousemove', 'wsMouseMove(this, event)');
 }
 
 function wsMouseDown(el, ev) {
@@ -130,5 +144,22 @@ function setBG(el,idx) {
 
 function getChar (event){
   var keyCode = ('which' in event) ? event.which : event.keyCode;
-  alert ("The Unicode key code is: " + keyCode);
+  if (keyCode == 108 || keyCode == 76) {
+    moveForeground();
+  }
+}
+
+function moveForeground() {
+  fg = document.getElementById("workspacefg");
+  if (fg.style.marginTop == "") {
+    fg.style.marginTop = "-1000%";
+    ed = document.getElementById('editing');
+    ed.innerText = "Editing: Background:";
+    ed.style.backgroundColor="green";
+  } else {
+    fg.style.marginTop = "";
+    ed = document.getElementById('editing');
+    ed.innerText = "Editing: Foreground:";
+    ed.style.backgroundColor="red";
+  }
 }
