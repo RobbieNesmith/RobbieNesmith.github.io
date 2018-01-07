@@ -1,0 +1,24 @@
+<html>
+<head>
+<title="Place Client">
+<link rel="stylesheet" type="text/css" href="placeclient.css">
+<script src="placeclient.js"></script>
+</head>
+<body onload="setupPage();">
+<h1>Place Client</h1>
+<h2>Set server info (<span id="serverinfo"></span>)</h2>
+<input id="address"></input>:
+<input id="port" type="number" value=80></input>
+<button id="setserver" onclick="setServer();">Set</button>
+<h2>Choose a color</h2>
+<input class="butt" id="colorselector" type="color"></input>
+<br>
+<h2>Place it on the grid</h2>
+<div id="outercontainer">
+  <div id="placeholder">
+  </div>
+</div>
+<h2>Get current grid layout from server</h2>
+<button class="butt" id="update" onclick="getAll();">Update</button>
+</body>
+</html>

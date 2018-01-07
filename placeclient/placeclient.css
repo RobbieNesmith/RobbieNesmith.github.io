@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#outercontainer {
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+#placeholder {
+  display: flex;
+  flex-shrink: 0;
+  width: 512;
+  height: 512;
+  flex-wrap: wrap;
+}
+
+.butt {
+  width: 512;
+  height: 40;
+}
+
+.pixel {
+  width: 32;
+  height: 32;
+  flex-shrink: 0;
+  background-color:black;
+  border: dashed 1px white;
+  box-shadow: 0 0 0 1px black inset;
+}
