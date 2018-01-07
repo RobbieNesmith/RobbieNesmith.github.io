@@ -43,7 +43,44 @@ body
 {
   background-color: #f0f0f0;
   width: 100%;
-  height: 20px;
+  height: 32px;
+}
+
+.toolbaroption
+{
+  position: relative;
+  height: 100%;
+  border: none;
+  padding: 0 10 0 10;
+  margin: 0;
+  background-color: rgba(0,0,0,0);
+}
+
+.toolbardropdown
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  padding-top: 32px;
+}
+
+.dropdownitem
+{
+  width: 100%;
+  height: 32px;
+  background-color: #ccc;
+  text-align:left;
+}
+
+.dropdownitem:hover
+{
+  background-color: #ddd;
+}
+
+.dropdownitem:active
+{
+  background-color: white;
 }
 
 #tilepalette

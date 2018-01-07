@@ -2,6 +2,7 @@ var tileNum = 1;
 var rcTile = 0;
 var isDraggingWs = false;
 var isDraggingRc = false;
+var dropdowns = {"view": [{"text": "Toggle FG/BG (L)", "function": 'moveForeground();'}]};
 
 function setup() {
   tp = document.getElementById('tilepalette');
@@ -162,4 +163,23 @@ function moveForeground() {
     ed.innerText = "Editing: Foreground:";
     ed.style.backgroundColor="red";
   }
+}
+
+function createDropdown(el, ddname) {
+  ddm = document.createElement('div');
+  ddm.className = 'toolbardropdown';
+  ddm.setAttribute('onmouseleave', 'selfDestruct(this)');
+  items = dropdowns[ddname];
+  for (i = 0; i < items.length; i++) {
+    ddi = document.createElement('div');
+    ddi.className = 'dropdownitem';
+    ddi.innerText = items[i]['text'];
+    ddi.setAttribute('onclick',items[i]['function']);
+    ddm.appendChild(ddi);
+  }
+  el.appendChild(ddm);
+}
+
+function selfDestruct(e) {
+  e.parentNode.removeChild(e);
 }

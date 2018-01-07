@@ -12,7 +12,12 @@
 
 <body oncontextmenu="return false;" ondragstart="return false;" ondrop="return false;" onload='setup()' onkeypress="getChar(event);">
 <div id="maincontainer">
-  <div id="toolbar">file edit view crash</div>
+  <div id="toolbar">
+    <button class="toolbaroption" onclick="createDropdown(this, 'file');">file</button>
+    <button class="toolbaroption" onclick="createDropdown(this, 'edit');">edit</button>
+    <button class="toolbaroption" onclick="createDropdown(this, 'view');">view</button>
+    <button class="toolbaroption" onclick="createDropdown(this, 'crash');">crash</button>
+  </div>
   <div id="subcontainer">
     <div id="tilepalette" class="noselect"></div>
     <div id="workspacecontainer">
