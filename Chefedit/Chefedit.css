@@ -12,8 +12,7 @@
                                   supported by Chrome and Opera */
 }
 
-body
-{
+body {
   background-color: #ff0000;
 }
 
@@ -39,15 +38,13 @@ body
   height: 100%;
 }
 
-#toolbar
-{
+#toolbar {
   background-color: #f0f0f0;
   width: 100%;
   height: 32px;
 }
 
-.toolbaroption
-{
+.toolbaroption {
   position: relative;
   height: 100%;
   border: none;
@@ -56,8 +53,7 @@ body
   background-color: rgba(0,0,0,0);
 }
 
-.toolbardropdown
-{
+.toolbardropdown {
   position: absolute;
   top: 0;
   left: 0;
@@ -65,26 +61,22 @@ body
   padding-top: 32px;
 }
 
-.dropdownitem
-{
+.dropdownitem {
   width: 100%;
   height: 32px;
   background-color: #ccc;
   text-align:left;
 }
 
-.dropdownitem:hover
-{
+.dropdownitem:hover {
   background-color: #ddd;
 }
 
-.dropdownitem:active
-{
+.dropdownitem:active {
   background-color: white;
 }
 
-#tilepalette
-{
+#tilepalette {
   width: 256px;
   height: 100%;
   
@@ -93,8 +85,7 @@ body
   overflow-y: scroll;
 }
 
-div.tileholder
-{
+div.tileholder {
   background-color: #d0d0d0;
   cursor: pointer;
   
@@ -106,29 +97,25 @@ div.tileholder
   padding: 16px;
 }
 
-div.tileholder:nth-child(even)
-{
+div.tileholder:nth-child(even) {
   background-color: #a0a0a0;
 }
 
-div.selected
-{
+div.selected {
   border: solid 4px green;
   border-bottom: solid 4px green !important;
   border-left: solid 4px green !important;
   padding: 12px;
 }
 
-div.rightsel
-{
+div.rightsel {
   border: solid 4px red;
   border-top: solid 4px red !important;
   border-right: solid 4px red !important;
   padding: 12px;
 }
 
-div.tileimage
-{
+div.tileimage {
   background: url("img/ss.png");
   
   flex-shrink: 0;
@@ -138,20 +125,17 @@ div.tileimage
   height: 32px;
 }
 
-div.tiledescription
-{
+div.tiledescription {
   margin-left: 16px;
 }
 
-#workspacecontainer
-{
+#workspacecontainer {
   flex-grow: 1;
   width: 100%;
   height: 100%;
 }
 
-#workspacepadding
-{
+#workspacepadding {
   background-color: blue;
 
   display: flex;
@@ -162,15 +146,13 @@ div.tiledescription
   height: 100%;
 }
 
-#editing
-{
+#editing {
   position: fixed;
   padding: 5px;
   border-radius: 0 0 10px 0;
 }
 
-#workspace
-{
+#workspace {
   background-color: black;
   
   display: flex;
@@ -181,8 +163,7 @@ div.tiledescription
   height: 480px;
 }
 
-#workspacefg
-{
+#workspacefg {
   background-color: rgba(0,0,0,0.5);
   
   display: flex;
@@ -192,4 +173,31 @@ div.tiledescription
   width: 640px;
   height: 480px;
   margin-left: -640px;
+}
+
+#grayout {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(100,100,100, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+#loadDialogContainer {
+  background-color: blue;
+  width: 500px;
+  padding: 16px;
+}
+
+#dragDropTarget {
+  width: 90%;
+  height: 100px;
+  border: dashed 1px white;
+  margin: 8px;
 }

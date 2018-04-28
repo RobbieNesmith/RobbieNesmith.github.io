@@ -2,7 +2,10 @@ var tileNum = 1;
 var rcTile = 0;
 var isDraggingWs = false;
 var isDraggingRc = false;
-var dropdowns = {"view": [{"text": "Toggle FG/BG (L)", "function": 'moveForeground();'}]};
+var dropdowns = {"file": [{"text": "New", "function": "newFile();"},{"text": "Open", "function": "displayLoadDialog();"}, {"text": "Save", "function": "saveFile();"}], "view": [{"text": "Toggle FG/BG (L)", "function": "moveForeground();"}]};
+var levelData;
+var levelName;
+var tmpLevelData;
 
 function setup() {
   tp = document.getElementById('tilepalette');
@@ -57,7 +60,7 @@ function wsMouseDown(el, ev) {
     isDraggingWs = true;
     placeAtCoords(el, x, y, tileNum);
   } else if (ev.button == 1) {
-    getAtCoords(el, x, y);
+    setSelectedByIndex(getAtCoords(el, x, y));
   } else if (ev.button == 2) {
     isDraggingRc = true;
     placeAtCoords(el, x, y, rcTile);
@@ -102,6 +105,7 @@ function getAtCoords(el, x, y) {
       py = -parseInt(py.substring(0, py.length - 2)) / 32;
     }
     setSelectedByIndex(px + 16 * py, 0);
+    return px + 16 * py;
   }
 }
 
@@ -168,7 +172,7 @@ function moveForeground() {
 function createDropdown(el, ddname) {
   ddm = document.createElement('div');
   ddm.className = 'toolbardropdown';
-  ddm.setAttribute('onmouseleave', 'selfDestruct(this)');
+  ddm.setAttribute('onmouseleave', 'selfDestruct(this);');
   items = dropdowns[ddname];
   for (i = 0; i < items.length; i++) {
     ddi = document.createElement('div');
@@ -182,4 +186,133 @@ function createDropdown(el, ddname) {
 
 function selfDestruct(e) {
   e.parentNode.removeChild(e);
+}
+
+function displayLoadDialog() {
+  var grayout = document.createElement('div');
+  var loadDialogContainer = document.createElement('div');
+  var dragDropTarget = document.createElement('input');
+  var loadButton = document.createElement('button');
+  dragDropTarget.type = "file";
+  dragDropTarget.id = "dragDropTarget";
+  dragDropTarget.width = "90%";
+  dragDropTarget.setAttribute('onchange', 'readFile()');
+  loadButton.id = "loadbutton";
+  loadButton.innerText = "Load File";
+  loadButton.disabled = true;
+  loadButton.setAttribute('onclick', 'loadFileToEditor()');
+  grayout.id = 'grayout';
+  grayout.setAttribute('onclick', 'closeLoadDialog(event)');
+  loadDialogContainer.id = "loadDialogContainer";
+  loadDialogContainer.setAttribute('onclick', 'blockEventPropagation(event);');
+  loadDialogContainer.appendChild(dragDropTarget);
+  loadDialogContainer.appendChild(document.createElement('br'));
+  loadDialogContainer.appendChild(loadButton);
+  grayout.appendChild(loadDialogContainer);
+  document.body.appendChild(grayout);
+}
+
+function closeLoadDialog(event) {
+  greyout = document.getElementById('grayout');;
+  document.body.removeChild(greyout);
+}
+
+function blockEventPropagation(event) {
+  event.stopPropagation();
+}
+
+function readFile() {
+  console.log("reading file");
+  theFile = document.getElementById('dragDropTarget').files[0];
+  levelName = theFile.name;
+  var reader = new FileReader();
+  reader.onloadend = function(event) {
+    if (event.target.readyState == FileReader.DONE) {
+      tmpLevelData = event.target.result;
+      document.getElementById('loadbutton').disabled = false;
+    }
+  }
+  reader.readAsBinaryString(theFile);
+}
+
+function loadFileToEditor() {
+  levelData = tmpLevelData;
+  tmpLevelData = "";
+  closeLoadDialog();
+  var bgoffset = 88;
+  var fgoffset = 756;
+  var bg = document.getElementById('workspace');
+  var fg = document.getElementById('workspacefg');
+  for (var i = 0; i < 20 * 15; i++) {
+    var x = (i % 20) * 32;
+    var y = (i / 20) * 32;
+    var tile = levelData.charCodeAt(bgoffset + i * 2);
+    placeAtCoords(bg, x, y, tile);
+  }
+  for (var i = 0; i < 20 * 15; i++) {
+    var x = (i % 20) * 32;
+    var y = (i / 20) * 32;
+    var tile = levelData.charCodeAt(fgoffset + i * 2);
+    placeAtCoords(fg, x, y, tile);
+  }
+}
+
+function newFile() {
+  levelData = "";
+  var bg = document.getElementById('workspace');
+  var fg = document.getElementById('workspacefg');
+  for (var i = 0; i < 20 * 15; i++) {
+    var x = (i % 20) * 32;
+    var y = (i / 20) * 32;
+    placeAtCoords(bg, x, y, 0);
+  }
+  for (var i = 0; i < 20 * 15; i++) {
+    var x = (i % 20) * 32;
+    var y = (i / 20) * 32;
+    placeAtCoords(fg, x, y, 0);
+  }
+}
+
+function saveFile() {
+  var bgoffset = 88;
+  var fgoffset = 756;
+  var bg = document.getElementById('workspace');
+  var fg = document.getElementById('workspacefg');
+  
+  var firstChunk = levelData.substr(0, bgoffset);
+  var secondChunk = levelData.substr(688, 68);
+  var thirdChunk = levelData.substr(1356, levelData.length);
+  var bgData = "";
+  var fgData = "";
+  for (var i = 0; i < 20 * 15; i++) {
+    var x = (i % 20) * 32;
+    var y = (i / 20) * 32;
+    var tile = levelData.charCodeAt(bgoffset + i * 2);
+    bgData += String.fromCharCode(getAtCoords(bg, x, y, tile));
+    bgData += String.fromCharCode(0);
+  }
+  for (var i = 0; i < 20 * 15; i++) {
+    var x = (i % 20) * 32;
+    var y = (i / 20) * 32;
+    var tile = levelData.charCodeAt(fgoffset + i * 2);
+    fgData += String.fromCharCode(getAtCoords(fg, x, y, tile));
+    fgData += String.fromCharCode(0);
+  }
+  levelData = firstChunk + bgData + secondChunk + fgData + thirdChunk;
+  var outfile = "";
+  for (var i = 0; i < levelData.length; i++) {
+    var outChar = levelData.charCodeAt(i).toString(16);
+    if (outChar.length == 1) {
+      outfile += "0";
+    }
+    outfile += outChar;
+  }
+  
+  var dlLink = document.createElement('a');
+  dlLink.href = "data:text/plain," + outfile;
+  dlLink.style.display = "none";
+  dlLink.download = levelName;
+  document.body.appendChild(dlLink);
+  dlLink.click();
+  document.body.removeChild(dlLink);
 }
