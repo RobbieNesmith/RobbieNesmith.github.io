@@ -101,6 +101,26 @@ div.tileholder:nth-child(even) {
   background-color: #a0a0a0;
 }
 
+#mobinfo {
+  width: 256px;
+  height: 100%;
+  
+  flex-shrink:0;
+  
+  overflow-y: scroll;
+}
+
+.mobholder {
+  background-color: #d0d0d0;
+  cursor: pointer;
+  width: 100%;
+  padding: 16px;
+}
+
+.mobholder:nth-child(even) {
+  background-color: #a0a0a0;
+}
+
 div.selected {
   border: solid 4px green;
   border-bottom: solid 4px green !important;

@@ -50,5 +50,20 @@ tileinfo = [
 "The right edge of a platform",
 "The left edge of a platform",
 "The middle of a platform",
-"The right edge of a platform"
+"The right edge of a platform",
+"A dissolving platform",
+"A dissolving platform",
+"A dissolving platform",
+"A dissolving platform",
+"A dissolving platform",
+"A dissolving platform",
+"????",
+"????",
+"Banana item",
+"Grape item",
+"Cherry item",
+"Watermelon item",
+"Peach item",
+"????",
+"????"
 ]

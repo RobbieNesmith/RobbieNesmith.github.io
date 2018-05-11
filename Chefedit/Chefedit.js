@@ -241,6 +241,7 @@ function loadFileToEditor() {
   closeLoadDialog();
   var bgoffset = 88;
   var fgoffset = 756;
+  var numMobsOffset = 1360;
   var bg = document.getElementById('workspace');
   var fg = document.getElementById('workspacefg');
   for (var i = 0; i < 20 * 15; i++) {
@@ -254,6 +255,33 @@ function loadFileToEditor() {
     var y = (i / 20) * 32;
     var tile = levelData.charCodeAt(fgoffset + i * 2);
     placeAtCoords(fg, x, y, tile);
+  }
+  var numMobs = levelData.charCodeAt(numMobsOffset);
+  console.log("Loading " + numMobs + " mobs.");
+  var mobInfo = document.getElementById('mobinfo');
+  for (var i = mobInfo.children.length - 1; i >= 0; i--) {
+    mobInfo.removeChild(mobInfo.children[i]);
+  }
+  var mobDelim = String.fromCharCode(255);
+  mobDelim += mobDelim;
+  mobDelim += mobDelim;
+  mobDelim += mobDelim;
+  var mobArray = levelData.substr(1360, levelData.length).split(mobDelim);
+  for (var i = 0; i < numMobs; i++) {
+    var mobHolder = document.createElement('div');
+    var mobTitle = document.createElement('span');
+    var mobData = document.createElement('textarea');
+    mobHolder.className = "mobholder";
+    mobTitle.innerText = "A mob";
+    for (var j = 0; j < mobArray[i].length; j++) {
+      mobData.value += mobArray[i].charCodeAt(j).toString(16);
+    }
+    mobData.style.width = "100%";
+    mobData.style.height = "50px";
+    mobData.style.resize = "vertical";
+    mobHolder.appendChild(mobTitle);
+    mobHolder.appendChild(mobData);
+    mobInfo.appendChild(mobHolder);
   }
 }
 
