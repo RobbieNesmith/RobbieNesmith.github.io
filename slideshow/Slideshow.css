@@ -1,7 +1,17 @@
-body
-{
+body {
   border:0;
   margin:0;
   padding:0;
   background-color: black;
+  height:300vh;
+  text-align:center;
+}
+
+img {
+  margin-top:20vh;
+  width: 80%;
+}
+
+#cons {
+  color: white;
 }
