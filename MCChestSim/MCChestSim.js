@@ -1,3 +1,60 @@
+let id = 0;
+
+function dragItem(event)
+{
+    event.dataTransfer.setData("text", event.target.id);
+}
+
+function dragOver(event)
+{
+    const data = event.dataTransfer.getData("text");
+    const transferItem = document.getElementById(data);
+    let destinationItem;
+    if (event.target.className == "qty")
+    {
+        destinationItem = event.target.parentNode;
+    }
+    else
+    {
+        destinationItem = event.target;
+    }
+    const sameType = destinationItem.style.background == transferItem.style.background;
+    const sameItem = destinationItem.id == transferItem.id;
+    if (destinationItem.className=="itemSlot" || sameType && !sameItem) {
+        event.preventDefault();
+    }
+}
+
+function dropItem(event)
+{
+    event.preventDefault();
+    const data = event.dataTransfer.getData("text");
+    const transferItem = document.getElementById(data);
+    let destinationItem = event.target;
+    if (event.target.className == "qty") {
+      destinationItem = event.target.parentNode;
+    }
+    if (destinationItem.className=="itemSlot") {
+        destinationItem.appendChild(transferItem);
+    } else if (destinationItem.style.background == transferItem.style.background) {
+        let transferQty = 1;
+        if (transferItem.children.length) {
+            transferQty = parseInt(transferItem.children[0].innerText);
+        }
+        let destinationQty = 1;
+        if (destinationItem.children.length) {
+            destinationQty = parseInt(destinationItem.children[0].innerText);
+        }
+        transferItem.parentNode.removeChild(transferItem);
+        if (destinationItem.children.length == 0) {
+            let qty = document.createElement("div");
+            qty.className = "qty";
+            destinationItem.appendChild(qty);
+        }
+        destinationItem.children[0].innerText = transferQty + destinationQty;
+    }
+}
+
 function Item(name, chance, min, max)
 {
     this.name = name;
@@ -40,8 +97,8 @@ function getRandomItem()
         
         if(chance < items[num].chance)
         {
-            console.log("------------------------------------")
-            console.log("num: " + num + "\nchance: " + chance + "\nqtyMult: " + qtyMult);
+            //console.log("------------------------------------")
+            //console.log("num: " + num + "\nchance: " + chance + "\nqtyMult: " + qtyMult);
             item = items[num]
             qty = Math.floor(qtyMult * (item.max - item.min)) + item.min;
         }
@@ -73,16 +130,69 @@ function Chest(type) //0 village, 1 dungeon
     this.dispContents = dispContents;
 }
 
+function setupChestGrid()
+{
+    let chest = document.getElementById("chest");
+    
+    // chest slots
+    
+    for (let i = 0; i < 27; i++)
+    {
+        let itemSlot = document.createElement("div");
+        itemSlot.className="itemSlot";
+        itemSlot.setAttribute("ondrop", "dropItem(event)");
+        itemSlot.setAttribute("ondragover", "dragOver(event)");
+        itemSlot.style.left = (24 + (i % 9) * 54 ) + "px";
+        itemSlot.style.top = (54 + Math.floor(i / 9) * 54) + "px";
+        chest.appendChild(itemSlot);
+    }
+    
+    // inventory slots
+    
+    for (let i = 0; i < 27; i++)
+    {
+        let itemSlot = document.createElement("div");
+        itemSlot.className="itemSlot";
+        itemSlot.setAttribute("ondrop", "dropItem(event)");
+        itemSlot.setAttribute("ondragover", "dragOver(event)");
+        itemSlot.style.left = (24 + (i % 9) * 54 ) + "px";
+        itemSlot.style.top = (255 + Math.floor(i / 9) * 54) + "px";
+        chest.appendChild(itemSlot);
+    }
+    
+    // hotbar slots
+    
+    for (let i = 0; i < 9; i++)
+    {
+        let itemSlot = document.createElement("div");
+        itemSlot.className="itemSlot";
+        itemSlot.setAttribute("ondrop", "dropItem(event)");
+        itemSlot.setAttribute("ondragover", "dragOver(event)");
+        itemSlot.style.left = (24 + i * 54 ) + "px";
+        itemSlot.style.top = (429) + "px";
+        chest.appendChild(itemSlot);
+    }
+}
+
 function dispContents()
 {
     with (this)
     {
         var i;
         var chest = document.getElementById("chest");
-        while(chest.hasChildNodes())
+        
+        for (let slot = 0; slot < 27; slot++)
         {
-            chest.removeChild(chest.lastChild);
+            while(chest.children[slot].hasChildNodes())
+            {
+                chest.children[slot].removeChild(chest.children[slot].lastChild);
+            }
         }
+        
+        //while(chest.hasChildNodes())
+        //{
+        //    chest.removeChild(chest.lastChild);
+        //}
         for(i = 0; i < 27; i++)
         {
             if(items[i] instanceof ItemFinal)
@@ -90,9 +200,13 @@ function dispContents()
                 if(!(items[i].name == "nothing"))
                 {
                     var it = document.createElement("div");
+                    it.draggable=true;
+                    it.setAttribute("ondragstart", "dragItem(event)");
                     it.className = "item";
-                    it.style.left = (24 + (i % 9) * 54 ) + "px";
-                    it.style.top = (54 + Math.floor(i / 9) * 54) + "px";
+                    it.id = `item${id}`;
+                    id++;
+                    // it.style.left = (24 + (i % 9) * 54 ) + "px";
+                    // it.style.top = (54 + Math.floor(i / 9) * 54) + "px";
                     switch (items[i].name)
                     {
                     case "Bread":
@@ -166,14 +280,27 @@ function dispContents()
                     {
                         var qty = document.createElement('div');
                         qty.className = "qty";
-                        qty.innerHTML = items[i].qty;
+                        qty.innerText = items[i].qty;
                         it.appendChild(qty);
                     }
-                    chest.appendChild(it);
+                    chest.children[i].appendChild(it);
                 }
             }
         }
     }
+}
+
+function clearContents()
+{
+    chest = document.getElementById("chest");
+    for (let slot = 0; slot < 63; slot++)
+    {
+        while(chest.children[slot].hasChildNodes())
+        {
+            chest.children[slot].removeChild(chest.children[slot].lastChild);
+        }
+    }
+    id = 0;
 }
 
 function testV()

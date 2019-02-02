@@ -4,9 +4,12 @@
 <link rel="stylesheet" type="text/css" href="MCChestSim.css">
 <script type="text/javascript" src="MCChestSim.js"></script>
 </head>
-<body>
+<body onload="setupChestGrid();">
 <div class="chest" id="chest"></div><br />
-<button onclick="testV();">Village Chest</button><button onclick="testD();">Dungeon Chest</button><br />
-<p>This may not be entirely correct. I originally wrote this program in Java 3 or so years ago, so Minecraft has probably changed since then.</p>
+<button onclick="testV();">Village Chest</button>
+<button onclick="testD();">Dungeon Chest</button>
+<button onclick="clearContents();">Clear Inventory</button>
+<br />
+<p>Based on an old version of Minecraft</p>
 </body>
 </html>

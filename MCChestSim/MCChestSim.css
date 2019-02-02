@@ -1,6 +1,9 @@
 body
 {
-
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
 }
 
 div.chest
@@ -9,16 +12,22 @@ div.chest
     width: 528px;
     height: 501px;
     background: url("InventoryBG.png");
-    -webkit-user-select:none;
-    user-select:none;
 }
 
 div.item
 {
     position: absolute;
-    width: 48;
-    height: 48;
+    width: 48px;
+    height: 48px;
 }
+
+div.itemSlot
+{
+    position: absolute;
+    width: 48px;
+    height: 48px;
+}
+
 div.qty
 {
     position: absolute;
