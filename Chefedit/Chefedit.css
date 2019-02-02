@@ -193,6 +193,8 @@ div.tiledescription {
   width: 640px;
   height: 480px;
   margin-left: -640px;
+  
+  transition: opacity .2s;
 }
 
 #grayout {

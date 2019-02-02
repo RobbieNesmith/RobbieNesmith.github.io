@@ -6,6 +6,10 @@ var dropdowns = {"file": [{"text": "New", "function": "newFile();"},{"text": "Op
 var levelData;
 var levelName;
 var tmpLevelData;
+var layer = 1; // 0 = background 1 = foreground
+var tileGridFG;
+var tileGridBG;
+var mobList;
 
 function setup() {
   tp = document.getElementById('tilepalette');
@@ -14,30 +18,40 @@ function setup() {
   ed = document.getElementById('editing');
   ed.innerText = "Editing: Foreground:";
   ed.style.backgroundColor="red";
-  for (i = 0; i < 256; i++) {
+  for (i = 0; i < 340; i++) {
     e = document.createElement('div');
     im = document.createElement('div');
     e.className = "tileholder";
-    e.setAttribute('onclick', 'setSelected(this, 0);');
-    e.setAttribute('oncontextmenu', 'setSelected(this, 1)');
+    e.setAttribute('onclick', 'setSelectedByIndex(' + i + ', 0);');
+    e.setAttribute('oncontextmenu', 'setSelectedByIndex(' + i + ', 1)');
     im.className = "tileimage";
     setBG(im,i);
     e.appendChild(im);
     if(i < tileinfo.length) {
       label = document.createElement('div');
       label.className = "tiledescription";
-      label.innerHTML = tileinfo[i];
+      label.innerText = "(" + i + "): " + tileinfo[i];
+      e.appendChild(label);
+    } else {
+      label = document.createElement('div');
+      label.className = "tiledescription";
+      label.innerText = "(" + i + ")";
       e.appendChild(label);
     }
     tp.appendChild(e);
   }
-  setSelected(tp.children[0], 1);
-  setSelected(tp.children[1], 0);
+  setSelectedByIndex(0, tileNum);
+  setSelectedByIndex(1, rcTile);
+  
+  tileGridFG = [];
+  tileGridBG = [];
   
   for (i = 0; i < 20 * 15; i++) {
     tl = document.createElement('div');
     tl.className = "tileimage";
     wsb.appendChild(tl);
+    tileGridFG.push(0);
+    tileGridBG.push(0);
   }
   for (i = 0; i < 20 * 15; i++) {
     tl = document.createElement('div');
@@ -58,12 +72,12 @@ function setup() {
 function wsMouseDown(el, ev) {
   if (ev.button == 0) {
     isDraggingWs = true;
-    placeAtCoords(el, x, y, tileNum);
+    placeAtIndex(layer, coordsToIndex(x, y), tileNum);
   } else if (ev.button == 1) {
-    setSelectedByIndex(getAtCoords(el, x, y));
+    setSelectedByIndex(getAtIndex(layer, coordsToIndex(x, y)), 0);
   } else if (ev.button == 2) {
     isDraggingRc = true;
-    placeAtCoords(el, x, y, rcTile);
+    placeAtIndex(layer, coordsToIndex(x, y), rcTile);
   }
 }
 
@@ -76,42 +90,53 @@ function wsMouseMove(el, ev) {
   x = ev.pageX - el.offsetLeft;
   y = ev.pageY - el.offsetTop;
   if (isDraggingWs) {
-    placeAtCoords(el, x, y, tileNum);
+    placeAtIndex(layer, coordsToIndex(x, y), tileNum);
   } else if (isDraggingRc) {
-    placeAtCoords(el, x, y, rcTile);
+    placeAtIndex(layer, coordsToIndex(x, y), rcTile);
   }
 }
 
-function placeAtCoords(el, x, y, tn) {
+function coordsToIndex(x, y) {
   if (x >= 0 && x < 640 && y >= 0 && y < 480) {
-    idx = Math.floor(y / 32) * 20 + Math.floor(x / 32);
-    setBG(el.children[idx],tn);
+    return Math.floor(y / 32) * 20 + Math.floor(x / 32);
+  } else {
+    return -1;
   }
 }
 
-function getAtCoords(el, x, y) {
-  if (x >= 0 && x < 640 && y >= 0 && y < 480) {
-    idx = Math.floor(y / 32) * 20 + Math.floor(x / 32);
-    px = el.children[idx].style.backgroundPositionX;
-    py = el.children[idx].style.backgroundPositionY;
-    if (px == "") {
-      px = 0;
+function placeAtIndex(layer, idx, tn) {
+  if (idx >= 0 && idx < 20 * 15) {
+    if (layer === 1) {
+      tileGridFG[idx] = tn;
+      el = document.getElementById("workspacefg");
+      setBG(el.children[idx], tn);
     } else {
-      px = -parseInt(px.substring(0, px.length - 2)) / 32;
+      tileGridBG[idx] = tn;
+      el = document.getElementById("workspace");
+      setBG(el.children[idx], tn);
     }
-    if (py == "") {
-      py = 0;
-    } else {
-      py = -parseInt(py.substring(0, py.length - 2)) / 32;
-    }
-    setSelectedByIndex(px + 16 * py, 0);
-    return px + 16 * py;
   }
 }
 
-function setSelected(el, mb) {
+function getAtIndex(layer, idx) {
+  if (idx >= 0 && idx < 20 * 15) {
+    if (layer === 1) {
+      return tileGridFG[idx];
+    } else {
+      return tileGridBG[idx];
+    }
+  }
+}
+
+function setSelectedByIndex(index, mb) {
+  if (mb == 0) {
+    tileNum = index;
+  } else {
+    rcTile = index;
+  }
   tp = document.getElementById('tilepalette');
   ch = tp.children;
+  el = ch[index];
   for (i = 0; i < ch.length; i++) {
     if (mb == 0) {
       ch[i].classList.remove("selected");
@@ -121,27 +146,12 @@ function setSelected(el, mb) {
   }
   if (mb == 0) {
     el.className += " selected";
-    tileNum = 0;
   } else if (mb == 1) {
     el.className += " rightsel";
-    rcTile = 0;
-  }
-  while (null != el.previousElementSibling) {
-    if (mb == 0) {
-      tileNum++;
-    } else {
-      rcTile++;
-    }
-    el = el.previousElementSibling;
   }
 }
 
-function setSelectedByIndex(index, mb) {
-  tp = document.getElementById('tilepalette');
-  setSelected(tp.children[index], mb)
-}
-
-function setBG(el,idx) {
+function setBG(el, idx) {
   x = idx % 16;
   y = Math.floor(idx / 16);
   el.style.backgroundPosition = x * -32 + 'px ' + y * -32 + 'px';
@@ -149,21 +159,24 @@ function setBG(el,idx) {
 
 function getChar (event){
   var keyCode = ('which' in event) ? event.which : event.keyCode;
+  // L key switches layer
   if (keyCode == 108 || keyCode == 76) {
     moveForeground();
   }
+  
 }
 
 function moveForeground() {
   fg = document.getElementById("workspacefg");
-  if (fg.style.marginTop == "") {
-    fg.style.marginTop = "-1000%";
-    ed = document.getElementById('editing');
+  ed = document.getElementById('editing');
+  if (layer === 1) {
+    layer = 0;
+    fg.style.opacity = 0;
     ed.innerText = "Editing: Background:";
     ed.style.backgroundColor="green";
   } else {
-    fg.style.marginTop = "";
-    ed = document.getElementById('editing');
+    layer = 1;
+    fg.style.opacity = 1;
     ed.innerText = "Editing: Foreground:";
     ed.style.backgroundColor="red";
   }
@@ -245,16 +258,14 @@ function loadFileToEditor() {
   var bg = document.getElementById('workspace');
   var fg = document.getElementById('workspacefg');
   for (var i = 0; i < 20 * 15; i++) {
-    var x = (i % 20) * 32;
-    var y = (i / 20) * 32;
     var tile = levelData.charCodeAt(bgoffset + i * 2);
-    placeAtCoords(bg, x, y, tile);
+	tile += levelData.charCodeAt((bgoffset + i * 2 + 1)) * 256;
+    placeAtIndex(0, i, tile);
   }
   for (var i = 0; i < 20 * 15; i++) {
-    var x = (i % 20) * 32;
-    var y = (i / 20) * 32;
     var tile = levelData.charCodeAt(fgoffset + i * 2);
-    placeAtCoords(fg, x, y, tile);
+	tile += levelData.charCodeAt((fgoffset + i * 2 + 1)) * 256;
+    placeAtIndex(1, i, tile);
   }
   var numMobs = levelData.charCodeAt(numMobsOffset);
   console.log("Loading " + numMobs + " mobs.");
@@ -266,15 +277,20 @@ function loadFileToEditor() {
   mobDelim += mobDelim;
   mobDelim += mobDelim;
   mobDelim += mobDelim;
-  var mobArray = levelData.substr(1360, levelData.length).split(mobDelim);
+  var mobArray = levelData.substr(numMobsOffset, levelData.length).split(mobDelim);
   for (var i = 0; i < numMobs; i++) {
     var mobHolder = document.createElement('div');
     var mobTitle = document.createElement('span');
     var mobData = document.createElement('textarea');
     mobHolder.className = "mobholder";
     mobTitle.innerText = "A mob";
+    console.log(parseMob(mobArray[i], i === 0));
     for (var j = 0; j < mobArray[i].length; j++) {
-      mobData.value += mobArray[i].charCodeAt(j).toString(16);
+      var temp = mobArray[i].charCodeAt(j).toString(16);
+      if (temp.length === 1) {
+        temp = "0" + temp;
+      }
+      mobData.value += temp;
     }
     mobData.style.width = "100%";
     mobData.style.height = "50px";
@@ -290,14 +306,8 @@ function newFile() {
   var bg = document.getElementById('workspace');
   var fg = document.getElementById('workspacefg');
   for (var i = 0; i < 20 * 15; i++) {
-    var x = (i % 20) * 32;
-    var y = (i / 20) * 32;
-    placeAtCoords(bg, x, y, 0);
-  }
-  for (var i = 0; i < 20 * 15; i++) {
-    var x = (i % 20) * 32;
-    var y = (i / 20) * 32;
-    placeAtCoords(fg, x, y, 0);
+    placeAtIndex(0, i, 0);
+    placeAtIndex(1, i, 0);
   }
 }
 
@@ -313,18 +323,12 @@ function saveFile() {
   var bgData = "";
   var fgData = "";
   for (var i = 0; i < 20 * 15; i++) {
-    var x = (i % 20) * 32;
-    var y = (i / 20) * 32;
-    var tile = levelData.charCodeAt(bgoffset + i * 2);
-    bgData += String.fromCharCode(getAtCoords(bg, x, y, tile));
-    bgData += String.fromCharCode(0);
-  }
-  for (var i = 0; i < 20 * 15; i++) {
-    var x = (i % 20) * 32;
-    var y = (i / 20) * 32;
-    var tile = levelData.charCodeAt(fgoffset + i * 2);
-    fgData += String.fromCharCode(getAtCoords(fg, x, y, tile));
-    fgData += String.fromCharCode(0);
+    var bgTile = getAtIndex(0, i);
+	var fgTile = getAtIndex(1, i);
+    bgData += String.fromCharCode(bgTile & 255);
+    bgData += String.fromCharCode(bgTile >> 8);
+    fgData += String.fromCharCode(fgTile & 255);
+	fgData += String.fromCharCode(fgTile >> 8);
   }
   levelData = firstChunk + bgData + secondChunk + fgData + thirdChunk;
   var outfile = "";
@@ -343,4 +347,70 @@ function saveFile() {
   document.body.appendChild(dlLink);
   dlLink.click();
   document.body.removeChild(dlLink);
+}
+
+function parseMob(mobstr, isFirstMob) {
+  function readFourBytes(theString, thePos) {
+    var result = theString.charCodeAt(thePos);
+    result *= 256;
+    result += theString.charCodeAt(thePos + 1);
+    result *= 256;
+    result += theString.charCodeAt(thePos + 2);
+    result *= 256;
+    result += theString.charCodeAt(thePos + 3);
+    return result;
+  }
+  
+  // parse mob code
+  
+  var pointer = 0;
+  var extraDataFlag;
+  if (isFirstMob) {
+    extraDataFlag = 0;
+  } else {
+    extraDataFlag = mobstr.charCodeAt(pointer);
+  }
+  var extraData;
+  pointer += 4;
+  if (extraDataFlag == 0x11) {
+    extraData = mobstr.substr(pointer, 8);
+    pointer += 8;
+  } else if (extraDataFlag == 0x10) {
+    extraData = mobstr.substr(pointer, 4);
+    pointer += 4;
+  } else if (extraDataFlag == 0x01) {
+    extraData = mobstr.substr(pointer, 4);
+    pointer += 4;
+  }
+  var coordinates = [];
+  coordinates.push([readFourBytes(mobstr, pointer),readFourBytes(mobstr, pointer + 4)]);
+  pointer += 8;
+  var isFlipped = readFourBytes(mobstr, pointer);
+  pointer += 4;
+  var name = "";
+  var curChar = "";
+  while (curChar != String.fromCharCode(0)) {
+    name += curChar;
+    curChar = mobstr.charAt(pointer);
+    pointer ++;
+  }
+  var numCoords = mobstr.charCodeAt(pointer);
+  pointer += 4;
+  for (var i = 0; i < numCoords; i++) {
+    coordinates.push([readFourBytes(mobstr, pointer),readFourBytes(mobstr, pointer + 4)]);
+    pointer += 8;
+  }
+  
+  var mobData = {};
+  mobData.extraDataFlag = extraDataFlag;
+  mobData.extraData = extraData;
+  mobData.isFlipped = isFlipped;
+  mobData.numCoords = numCoords;
+  mobData.coordinates = coordinates;
+  mobData.name = name;
+  return mobData;
+}
+
+function mobToString(mobData) {
+  
 }
