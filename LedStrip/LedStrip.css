@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  font-size: 6vw;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+.hidden {
+  display: none;
+}
+
+.tab {
+  display: inline-block;
+  background-color: #d0d0d0;
+  border: none;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 0.5rem;
+}
+
+.selected {
+  background-color: #9f9ede;
+  color: white;
+}
+
+.tabdisplaycontainer {
+}
+
+.tabcontentcontainer {
+  background-color: #9f9ede;
+  padding: 0.2rem;
+  border-radius: 0 0.2rem 0.2rem 0.2rem;
+  box-shadow: 0 1rem 2rem 0 rgba(0,0,0,0.2);
+}
+
+.tabcontent {
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 0 0.1rem 0 black;
+}
+
+#colorinput {
+  width: 100%;
+  background-color:rgba(0,0,0,0);
+  padding: 0;
+  border: none;
+  height: 3rem;
+  margin-top: 0.5rem;
+}
+
+.inputcontainer {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.inputtext {
+  width: 100%;
+  flex-shrink: 1;
+  margin-right: 1rem;
+}
+
+.inputbutton {
+  flex-shrink: 0;
+}
