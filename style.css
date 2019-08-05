@@ -28,8 +28,7 @@ div.displayPane
     height: 320px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.4);
     flex-grow: 0;
-    transition: all .4s;
-    
+    transition: box-shadow .4s, border .4s, background-color .4s;
 }
 div.displayPane:hover
 {
@@ -45,8 +44,7 @@ div.displayPane:active
 }
 img.displayImage
 {
-    width: 320px;
-    height: 240px;
+    width: 100%;
 }
 div.footer
 {
@@ -57,4 +55,22 @@ div.footer
     height:16px;
     background: url("img/background.png");
     box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+@media (max-aspect-ratio: 1/1) or (max-width: 888px) {
+  h1 {
+    font-size: 7vw;
+  }
+  
+  div.displayPane {
+    width: calc(90vw - 20px);
+    height: calc(90vw - 20px);
+    font-size: 5vw;
+    margin-bottom: 7vw;
+  }
+  
+  div.footer {
+    font-size: 5vw;
+    height: 6vw;
+  }
 }
