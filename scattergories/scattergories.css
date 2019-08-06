@@ -97,7 +97,7 @@ body
   background-color:white;
   border: solid .5vw grey;
   border-radius: 2vw;
-  transition: top .5s;
+  transition: top .5s, opacity .5s;
 }
 .startButt
 {
@@ -107,6 +107,11 @@ body
   border-radius: 2vw;
   border: solid .5vw grey;
   padding-left: 1vw;
+}
+
+.filein {
+  width: 80%;
+  padding-left: 10%;
 }
 
 @media (min-aspect-ratio: 1/1) {

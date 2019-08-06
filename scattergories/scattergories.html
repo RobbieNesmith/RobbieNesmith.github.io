@@ -35,6 +35,9 @@
     <div class="popupBox" id="startPrompt">
       <div>Start a round?</div>
       <button class="startButt" onclick="countdown(3)">Yes!</button>
+      <div>Load custom prompt deck <a href="scattergories.json">(example)</a></div>
+      <input type="file" class="filein" onchange="readFile(this.files[0])"></input>
+      <div id="fileinfo"></div>
     </div>
     <div class="countdown" id="countdown"></div>
   </body>

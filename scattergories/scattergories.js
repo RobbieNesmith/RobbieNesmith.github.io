@@ -1,4 +1,4 @@
-cards = [
+let cards = [
 ["A boy's name","Cities","Things that are cold","Things you don't want in the house","Sports teams","Insects","Things in a coffee bar","Things you mix up","TV shows","Things found in the ocean","Kinds of weather","Foods that kids hate"],
 ["Things that are sticky","Awards/Ceremonies","Cars","Spices/Herbs","Bad Habits","Cosmetics/Toiletries","Celebrities","Things to do with leftover turkey","Reptiles/Amphibians","Fads","Leisure Activities","Things you're allergic to"],
 ["Articles of clothing","Desserts","Car Parts","Shoes","Athletes","4-letter words","Things you fold","Things in a bedroom","Things you do online","Things at the beach","Things you dream about","Tools"],
@@ -17,7 +17,9 @@ cards = [
 ["Things that go well with chocolate","Things in a mystery novel","Websites","Loud things","Things you eat with a spoon","Famous sayings","Underground things","Things that are wet","Things in an airport","Words with double letters","Things a baby uses","Things in fairy tales"]
 ];
 
-letters="ABCDEFGHIJKLMNOPRSTW";
+let letters="ABCDEFGHIJKLMNOPRSTW";
+
+let config = {};
 
 function populateQuestions() {
   let cdb = document.getElementById("countdown");
@@ -42,6 +44,7 @@ function promptStart() {
   let sp = document.getElementById("startPrompt");
   let tmr = document.getElementById("fill");
   sp.style.top = "20vw";
+  sp.style.opacity = "1";
   tmr.style.transition = "height 0s";
   tmr.style.height = "100%";
 }
@@ -62,10 +65,38 @@ function countdown(number) {
     resetQuestions();
     let cdb = document.getElementById("countdown");
     let sp = document.getElementById("startPrompt");
+    sp.style.opacity = "0";
     sp.style.top = "-40vw";
     cdb.style.top = "45vh";
     cdb.style.left = "45vw";
     cdb.innerText = number;
     setTimeout(() => countdown(number - 1), 1000);
   }
+}
+
+function readFile(theFile) {
+  let reader = new FileReader();
+  reader.onloadend = (evt) => {
+    let loadButt = document.getElementById("loadbutt");
+    let fileInfo = document.getElementById("fileinfo");
+    if (evt.target.readyState == FileReader.DONE) {
+      try {
+        let contents = evt.target.result;
+        console.log(contents);
+        config = JSON.parse(contents);
+        fileInfo.style.color = "black";
+        fileInfo.innerText = `Loaded configuration file for ${config.name}.\nThere are ${config.cards.length} cards and ${config.allowedLetters.length} allowed letters.`
+        loadConfig(config);
+      } catch (e) {
+        fileInfo.style.color = "red";
+        fileInfo.innerText = "Failed to load file!";
+      }
+    }
+  }
+  reader.readAsText(theFile);
+}
+
+function loadConfig(config) {
+  letters = config.allowedLetters;
+  cards = config.cards;
 }
