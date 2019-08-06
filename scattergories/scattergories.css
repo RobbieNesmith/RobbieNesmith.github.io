@@ -11,6 +11,10 @@ body
   margin-left:10vw;
 }
 
+#lst {
+  padding-left: 5vw;
+}
+
 .textin
 {
   width:90%;
@@ -25,26 +29,47 @@ body
   border: solid .5vw blue;
 }
 
-.letterDisp
-{
+.rightcont {
   position: fixed;
+  display: flex;
+  flex-direction: column;
   top:0;
   right:0;
+  height: 100%;
+}
+
+.letterDisp
+{
+  position: relative;
   width: 10vw;
   height: 10vw;
   background-color: white;
   border: solid .5vw grey;
   border-radius: 2vw;
   font-size: 10vw;
+  text-align: center;
+}
+
+.countdown
+{
+  position: fixed;
+  left: 45vw;
+  top: -40vh;
+  width: 10vw;
+  height: 10vw;
+  background-color: white;
+  border: solid .5vw grey;
+  border-radius: 2vw;
+  font-size: 10vw;
+  text-align: center;
 }
 
 .timer
 {
-  position:fixed;
-  bottom:0;
-  right:0;
+  position: relative;
   width: 10vw;
-  height: calc(100% - 12vw);
+  height: 100%;
+  flex-shrink: 1;
   background-color: lime;
   border: solid .5vw grey;
   border-radius: 2vw;
@@ -55,7 +80,7 @@ body
   position:absolute;
   bottom: 0;
   height:100%;
-  width: 100%;
+  width: 10vw;
   background-color:blue;
   transition: height linear 180s;
 }
@@ -66,8 +91,9 @@ body
   display:block;
   top: -40vw;
   left: 5vw;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
   width:90vw;
-  height:30vw;
   background-color:white;
   border: solid .5vw grey;
   border-radius: 2vw;
@@ -81,4 +107,66 @@ body
   border-radius: 2vw;
   border: solid .5vw grey;
   padding-left: 1vw;
+}
+
+@media (min-aspect-ratio: 1/1) {
+  body
+  {
+    font-size: 1.5rem;
+  }
+
+  .textin
+  {
+    width:90%;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: solid 1px grey;
+    padding-left: 1rem;
+  }
+
+  .textin:focus
+  {
+    border: solid 1px blue;
+  }
+  
+  .letterDisp
+  {
+    width: 2rem;
+    height: 2rem;
+    border: solid 2px grey;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+  }
+  
+  .countdown
+  {
+    width: 2rem;
+    height: 2rem;
+    border: solid 2px grey;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .timer
+  {
+    width: 2rem;
+    border: solid 2px grey;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .popupBox
+  {
+    border: solid 2px grey;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .startButt
+  {
+    width:80%;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: solid 1px grey;
+    padding-left: 1rem;
+  }
 }

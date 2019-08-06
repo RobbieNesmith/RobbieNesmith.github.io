@@ -19,32 +19,53 @@ cards = [
 
 letters="ABCDEFGHIJKLMNOPRSTW";
 
-function populateQuestions()
-{
-  sp = document.getElementById("startPrompt");
-  sp.style.top = "-40vw";
-  cardNum = Math.floor(Math.random() * cards.length);
-  letter = letters.charAt(Math.floor(Math.random() * 20));
-  ltr = document.getElementById("letterDisp");
-  ltr.innerHTML = letter;
-  tmr = document.getElementById("fill");
+function populateQuestions() {
+  let cdb = document.getElementById("countdown");
+  let cardNum = Math.floor(Math.random() * cards.length);
+  let letter = letters.charAt(Math.floor(Math.random() * 20));
+  let ltr = document.getElementById("letterDisp");
+  let tmr = document.getElementById("fill");
+  let lst = document.getElementById("lst");
+  cdb.style.top = "-40vw";
+  ltr.innerText = letter;
   tmr.style.transition="height linear 180s"
   tmr.style.height = 0;
-  lst = document.getElementById("lst");
-  for(i = 0; i < lst.children.length; i++)
-  {
-    lst.children[i].children[0].innerHTML = cards[cardNum][i];
+  for(i = 0; i < lst.children.length; i++) {
+    lst.children[i].children[0].innerText = cards[cardNum][i];
+    lst.children[i].children[2].disabled = false;
     lst.children[i].children[2].value = "";
   }
-  setTimeout(promptStart,180000);
+  setTimeout(promptStart, 180000);
 }
 
-
-function promptStart()
-{
-  sp = document.getElementById("startPrompt");
+function promptStart() {
+  let sp = document.getElementById("startPrompt");
+  let tmr = document.getElementById("fill");
   sp.style.top = "20vw";
-  tmr = document.getElementById("fill");
   tmr.style.transition = "height 0s";
   tmr.style.height = "100%";
+}
+
+function resetQuestions() {
+  let lst = document.getElementById("lst");
+  for(i = 0; i < lst.children.length; i++) {
+    lst.children[i].children[0].innerHTML = "???";
+    lst.children[i].children[2].disabled = true;
+    lst.children[i].children[2].value = "";
+  }
+}
+
+function countdown(number) {
+  if (number === 0) {
+    populateQuestions();
+  } else {
+    resetQuestions();
+    let cdb = document.getElementById("countdown");
+    let sp = document.getElementById("startPrompt");
+    sp.style.top = "-40vw";
+    cdb.style.top = "45vh";
+    cdb.style.left = "45vw";
+    cdb.innerText = number;
+    setTimeout(() => countdown(number - 1), 1000);
+  }
 }
