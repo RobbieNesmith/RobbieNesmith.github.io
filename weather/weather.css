@@ -1,0 +1,63 @@
+body {
+  font-family: sans-serif;
+}
+
+.holder {
+  background-color: lightgrey;
+  display: inline-block;
+  margin: 1rem;
+  overflow:hidden;
+  border: solid grey 1px;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.holder h1 {
+  background-color: grey;
+  color: white;
+  margin: 0;
+  padding: 1rem;
+}
+
+.imageHolder {
+  border-bottom: solid grey 1px;
+}
+
+.backHolder {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.backHolder:hover {
+  background-color: #eee;
+}
+
+.imageNameList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: none;
+}
+
+.imageName {
+  margin: 0;
+  padding: 1rem;
+  border-top: solid grey 1px;
+  cursor: pointer;
+  background-color: lightgrey;
+}
+
+.imageName:hover {
+  background-color: #eee;
+}
+
+.imageName:first-of-type {
+  border-top: none;
+}
+
+.loading {
+  text-align: center;
+}
+
+#debug {
+  display: none;
+}
