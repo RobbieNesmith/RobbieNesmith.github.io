@@ -29,10 +29,21 @@
       </div>
       <div id="setcontent" class="tabcontent hidden">
         <div>
-          Set the hostname or IP address of your server.
+          <div>Set the hostname or IP address of your sunrise clock.</div>
           <div class="inputcontainer">
             <input class="inputtext" id="servernameinput"></input>
             <button class="inputbutton" onclick="setServerName()">Set</button>
+          </div>
+        </div>
+        <div>
+          <div>Set the time of your sunrise clock.</div>
+          <div>Current time: <span id="currentTime"></span></div>
+          <div class="inputcontainer">
+            <input class="inputtext" id="servertimeinput"></input>
+            <button class="inputbutton" onclick="setServerTime()">Set</button>
+          </div>
+          <div class="inputcontainer">
+            <button class="fullwidth" onclick="setServerTimeAuto()">Set time automatically</button>
           </div>
         </div>
       </div>
