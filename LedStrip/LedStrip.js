@@ -1,4 +1,5 @@
 let serverName = "192.168.7.243";
+let currentTime = "";
 let manualColor = "#000000";
 
 function show(which) {
@@ -23,7 +24,7 @@ function show(which) {
     autoContent.className = "tabcontent hidden";
     manContent.className = "tabcontent";
     setContent.className = "tabcontent hidden";
-    fetch(`http://${serverName}/manual`);
+    setManualColor();
   } else {
     autoTab.className = "tab";
     manTab.className = "tab";
@@ -31,6 +32,7 @@ function show(which) {
     autoContent.className = "tabcontent hidden";
     manContent.className = "tabcontent hidden";
     setContent.className = "tabcontent";
+    getServerTime();
   }
 }
 
@@ -49,6 +51,13 @@ function setServerName() {
 function setup() {
   getManualColor();
   getCurrentState();
+  getServerTime();
+  setServerAddress();
+}
+
+function updateCurrentTime(date) {
+  currentTime = date;
+  document.getElementById("currentTime").innerText = `${date.toDateString()} ${date.toTimeString().split(" ")[0]}`;
 }
 
 function getManualColor() {
@@ -77,4 +86,34 @@ function getCurrentState() {
         show("manual");
       }
     });
+}
+
+function getServerTime() {
+  fetch(`http://${serverName}/getdatetime`)
+    .then(res => res.text())
+    .then(text => {
+        console.log(text);
+        updateCurrentTime(new Date(text));
+    });
+}
+
+function setServerTime() {
+  let time = document.getElementById("servertimeinput").value;
+  let dateTime = new Date(time);
+  console.log(dateTime);
+  sendSetDateRequest(dateTime);
+}
+
+function setServerAddress() {
+  document.getElementById("servernameinput").value = serverName;
+}
+
+function setServerTimeAuto() {
+  let dateTime = new Date();
+  sendSetDateRequest(dateTime);
+}
+
+function sendSetDateRequest(date) {
+  fetch(`http://${serverName}/setdatetime?year=${date.getFullYear() - 2000}&month=${date.getMonth() + 1}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()}&second=${date.getSeconds()}`)
+  .then((res) => getServerTime())
 }

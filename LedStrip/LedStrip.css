@@ -63,3 +63,21 @@ body {
 .inputbutton {
   flex-shrink: 0;
 }
+
+.fullwidth {
+  width: 100%;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+  .inputcontainer {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .inputbutton {
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
