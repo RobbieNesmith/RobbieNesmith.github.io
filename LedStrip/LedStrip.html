@@ -28,6 +28,8 @@
         <input type="color" id="colorinput" onchange="setManualColor();"></input>
       </div>
       <div id="setcontent" class="tabcontent hidden">
+        <div>Clock status: <span style="color:yellow" id="clockstatus">Connecting...</span></div>
+        <hr>
         <div>
           <div>Set the hostname or IP address of your sunrise clock.</div>
           <div class="inputcontainer">
@@ -35,6 +37,7 @@
             <button class="inputbutton" onclick="setServerName()">Set</button>
           </div>
         </div>
+        <hr>
         <div>
           <div>Set the time of your sunrise clock.</div>
           <div>Current time: <span id="currentTime"></span></div>
