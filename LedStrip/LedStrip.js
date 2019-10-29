@@ -1,6 +1,7 @@
 let serverName = "192.168.7.243";
 let currentTime = "";
 let manualColor = "#000000";
+let clockConnected = false;
 
 function show(which) {
   const autoTab = document.getElementById("autotab");
@@ -33,6 +34,7 @@ function show(which) {
     manContent.className = "tabcontent hidden";
     setContent.className = "tabcontent";
     getServerTime();
+    startClockUpdates();
   }
 }
 
@@ -57,7 +59,10 @@ function setup() {
 
 function updateCurrentTime(date) {
   currentTime = date;
-  document.getElementById("currentTime").innerText = `${date.toDateString()} ${date.toTimeString().split(" ")[0]}`;
+}
+
+function displayCurrentTime() {
+  document.getElementById("currentTime").innerText = `${currentTime.toDateString()} ${currentTime.toTimeString().split(" ")[0]}`;
 }
 
 function getManualColor() {
@@ -74,6 +79,7 @@ function getManualColor() {
 }
 
 function getCurrentState() {
+  let statusHolder = document.getElementById("clockstatus");
   fetch(`http://${serverName}/getstate`)
     .then(function(response) {
       return response.text();
@@ -85,7 +91,24 @@ function getCurrentState() {
       } else {
         show("manual");
       }
+      statusHolder.innerText = "Connected";
+      statusHolder.style.color = "green";
+      clockConnected = true;
+    })
+    .catch(function(response) {
+      statusHolder.innerText = "Error connecting";
+      statusHolder.style.color = "red";
+      clockConnected = false;
+      show("settings");
     });
+}
+
+function startClockUpdates() {
+  if (clockConnected) {
+    currentTime.setSeconds(currentTime.getSeconds() + 1);
+    displayCurrentTime();
+    setTimeout(startClockUpdates, 1000);
+  }
 }
 
 function getServerTime() {
@@ -94,6 +117,7 @@ function getServerTime() {
     .then(text => {
         console.log(text);
         updateCurrentTime(new Date(text));
+        displayCurrentTime();
     });
 }
 
