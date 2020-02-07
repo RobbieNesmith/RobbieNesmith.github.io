@@ -1,3 +1,19 @@
+async function registerSW() {
+  if("serviceWorker" in navigator) {
+    try {
+      await navigator.serviceWorker.register("./sw.js");
+    } catch (e) {
+      console.log("SW registration failed");
+    }
+  } else {
+    console.log("SW not supported");
+  }
+}
+
+window.addEventListener("load", () => {
+  registerSW();
+});
+
 let cards = [
 ["A boy's name","Cities","Things that are cold","Things you don't want in the house","Sports teams","Insects","Things in a coffee bar","Things you mix up","TV shows","Things found in the ocean","Kinds of weather","Foods that kids hate"],
 ["Things that are sticky","Awards/Ceremonies","Cars","Spices/Herbs","Bad Habits","Cosmetics/Toiletries","Celebrities","Things to do with leftover turkey","Reptiles/Amphibians","Fads","Leisure Activities","Things you're allergic to"],
