@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="windowDesignerGrid.css" />
+        <style id="gridSettings">
+        .windowContainer {
+            grid-template-columns: 32px 32px 1fr 32px auto 32px 1fr 32px 32px;
+            grid-template-rows: 32px 1fr 32px;
+        }
+        </style>
+        <style id="gridImages">
+        </style>
+        <script type="text/javascript" src="windowDesignerGrid.js"></script>
+    </head>
+    <body onload="setup()" onmouseup="unGrab();">
+        <div class="windowContainer" onmousedown="clickWindow(event.target)" style="top: 100px; left: 100px; width: 640px; height: 320px;">
+            <div class="headerTopLeft"></div>
+            <div class="headerTopLeftTransition"></div>
+            <div class="headerExpander"></div>
+            <div class="headerTitleTransitionLeft"></div>
+            <div class="headerTitle">
+                Window&nbsp;Settings
+            </div>
+            <div class="headerTitleTransitionRight"></div>
+            <div class="headerExpander"></div>
+            <div class="headerTopRightTransition" onmousedown="initMove(this)"></div>
+            <div class="headerTopRight" onmousedown="initMove(this)"></div>
+            
+            <div class="leftSide"></div>
+            <div class="content">
+                <div class="settings">
+                    <h1>Settings</h1>
+                    <div class="settingsSection">
+                        <h2>Header</h2>
+                        <div class="settingsContent">
+                            <div class="setting">
+                                <div class="bgImage" id="headerLeftImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                                <div class="bgImage" id="headerLeftTransitionImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                                <div class="bgImage" id="headerExpanderImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                                <div class="bgImage" id="headerTitleTransitionLeftImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                                <div class="bgImage" id="headerTitleImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                                <div class="bgImage" id="headerTitleTransitionRightImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                                <div class="bgImage" id="headerRightTransitionImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                                <div class="bgImage" id="headerRightImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                            </div>
+                            <div class="setting">
+                                <label for="headerHeight">Header Height:</label>
+                                <input id="headerHeight" type="number" onchange="updateGridSettingsFromForm()"></input>
+                            </div>
+                            <div class="setting">
+                                <label for="transitionWidth">Transition Width:</label>
+                                <input id="transitionWidth" type="number" onchange="updateGridSettingsFromForm()"></input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settingsSection">
+                        <h2>Sides</h2>
+                        <div class="settingsContent">
+                            <div class="setting">
+                                <div class="bgImage" id="leftSideImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                                <div class="bgImage" id="rightSideImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                            </div>
+                            <div class="setting">
+                                <label for="sideWidth">Side Width:</label>
+                                <input id="sideWidth" type="number" onchange="updateGridSettingsFromForm()"></input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settingsSection">
+                        <h2>Footer</h2>
+                        <div class="settingsContent">
+                            <div class="setting">
+                                <div class="bgImage" id="footerLeftImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                                <div class="bgImage" id="footerExpanderImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                                <div class="bgImage" id="footerRightImage" ondrop="dropHandler(event, this);" ondragover="dragOverHandler(event);" ondragend="dragEndHandler(event);"></div>
+                            </div>
+                            <div class="setting">
+                                <label for="footerHeight">Footer Height:</label>
+                                <input id="footerHeight" type="number" onchange="updateGridSettingsFromForm()"></input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settingsSection">
+                        <h2>Presets</h2>
+                        <div class="settingsContent">
+                            <div class="setting">
+                                <label for="presetSelector">Select a preset: </label>
+                                <select id="presetSelector" onchange="loadGridImagesPreset(event.target.value);updateGridImages();">
+                                    <option value="fancy">My testing design</option>
+                                    <option value="os9">Classic Mac OS</option>
+                                    <option value="xp">Windows XP</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightSide"></div>
+            
+            <div class="footerLeft"></div>
+            <div class="footerExpander"></div>
+            <div class="footerRight"></div>
+        </div>
+
+        
+    </body>
+</html>
