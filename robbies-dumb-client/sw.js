@@ -39,8 +39,9 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
 	"https://robbies-dumb-server.herokuapp.com/list",
-	new workbox.strategies.StaleWhileRevalidate({
-		cacheName: cacheName + "-api"
+	new workbox.strategies.NetworkFirst({
+		cacheName: cacheName + "-api",
+		networkTimeoutSeconds: 5
 	}),
 	"GET"
 );
