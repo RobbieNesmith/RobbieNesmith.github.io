@@ -1,0 +1,43 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: gray;
+}
+
+.banner {
+	width: 100%;
+	background-color: #912;
+	color: white;
+	text-align: center;
+	padding: 1rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	border-left: solid 2rem #601;
+	border-right: solid 2rem #601;
+	box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+	font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+}
+
+.pagelinks {
+	margin-left: 2rem;
+	margin-right: 2rem;
+	padding: 1rem;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+	background-color: silver;
+	box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+	display: flex;
+	justify-content: space-around;
+}
+
+.maincontent {
+	margin-left: 2rem;
+	margin-right: 2rem;
+	background-color: white;
+	padding: 1rem;
+	margin-top: 2rem; 
+	box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+}

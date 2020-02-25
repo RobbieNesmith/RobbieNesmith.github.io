@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Robbie's Dumb Client</title>
+		<link rel="icon" href="img/icon-72x72.png">
+		<link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" type="text/css" href="robbies-dumb-client.css">
+		<script type="text/javascript" src="robbies-dumb-client.js"></script>
+	</head>
+	<body onload="getFromServer()">
+		<header class="banner">
+			<h1>Robbie's Dumb Client</h1>
+			<h2>A Progressive Web App</h2>
+		</header>
+		<nav class="pagelinks">
+			<a href="robbies-dumb-client.html">Dumb Client Home</a>
+			<a href="static.html">Example static page</a>
+			<a href="post.html">Create item (API POST)</a>
+		</nav>
+			<section class="maincontent">
+				<section id="loadingContent">
+					<img src="img/spinner.gif">
+				</section>
+				<section id="resultContent" style="display:none">
+				</section>
+			</section>
+	</body>
+</html>
