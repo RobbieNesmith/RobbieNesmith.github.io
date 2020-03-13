@@ -1,0 +1,92 @@
+body {
+	background-color: silver;
+}
+
+.mainContainer {
+	background-color: #F0F0F0;
+	margin: 6rem;
+	margin-top: 1rem;
+	box-shadow: 0 0 2rem rgba(0,0,0,0.1);
+	border-bottom: solid 8px lightgrey;
+	display: grid;
+	grid-template-columns: 16rem 1fr;
+	grid-template-rows: auto auto;
+}
+
+.banner {
+	font-family: "Spartan";
+	background-color: #16ba68;
+	border-top: solid 1px #7ae2ae;
+	padding-bottom: 0.5rem;
+	font-size: 24px;
+	text-align: center;
+	grid-column-start: 1;
+	grid-column-end: -1;
+}
+
+.content {
+	font-family: "sans";
+	margin: 1rem;
+}
+
+.sidebar {
+	background-color: #0b9e54;
+}
+
+.sidebarButton {
+	display: block;
+	width: 100%;
+	height: 4rem;
+	background-color: transparent;
+	border: none;
+	transition: all .25s;
+}
+
+.sidebarButton:hover {
+	background-color: rgba(0,0,20,0.25);
+}
+
+.sidebarButton:active {
+	transition: all 0s;
+	background-color: rgba(255,255,144,0.25);
+}
+
+.topThree {
+	display: flex;
+	justify-content: space-around;
+}
+
+.topThree .playerDisplayer {
+	width: 100%;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.topThree .playerDisplayer:nth-child(1) {
+	order: 2;
+}
+
+.topThree .playerDisplayer:nth-child(2) {
+	order: 1;
+}
+
+.topThree .playerDisplayer:nth-child(3) {
+	order: 3;
+}
+
+.leaderboardPlayerList {
+	padding: 0;
+}
+
+.leaderboardPlayerListItem:nth-child(even) {
+	background-color: silver;
+}
+.leaderboardPlayerListItem {
+	height: 2rem;
+	list-style: none;
+	margin: none;
+}
+
+.leaderboardPlayerListItem .playerDisplayer {
+	display: inline-block;
+}
