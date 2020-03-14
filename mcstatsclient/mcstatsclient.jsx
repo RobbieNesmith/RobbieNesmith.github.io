@@ -172,16 +172,16 @@ class Leaderboard extends React.Component {
 				</header>
 				<section>
 					<div className="topThree">
-						{ orderedPlayers.slice(0, 3).map(player =>{
-							return <PlayerDisplayer stats={ this.props.stats[player] } key={ player } category={ this.props.category } item={ this.props.item } />;
+						{ orderedPlayers.slice(0, 3).map((player, i) =>{
+							return <PlayerDisplayer stats={ this.props.stats[player] } uuid={ player } key={ player } category={ this.props.category } item={ this.props.item } topThree winner={ i === 0 } />;
 						}) }
 					</div>
 					<ol className="leaderboardPlayerList" start="4">
 						{ orderedPlayers.slice(3).map((player, i) => {
 							return(
-								<li className="leaderboardPlayerListItem">
+								<li className="leaderboardPlayerListItem" key={ player }>
 									<span className="playerRank">{ i + 4 }.</span>
-									<PlayerDisplayer stats={ this.props.stats[player] } key={ player } category={ this.props.category } item={ this.props.item } />
+									<PlayerDisplayer stats={ this.props.stats[player] } uuid={ player } category={ this.props.category } item={ this.props.item } />
 								</li>
 							);
 						}) }
@@ -202,9 +202,18 @@ class PlayerDisplayer extends React.Component {
 		if (this.props.stats["stats"][this.props.category] && this.props.stats["stats"][this.props.category][this.props.item]) {
 			score = this.props.stats["stats"][this.props.category][this.props.item];
 		}
+		let imgSize = 32;
+		if (this.props.winner) {
+			imgSize = 128;
+		} else if (this.props.topThree) {
+			imgSize = 64;
+		}
 
 		return(
 			<div className="playerDisplayer">
+				<a href={ `https://namemc.com/profile/${this.props.uuid}` }>
+					<img src={ `https://crafatar.com/avatars/${this.props.uuid}?overlay&size=${imgSize}` } />
+				</a>
 				<span className="playerName">
 					{ this.props.stats["name"] }
 				</span>
