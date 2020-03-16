@@ -73,41 +73,51 @@ body {
 	order: 2;
 	background-color: gold;
 	border: solid yellow;
+	height: 20rem;
 }
 
 .topThree .playerDisplayer:nth-child(2) {
 	order: 1;
 	background-color: silver;
 	border: solid lightgrey;
+	height: 15rem;
+	top: 5rem;
+	position: relative;
 }
 
 .topThree .playerDisplayer:nth-child(3) {
 	order: 3;
 	background-color: #B87333;
 	border: solid #E89353;
+	height: 10rem;
+	top: 10rem;
+	position: relative;
+}
+
+.leaderboardPlayerListContainer {
+	margin-top: 1rem;
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
 }
 
 .leaderboardPlayerList {
 	padding: 0;
+	width: 50%;
+	border-spacing: 0;
 }
 
-.leaderboardPlayerListItem:nth-child(even) {
-	background-color: silver;
-}
-
-.leaderboardPlayerListItem {
-	height: 2rem;
-	list-style: none;
-	margin: none;
-}
-
-.leaderboardPlayerListItem .playerDisplayer {
-	display: inline-block;
+.leaderboardPlayerList .playerDisplayer:nth-child(even) {
+	background-color: #e0e0e0;
 }
 
 .playerRank {
-	display: inline-block;
-	width: 3rem;
+	width: 2rem;
+	text-align: right;
+}
+
+.leaderboardPlayerList .playerFaceContainer {
+	width: 0;
 }
 
 .topThree .playerDisplayer:nth-child(1) .playerName {
@@ -127,20 +137,4 @@ body {
 	font-size: 2rem;
 }
 
-.leaderboardPlayerList .playerScore {
-	margin-left: 2rem;
-}
-.leaderboardPlayerList .playerName {
-	width: 20%;
-}
 
-.playerFace {
-	width: 32px;
-	height: 32px;
-	display: inline-block;
-}
-
-.topThree .playerFace {
-	width: 128px;
-	height: 128px;
-}

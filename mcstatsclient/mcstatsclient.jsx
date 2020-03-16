@@ -114,14 +114,15 @@ class LeaderboardSelector extends React.Component {
 			<div>
 				<div>
 					<label htmlFor="categorySelect">Select a category</label>
-					<select id="categorySelect" onChange={ (e) => this.setState({ category: e.target.value }) }>
+					<select id="categorySelect" onChange={ (e) => this.setState({ category: e.target.value, item: "" }) }>
 						<option value="">Choose a category...</option>
 						{ Object.keys(this.state.categories).map(c => {
 							return <option value={ c }>{ c }</option>;
 						}) }
 					</select>
 					<label htmlFor="itemSelect">Select an Item</label>
-					<select id="itemSelect" onChange={ (e) => this.setState({ item: e.target.value }) }>
+					<select id="itemSelect" value={ this.state.item } onChange={ (e) => this.setState({ item: e.target.value }) }>
+						<option value="">Choose an item...</option>
 						{ items.map(i => {
 							return <option value={ i }>{ i }</option>
 						}) }
@@ -173,19 +174,18 @@ class Leaderboard extends React.Component {
 				<section>
 					<div className="topThree">
 						{ orderedPlayers.slice(0, 3).map((player, i) =>{
-							return <PlayerDisplayer stats={ this.props.stats[player] } uuid={ player } key={ player } category={ this.props.category } item={ this.props.item } topThree winner={ i === 0 } />;
+							return <PlayerDisplayer stats={ this.props.stats[player] } uuid={ player } key={ player } category={ this.props.category } item={ this.props.item } rank={ i } />;
 						}) }
 					</div>
-					<ol className="leaderboardPlayerList" start="4">
-						{ orderedPlayers.slice(3).map((player, i) => {
-							return(
-								<li className="leaderboardPlayerListItem" key={ player }>
-									<span className="playerRank">{ i + 4 }.</span>
-									<PlayerDisplayer stats={ this.props.stats[player] } uuid={ player } category={ this.props.category } item={ this.props.item } />
-								</li>
-							);
-						}) }
-					</ol>
+					<div className="leaderboardPlayerListContainer">
+						<table className="leaderboardPlayerList">
+							<tbody>
+								{ orderedPlayers.slice(3).map((player, i) => {
+									return <PlayerDisplayer stats={ this.props.stats[player] } uuid={ player } category={ this.props.category } item={ this.props.item } rank={ i + 3 } />;
+								}) }
+							</tbody>
+						</table>
+					</div>
 				</section>
 			</div>
 		);
@@ -203,24 +203,34 @@ class PlayerDisplayer extends React.Component {
 			score = this.props.stats["stats"][this.props.category][this.props.item];
 		}
 		let imgSize = 32;
-		if (this.props.winner) {
-			imgSize = 128;
-		} else if (this.props.topThree) {
+		let ContainerTag = "tr";
+		let ChildTag = "td";
+		let rank = <td className="playerRank">{ this.props.rank + 1 }.</td>;
+		if (this.props.rank < 3) {
 			imgSize = 64;
+			ContainerTag = "div";
+			ChildTag = "span";
+			rank = null;
+		}
+		if (this.props.rank === 0) {
+			imgSize = 128;
 		}
 
 		return(
-			<div className="playerDisplayer">
-				<a href={ `https://namemc.com/profile/${this.props.uuid}` }>
-					<img src={ `https://crafatar.com/avatars/${this.props.uuid}?overlay&size=${imgSize}` } />
-				</a>
-				<span className="playerName">
+			<ContainerTag className="playerDisplayer">
+				{ rank }
+				<ChildTag className="playerFaceContainer">
+					<a href={ `https://namemc.com/profile/${this.props.uuid}` }>
+						<img className="playerFace" src={ `https://crafatar.com/avatars/${this.props.uuid}?overlay&size=${imgSize}` } />
+					</a>
+				</ChildTag>
+				<ChildTag className="playerName">
 					{ this.props.stats["name"] }
-				</span>
-				<span className="playerScore">
+				</ChildTag>
+				<ChildTag className="playerScore">
 					{ score }
-				</span>
-			</div>
+				</ChildTag>
+			</ContainerTag>
 		);
 	}
 }
