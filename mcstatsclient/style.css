@@ -13,8 +13,7 @@ body {
 	box-shadow: 0 0 2rem rgba(0,0,0,0.1);
 	border-bottom: solid 8px lightgrey;
 	display: grid;
-	grid-template-columns: 16rem 1fr;
-	grid-template-rows: auto auto;
+	grid-template-columns: 16rem minmax(0, 1fr);
 }
 
 .banner {
@@ -29,7 +28,6 @@ body {
 }
 
 .content {
-	font-family: "sans";
 	margin: 1rem;
 }
 
@@ -111,6 +109,10 @@ body {
 	border-spacing: 0;
 }
 
+.leaderboardPlayerList .playerDisplayer:nth-child(-n+3) {
+	display: none;
+}
+
 .leaderboardPlayerList .playerDisplayer:nth-child(even) {
 	background-color: #e0e0e0;
 }
@@ -144,7 +146,7 @@ body {
 .searchableDropdown {
 	display: inline-block;
 	position: relative;
-	width: 30rem;
+	width: 100%;
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
 }
@@ -167,7 +169,7 @@ body {
 	margin: 0;
 	padding: 0;
 	cursor: default;
-	max-height: 200px;
+	max-height: 50vh;
 	overflow-x: hidden;
 	overflow-y: auto;
 	z-index: 10;

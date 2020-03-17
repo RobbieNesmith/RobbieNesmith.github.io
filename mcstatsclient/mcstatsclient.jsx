@@ -207,14 +207,14 @@ class Leaderboard extends React.Component {
 				<section>
 					<div className="topThree">
 						{ orderedPlayers.slice(0, 3).map((player, i) =>{
-							return <PlayerDisplayer stats={ this.props.stats[player] } uuid={ player } key={ player } category={ this.props.category } item={ this.props.item } rank={ i } />;
+							return <PlayerDisplayer stats={ this.props.stats[player] } uuid={ player } key={ player } category={ this.props.category } item={ this.props.item } rank={ i } podium={ true } />;
 						}) }
 					</div>
 					<div className="leaderboardPlayerListContainer">
 						<table className="leaderboardPlayerList">
 							<tbody>
-								{ orderedPlayers.slice(3).map((player, i) => {
-									return <PlayerDisplayer stats={ this.props.stats[player] } uuid={ player } category={ this.props.category } item={ this.props.item } rank={ i + 3 } />;
+								{ orderedPlayers.map((player, i) => {
+									return <PlayerDisplayer stats={ this.props.stats[player] } uuid={ player } category={ this.props.category } item={ this.props.item } rank={ i } />;
 								}) }
 							</tbody>
 						</table>
@@ -239,13 +239,13 @@ class PlayerDisplayer extends React.Component {
 		let ContainerTag = "tr";
 		let ChildTag = "td";
 		let rank = <td className="playerRank">{ this.props.rank + 1 }.</td>;
-		if (this.props.rank < 3) {
+		if (this.props.rank < 3 && this.props.podium) {
 			imgSize = 64;
 			ContainerTag = "div";
 			ChildTag = "span";
 			rank = null;
 		}
-		if (this.props.rank === 0) {
+		if (this.props.rank === 0 && this.props.podium) {
 			imgSize = 128;
 		}
 
