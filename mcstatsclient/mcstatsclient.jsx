@@ -87,19 +87,33 @@ class SearchableDropdown extends React.Component {
 		if (!this.props.value) {
 			dispText = this.props.selectionMessage;
 		}
-		if (!this.state.open) {
-			return (
-				<button onClick={ () => this.setState({open: true, filter: ""}) } className="searchableDropdown searchableDropdownClosed">{ dispText }</button>
-			);
+
+		let unfocusCatcher = null;
+		let dropdownMenu = null;
+		let searchbarClass = "dropdownSearcher";
+		if (this.state.open) {
+			unfocusCatcher = <div className="unfocusCatcher" onClick={ () => this.setState({open: false}) }></div>;
+			dispText = this.state.filter;
+			dropdownMenu = <ul className="dropdownList">
+				{ this.props.options.filter(op => op.toLowerCase().includes(this.state.filter.toLowerCase())).map(option => <li onClick={ () => this.setState({option, open: false}, this.props.onChange(option)) }>{ option }</li>) }
+			</ul>;
+			searchbarClass = "dropdownSearcher dropdownSearcherActive";
 		}
-		let date = new Date().valueOf();
 		return (
 			<div className="searchableDropdown">
-				<div className="unfocusCatcher" onClick={ () => this.setState({open: false}) }></div>
-				<input id={ date } placeholder="Filter..." className="dropdownSearcher" value={ this.state.filter } onChange={ (evt) => this.setState({filter: evt.target.value}) }></input>
-				<ul className="dropdownList">
-					{ this.props.options.filter(op => op.toLowerCase().includes(this.state.filter.toLowerCase())).map(option => <li onClick={ () => this.setState({option, open: false}, this.props.onChange(option)) }>{ option }</li>) }
-				</ul>
+				{ unfocusCatcher }
+				<input
+					placeholder="Filter..."
+					className={ searchbarClass }
+					value={ dispText }
+					onClick={ () => {
+						if (!this.state.open) {
+							this.setState({open: true, filter: ""});
+						}
+					} }
+					onChange={ (evt) => this.setState({filter: evt.target.value}) }
+				/>
+				{ dropdownMenu }
 			</div>
 		);
 	}
