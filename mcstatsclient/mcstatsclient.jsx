@@ -76,11 +76,40 @@ class Content extends React.Component {
 	}
 }
 
+class SearchableDropdown extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {filter: "", open: false};
+	}
+
+	render() {
+		let dispText = this.props.value;
+		if (!this.props.value) {
+			dispText = this.props.selectionMessage;
+		}
+		if (!this.state.open) {
+			return (
+				<button onClick={ () => this.setState({open: true, filter: ""}) } className="searchableDropdown searchableDropdownClosed">{ dispText }</button>
+			);
+		}
+		let date = new Date().valueOf();
+		return (
+			<div className="searchableDropdown">
+				<div className="unfocusCatcher" onClick={ () => this.setState({open: false}) }></div>
+				<input id={ date } placeholder="Filter..." className="dropdownSearcher" value={ this.state.filter } onChange={ (evt) => this.setState({filter: evt.target.value}) }></input>
+				<ul className="dropdownList">
+					{ this.props.options.filter(op => op.toLowerCase().includes(this.state.filter.toLowerCase())).map(option => <li onClick={ () => this.setState({option, open: false}, this.props.onChange(option)) }>{ option }</li>) }
+				</ul>
+			</div>
+		);
+	}
+}
+
 class LeaderboardSelector extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {categories: {}, category: undefined, item: undefined };
+		this.state = {categories: {}, category: "", item: "" };
 	}
 
 	componentDidUpdate(prevProps) {
@@ -112,21 +141,11 @@ class LeaderboardSelector extends React.Component {
 		}
 		return (
 			<div>
-				<div>
-					<label htmlFor="categorySelect">Select a category</label>
-					<select id="categorySelect" onChange={ (e) => this.setState({ category: e.target.value, item: "" }) }>
-						<option value="">Choose a category...</option>
-						{ Object.keys(this.state.categories).map(c => {
-							return <option value={ c }>{ c }</option>;
-						}) }
-					</select>
-					<label htmlFor="itemSelect">Select an Item</label>
-					<select id="itemSelect" value={ this.state.item } onChange={ (e) => this.setState({ item: e.target.value }) }>
-						<option value="">Choose an item...</option>
-						{ items.map(i => {
-							return <option value={ i }>{ i }</option>
-						}) }
-					</select>
+				<div className="selections">
+					<span>Select a Category: </span>
+					<SearchableDropdown selectionMessage="Select a Category" value={ this.state.category } onChange={ (c) => this.setState({category: c, item: ""}) } options={ Object.keys(this.state.categories) } />
+					<span>Select an Item: </span>
+					<SearchableDropdown selectionMessage="Select an Item" value={ this.state.item } onChange={ (i) => this.setState({item: i}) } options={ items } />
 				</div>
 				<div>
 					<Leaderboard stats={ this.props.stats } category={ this.state.category } item={ this.state.item } />
