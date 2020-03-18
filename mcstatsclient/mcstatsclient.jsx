@@ -1,21 +1,19 @@
 class MainContainer extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {stats: {}};
+		this.state = {fetched: false, stats: {}};
 	}
 	componentDidMount() {
 		fetch("https://mcplayerstats.herokuapp.com/")
 			.then(res => res.json())
-			.then(json => this.setState({"stats": json}));
+			.then(json => this.setState({"fetched": true, "stats": json}));
 	}
 	render() {
 		return(
-			<div
-				className="mainContainer"
-			>
+			<div className="mainContainer">
 				<Header />
 				<Sidebar />
-				<Content stats={ this.state.stats } />
+				<Content fetched={ this.state.fetched } stats={ this.state.stats } />
 			</div>
 		);
 	}
@@ -60,17 +58,44 @@ class SidebarButton extends React.Component {
 	}
 }
 
+class SnarkyLoadingMessage extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		let messages = ["Fetching server statistics...",
+				"Downloading more RAM...",
+				"I know how much dirt you have",
+				"Awakening the Oracle...",
+				"Reading your Tarot...",
+				"Getting the deets...",
+				"Hang on a sec...",
+				"Measuring fun levels...",
+				"Acquiring IP with reverse GUI backtracking...",
+				"Let me Google that for you",
+				];
+		let message = messages[Math.floor(Math.random() * messages.length)];
+		return <div>{ message }</div>;
+	}
+}
+
 class Content extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 	render() {
+		if (this.props.fetched) {
+			return(
+				<div className="content">
+					<LeaderboardSelector stats={ this.props.stats } />
+				</div>
+			);
+		}
+
 		return(
 			<div className="content">
-				<div>
-					{ Object.keys(this.props.stats).length } players detected.
-				</div>
-				<LeaderboardSelector stats={ this.props.stats } />
+				<SnarkyLoadingMessage />
 			</div>
 		);
 	}
@@ -126,10 +151,7 @@ class LeaderboardSelector extends React.Component {
 		this.state = {categories: {}, category: "", item: "" };
 	}
 
-	componentDidUpdate(prevProps) {
-		if (this.props === prevProps) {
-			return;
-		}
+	componentDidMount() {
 		let categories = {};
 
 		for (let p of Object.keys(this.props.stats)) {
