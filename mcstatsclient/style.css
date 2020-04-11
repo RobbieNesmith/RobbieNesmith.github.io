@@ -199,3 +199,7 @@ body {
 	display: grid;
 	grid-template-columns: 10rem auto;
 }
+
+.hidden {
+	display: none;
+}
