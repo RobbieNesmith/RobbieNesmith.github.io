@@ -48,9 +48,14 @@ function setManualColor() {
 
 function setServerName() {
   serverName = document.getElementById("servernameinput").value;
+  if (typeof(Storage) !== "undefined") {
+    localStorage.setItem("serverName", serverName);
+  }
+  getCurrentState();
 }
 
 function setup() {
+  getSavedServerAddress();
   getManualColor();
   getCurrentState();
   getServerTime();
@@ -128,7 +133,13 @@ function setServerTime() {
   sendSetDateRequest(dateTime);
 }
 
-function setServerAddress() {
+function getSavedServerAddress() {
+  if (typeof(Storage) !== "undefined") {
+    let savedServerAddress = localStorage.getItem("serverName");
+    if (savedServerAddress != null) {
+      serverName = savedServerAddress;
+    }
+  }
   document.getElementById("servernameinput").value = serverName;
 }
 
