@@ -59,6 +59,7 @@ function setup() {
   getManualColor();
   getCurrentState();
   getServerTime();
+	initFullCalendar();
 }
 
 function updateCurrentTime(date) {
