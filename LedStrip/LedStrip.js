@@ -59,7 +59,6 @@ function setup() {
   getManualColor();
   getCurrentState();
   getServerTime();
-  setServerAddress();
 }
 
 function updateCurrentTime(date) {
