@@ -3,6 +3,7 @@ function initFullCalendar() {
 	var calendar = new FullCalendar.Calendar(calendarEl, {
 		initialView: "timeGridWeek",
 		allDaySlot: false,
+		height: "100%",
 		headerToolbar: {
       left: '',
       center: '',
