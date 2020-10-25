@@ -1,8 +1,17 @@
+const calendarResizeBreakpoint = 765;
+
 function initFullCalendar() {
+	let weekdayFormat = "long";
+	if (window.innerWidth < calendarResizeBreakpoint) {
+		weekdayFormat = "short";
+	}
 	var calendarEl = document.getElementById("cal");
 	var calendar = new FullCalendar.Calendar(calendarEl, {
 		initialView: "timeGridWeek",
+		nowIndicator: true,
+		expandRows: true,
 		allDaySlot: false,
+		slotDuration: "01:00:00",
 		height: "100%",
 		headerToolbar: {
       left: '',
@@ -10,9 +19,16 @@ function initFullCalendar() {
       right: ''
 		},
 		dayHeaderFormat: {
-			weekday: "long"
+			weekday: weekdayFormat
 		},
 		events: getEventsFromServer,
+		windowResize: function(view) {
+			if (window.innerWidth < calendarResizeBreakpoint) {
+				calendar.setOption("dayHeaderFormat", {weekday: "short"});
+			} else {
+				calendar.setOption("dayHeaderFormat", {weekday: "long"});
+			}
+		}
 	});
 	calendar.render();
 }

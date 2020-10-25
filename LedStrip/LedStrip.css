@@ -48,6 +48,17 @@ body {
 	height: 100%;
 }
 
+.autocontainer {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.calcontainer {
+	flex-shrink: 1;
+	height: 100%;
+}
+
 #colorinput {
   width: 100%;
   background-color:rgba(0,0,0,0);
