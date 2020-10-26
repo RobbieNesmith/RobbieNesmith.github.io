@@ -1,44 +1,48 @@
 const calendarResizeBreakpoint = 765;
 
 function initFullCalendar() {
-	let weekdayFormat = "long";
-	if (window.innerWidth < calendarResizeBreakpoint) {
-		weekdayFormat = "short";
-	}
-	var calendarEl = document.getElementById("cal");
-	var calendar = new FullCalendar.Calendar(calendarEl, {
-		initialView: "timeGridWeek",
-		nowIndicator: true,
-		expandRows: true,
-		allDaySlot: false,
-		slotDuration: "01:00:00",
-		height: "100%",
-        eventDidMount: function(arg) {
+    let weekdayFormat = "long";
+    if (window.innerWidth < calendarResizeBreakpoint) {
+        weekdayFormat = "short";
+    }
+    var calendarEl = document.getElementById("cal");
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: "timeGridWeek",
+        nowIndicator: true,
+        expandRows: true,
+        allDaySlot: false,
+        slotDuration: "01:00:00",
+        height: "100%",
+        eventDidMount: function (arg) {
             arg.el.style.background = arg.event.extendedProps.gradientString;
         },
-		headerToolbar: {
-      left: '',
-      center: '',
-      right: ''
-		},
-		dayHeaderFormat: {
-			weekday: weekdayFormat
-		},
-		events: getEventsFromServer,
-		windowResize: function(view) {
-			if (window.innerWidth < calendarResizeBreakpoint) {
-				calendar.setOption("dayHeaderFormat", {weekday: "short"});
-			} else {
-				calendar.setOption("dayHeaderFormat", {weekday: "long"});
-			}
-		}
-	});
-	calendar.render();
+        headerToolbar: {
+            left: '',
+            center: '',
+            right: ''
+        },
+        dayHeaderFormat: {
+            weekday: weekdayFormat
+        },
+        events: getEventsFromServer,
+        windowResize: function (view) {
+            if (window.innerWidth < calendarResizeBreakpoint) {
+                calendar.setOption("dayHeaderFormat", {
+                    weekday: "short"
+                });
+            } else {
+                calendar.setOption("dayHeaderFormat", {
+                    weekday: "long"
+                });
+            }
+        }
+    });
+    calendar.render();
 }
 
 async function getEventsFromServer(info, successCallback, failureCallback) {
-	let fadeEvents = [];
-	let fadesResponse = await fetch(`http://${serverName}/fades`);
+    let fadeEvents = [];
+    let fadesResponse = await fetch(`http://${serverName}/fades`);
     let fades = await fadesResponse.json();
 
     let today = moment();
@@ -68,6 +72,5 @@ async function getEventsFromServer(info, successCallback, failureCallback) {
             });
         }
     }
-	successCallback(fadeEvents);
+    successCallback(fadeEvents);
 }
-
