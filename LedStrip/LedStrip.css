@@ -68,6 +68,14 @@ body {
   margin-top: 0.5rem;
 }
 
+.recentColor {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border: solid 1px black;
+    margin-right: 0.25rem;
+}
+
 .inputcontainer {
   display: flex;
   margin-top: 0.5rem;
