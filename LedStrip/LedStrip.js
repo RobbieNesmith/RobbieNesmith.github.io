@@ -2,6 +2,7 @@ let serverName = "192.168.7.243";
 let currentTime = "";
 let manualColor = "#000000";
 let clockConnected = false;
+let recentColors = [];
 
 function show(which) {
     const autoTab = document.getElementById("autotab");
@@ -43,7 +44,8 @@ function setManualColor() {
     const red = parseInt(color.substring(1, 3), 16);
     const green = parseInt(color.substring(3, 5), 16);
     const blue = parseInt(color.substring(5, 7), 16);
-    fetch(`http://${serverName}/manual?red=${red}&green=${green}&blue=${blue}`);
+    fetch(`http://${serverName}/manual?red=${red}&green=${green}&blue=${blue}`)
+    .then(r => getRecentColors());
 }
 
 function setServerName() {
@@ -60,6 +62,7 @@ function setup() {
     getCurrentState();
     getServerTime();
     initFullCalendar();
+    getRecentColors();
 }
 
 function updateCurrentTime(date) {
@@ -151,4 +154,32 @@ function setServerTimeAuto() {
 function sendSetDateRequest(date) {
     fetch(`http://${serverName}/setdatetime?year=${date.getFullYear() - 2000}&month=${date.getMonth() + 1}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()}&second=${date.getSeconds()}`)
     .then((res) => getServerTime())
+}
+
+function getRecentColors() {
+    fetch(`http://${serverName}/recent_colors`)
+    .then(res => res.json())
+    .then(json => {
+        recentColors = json;
+        displayRecentColors();
+    });
+}
+
+function displayRecentColors() {
+    let recentColorsHolder = document.getElementById("recentColorsHolder");
+    while (recentColorsHolder.childElementCount > 0) {
+        recentColorsHolder.removeChild(recentColorsHolder.children[recentColorsHolder.children.length - 1]);
+    }
+
+    for (let color of recentColors) {
+        let e = document.createElement("button");
+        e.className = "recentColor";
+        e.style.backgroundColor = color;
+        e.addEventListener("click", () => {
+            let colorInput = document.getElementById("colorinput");
+            colorInput.value = color;
+            setManualColor();
+        });
+        recentColorsHolder.appendChild(e);
+    }
 }
