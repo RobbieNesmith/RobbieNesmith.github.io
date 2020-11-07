@@ -196,7 +196,19 @@ function createWindowsFromSource(s) {
 }
 
 function clickWindow(e) {
-    var z = e.parentNode.style.zIndex;
+		var wc = e.parentNode;
+		while(wc.className != "windowContainer") {
+			wc = wc.parentNode;
+		}
+		var oldZ = wc.style.zIndex;
+		var z = 0;
+		for (var w of document.querySelectorAll(".windowContainer")) {
+			z++;
+			if (w.style.zIndex > oldZ) {
+				w.style.zIndex = w.style.zIndex - 1;
+			}
+		}
+		wc.style.zIndex = z;
     if (e.className.includes("header")) {
         initMove(e);
     } else if (e.className === "leftSide") {
