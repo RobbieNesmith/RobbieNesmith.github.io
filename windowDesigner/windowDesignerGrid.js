@@ -93,6 +93,20 @@ function updateGridSettings() {
         settingFooterHeight + "px;}";
 }
 
+function loadSettingsPreset(presetName) {
+	fetch("windowDesignerSettings.json")
+		.then(response => response.json())
+		.then(json => {
+			console.log(json);
+			settingHeaderHeight = json[presetName]["headerHeight"];
+			settingTransitionWidth = json[presetName]["transitionWidth"];
+			settingSideWidth = json[presetName]["sideWidth"];
+			settingFooterHeight = json[presetName]["footerHeight"];
+			initSettings();
+			updateGridSettings();
+		});
+}
+
 function loadGridImagesPreset(presetName) {
     document.getElementById("headerLeftImage").style.backgroundImage = "url('img/" + presetName + "/htl.png')";
     document.getElementById("headerLeftTransitionImage").style.backgroundImage = "url('img/" + presetName +  "/htlt.png')";
@@ -107,6 +121,7 @@ function loadGridImagesPreset(presetName) {
     document.getElementById("footerLeftImage").style.backgroundImage = "url('img/" + presetName + "/fl.png')";
     document.getElementById("footerExpanderImage").style.backgroundImage = "url('img/" + presetName + "/fe.png')";
     document.getElementById("footerRightImage").style.backgroundImage = "url('img/" + presetName + "/fr.png')";
+		updateGridImages();
 }
 
 function updateGridImages() {
