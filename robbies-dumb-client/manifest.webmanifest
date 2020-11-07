@@ -1,0 +1,26 @@
+{
+  "name": "Robbie's Dumb Client",
+  "short_name": "robbies-dumb-client",
+  "start_url": "./robbies-dumb-client.html",
+  "display": "standalone",
+  "background_color": "silver",
+  "theme_color": "#912",
+  "description": "A dumb client for Robbie's Dumb Server",
+  "icons": [
+    {
+      "src": "img/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ] 
+}

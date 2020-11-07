@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Robbie's Dumb Client</title>
+		<link rel="icon" href="img/icon-72x72.png">
+		<link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" type="text/css" href="robbies-dumb-client.css">
+		<link rel="stylesheet" type="text/css" href="post.css">
+		<script type="text/javascript" src="robbies-dumb-client.js"></script>
+	</head>
+	<body>
+		<header class="banner">
+			<h1>Robbie's Dumb Client</h1>
+			<h2>A Progressive Web App</h2>
+		</header>
+		<nav class="pagelinks">
+			<a href="robbies-dumb-client.html">Dumb Client Home</a>
+			<a href="static.html">Example static page</a>
+			<a href="list.html">List items (API GET)</a>
+		</nav>
+			<section class="maincontent">
+				<div class="fakeForm">
+					<h3>Add something</h3>
+					<div class="fakeFormField">
+						<label for="title">Title: </label>
+						<input id="title"></input>
+					</div>
+					<div class="fakeFormField">
+						<label for="description">Description: </label>
+						<input id="description"></input>
+					</div>
+					<div class="fakeFormField">
+						<button onclick="postToServer()">Add to list</button>
+					</div>
+				</div>
+				<section id="requestLog">
+					<header>
+						<h3>Requests will show up here</h3>
+					</header>
+				</section>
+			</section>
+	</body>
+</html>

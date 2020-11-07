@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang=en>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Raubriecraft Player Statistics</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (max-width:1150px)" href="narrow.css" />
+		<link rel="manifest" href="./manifest.json">
+		<script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<script type="text/babel" src="mcstatsclient.jsx"></script>
+		<link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet"> 
+		<script type="text/javascript">
+			if ("serviceWorker" in navigator) {
+				navigator.serviceWorker.register("sw.js");
+			} else {
+				alert("service workers not available");
+			}
+		</script>
+	</head>
+	<body>
+		<div id="app">
+		</div>
+	</body>
+</html>

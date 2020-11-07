@@ -1,0 +1,29 @@
+.fakeForm {
+	width: 50%;
+}
+
+.fakeForm h3 {
+	margin-top: 0;
+}
+
+.fakeFormField {
+	margin-top: 1rem;
+}
+
+.fakeFormField:nth-child(1) {
+	margin-top: 0;
+}
+
+.request {
+	width: 50%;
+	padding: 1rem;
+	background-color: #eee;
+	box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+	border: solid 1px red;
+	border-left: solid .5rem red;
+}
+
+.sent {
+	border: solid 1px lime;
+	border-left: solid .5rem lime;
+}

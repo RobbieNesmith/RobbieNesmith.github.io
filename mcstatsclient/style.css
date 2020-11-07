@@ -1,0 +1,205 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: silver;
+}
+
+.mainContainer {
+	background-color: #F0F0F0;
+	margin: 6rem;
+	margin-top: 1rem;
+	box-shadow: 0 0 2rem rgba(0,0,0,0.1);
+	border-bottom: solid 8px lightgrey;
+	display: grid;
+	grid-template-columns: 16rem minmax(0, 1fr);
+}
+
+.banner {
+	font-family: "Spartan";
+	background-color: #16ba68;
+	border-top: solid 1px #7ae2ae;
+	padding-bottom: 0.5rem;
+	font-size: 24px;
+	text-align: center;
+	grid-column-start: 1;
+	grid-column-end: -1;
+}
+
+.content {
+	margin: 1rem;
+}
+
+.sidebar {
+	background-color: #0b9e54;
+}
+
+.sidebarButton {
+	display: block;
+	width: 100%;
+	height: 4rem;
+	background-color: transparent;
+	border: none;
+	transition: background-color .25s;
+}
+
+.sidebarButton:hover {
+	background-color: rgba(0,0,20,0.25);
+}
+
+.sidebarButton:active {
+	transition: background-color 0s;
+	background-color: rgba(255,255,144,0.25);
+}
+
+.topThree {
+	display: flex;
+	justify-content: space-around;
+}
+
+.topThree .playerDisplayer {
+	width: 100%;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	text-align: center;
+	border-radius: 1rem;
+	box-shadow: 0 0 2rem rgba(0,0,0,0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 2rem;
+}
+
+.topThree .playerDisplayer:nth-child(1) {
+	order: 2;
+	background-color: gold;
+	border: solid yellow;
+	height: 20rem;
+}
+
+.topThree .playerDisplayer:nth-child(2) {
+	order: 1;
+	background-color: silver;
+	border: solid lightgrey;
+	height: 15rem;
+	top: 5rem;
+	position: relative;
+}
+
+.topThree .playerDisplayer:nth-child(3) {
+	order: 3;
+	background-color: #B87333;
+	border: solid #E89353;
+	height: 10rem;
+	top: 10rem;
+	position: relative;
+}
+
+.leaderboardPlayerListContainer {
+	margin-top: 1rem;
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.leaderboardPlayerList {
+	padding: 0;
+	width: 50%;
+	border-spacing: 0;
+}
+
+.leaderboardPlayerList .playerDisplayer:nth-child(-n+3) {
+	display: none;
+}
+
+.leaderboardPlayerList .playerDisplayer:nth-child(even) {
+	background-color: #e0e0e0;
+}
+
+.playerRank {
+	width: 2rem;
+	text-align: right;
+}
+
+.leaderboardPlayerList .playerFaceContainer {
+	width: 0;
+}
+
+.topThree .playerDisplayer:nth-child(1) .playerName {
+	font-size: 2rem;
+}
+
+.topThree .playerDisplayer:nth-child(1) .playerScore {
+	font-size: 3rem;
+}
+
+.topThree .playerName {
+	font-size: 1.5rem;
+	display: block;
+}
+
+.topThree .playerScore {
+	font-size: 2rem;
+}
+
+.searchableDropdown {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.dropdownSearcher {
+	position: relative;
+	width: 100%;
+	height: 2rem;
+}
+
+.dropdownSearcherActive {
+	z-index: 10;
+}
+
+.dropdownList {
+	background-color: white;
+	border: solid #ccc 1px;
+	position:absolute;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	cursor: default;
+	max-height: 50vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 10;
+	width: 100%;
+}
+
+.dropdownList li {
+	transition: background-color .25s;
+	padding: 0.25rem;
+	user-select: none;
+}
+
+.dropdownList li:hover {
+	background-color: silver;
+}
+
+.unfocusCatcher {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
+
+.selections {
+	display: grid;
+	grid-template-columns: 10rem auto;
+}
+
+.hidden {
+	display: none;
+}

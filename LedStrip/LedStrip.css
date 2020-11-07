@@ -1,10 +1,11 @@
 * {
   box-sizing: border-box;
-  font-size: 6vw;
 }
 
 body {
   background-color: #f0f0f0;
+	margin: 0;
+	height: 100vh;
 }
 
 .hidden {
@@ -25,6 +26,10 @@ body {
 }
 
 .tabdisplaycontainer {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 8px;
 }
 
 .tabcontentcontainer {
@@ -32,12 +37,26 @@ body {
   padding: 0.2rem;
   border-radius: 0 0.2rem 0.2rem 0.2rem;
   box-shadow: 0 1rem 2rem 0 rgba(0,0,0,0.2);
+	height: 100%;
+	flex-shrink: 1;
 }
 
 .tabcontent {
   background-color: white;
   padding: 1rem;
   box-shadow: 0 0 0.1rem 0 black;
+	height: 100%;
+}
+
+.autocontainer {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.calcontainer {
+	flex-shrink: 1;
+	height: 100%;
 }
 
 #colorinput {
@@ -47,6 +66,14 @@ body {
   border: none;
   height: 3rem;
   margin-top: 0.5rem;
+}
+
+.recentColor {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border: solid 1px black;
+    margin-right: 0.25rem;
 }
 
 .inputcontainer {

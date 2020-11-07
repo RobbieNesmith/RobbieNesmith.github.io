@@ -1,0 +1,57 @@
+* {
+	font-size: 5vw;
+}
+
+body {
+	margin: 0;
+}
+
+h1 {
+	font-size: 10vw;
+}
+
+.mainContainer {
+	grid-template-columns: minmax(0, 1fr);
+	margin: 0;
+}
+
+.leaderboardPlayerList {
+	width: 100%;
+}
+
+.selections {
+	grid-template-columns: auto;
+}
+
+.topThree {
+	display: none;
+}
+
+.playerFace {
+	width: 10vw;
+}
+
+.leaderboardPlayerList .playerDisplayer td {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.leaderboardPlayerList .playerDisplayer:nth-child(-n+3) {
+	display: table-row;
+}
+
+.leaderboardPlayerList .playerDisplayer:nth-child(1) {
+	background-color: gold;
+}
+
+.leaderboardPlayerList .playerDisplayer:nth-child(2) {
+	background-color: silver;
+}
+
+.leaderboardPlayerList .playerDisplayer:nth-child(3) {
+	background-color: #B87333;
+}
+
+.unfocusCatcher {
+	background-color: rgba(127,127,127,0.5);
+}
