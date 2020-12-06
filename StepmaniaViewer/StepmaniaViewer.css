@@ -1,0 +1,151 @@
+* {
+	box-sizing: border-box;
+	font-weight: 400;
+}
+
+h1 {
+	margin: 0;
+	display: inline;
+	font-weight: 500;
+	font-size: 3rem;
+}
+
+body {
+	background: #f0d01f;
+	margin: 0;
+	font-family: "Open Sans", sans-serif;
+}
+
+section {
+	background-color: white;
+	box-shadow: 0 4px 0 4px #d8b90e;
+	padding: 1em;
+	margin-bottom: 1em !important;
+	margin-top: 1em !important;
+}
+
+.limitWidth {
+	width: 98%;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+header {
+	background: #21201f;
+	color: white;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.125);
+	padding: 1em 0;
+}
+
+.headerImg {
+	width: 3em;
+	margin-right: 1em;
+	vertical-align: sub;
+}
+
+#songInfo {
+	display: grid;
+	grid-template-columns: max-content auto;
+}
+
+.songInfoLine {
+	margin-top: 0.5em;
+	border-bottom: solid lightgrey 1px;
+}
+
+.key {
+	text-align: right;
+}
+
+.value {
+	font-weight: 300;
+	padding-left: 1em;
+}
+
+#stepsArea {
+	position: relative;
+}
+
+.step {
+	position: absolute;
+	width: 4em;
+	height: 4em;
+	background-image: url("img/default/_arrow 1x8 (doubleres).png");
+	background-size: 4em;
+	z-index: 2;
+}
+
+.mine {
+	position: absolute;
+	width: 4em;
+	height: 4em;
+	background-image: url("img/default/mine.gif");
+	background-size: 4em;
+	z-index: 2;
+}
+
+.tail {
+	position: absolute;
+	width: 4em;
+	display: flex;
+	flex-direction: column;
+	z-index: 1;
+}
+
+.holdTop {
+	background-image: url("img/default/Down Hold TopCap Inactive (doubleres).png");
+	width: 4em;
+	height: 2em;
+	flex-shrink: 0;
+	background-size: 4em;
+}
+
+.holdMiddle {
+	background-image: url("img/default/Down Hold Body Inactive (doubleres).png");
+	height: 100%;
+	flex-shrink: 1;
+	background-size: 4em;
+}
+
+.holdBottom {
+	background-image: url("img/default/Down Hold BottomCap Inactive (doubleres).png");
+	width: 4em;
+	height: 2em;
+	flex-shrink: 0;
+	background-size: 4em;
+}
+
+.rollTop {
+	background-image: url("img/default/Down Roll TopCap Inactive (doubleres).png");
+	width: 4em;
+	height: 2em;
+	flex-shrink: 0;
+	background-size: 4em;
+}
+
+.rollMiddle {
+	background-image: url("img/default/Down Roll Body Inactive (doubleres).png");
+	height: 100%;
+	flex-shrink: 1;
+	background-size: 4em;
+}
+
+.rollBottom {
+	background-image: url("img/default/Down Roll BottomCap Inactive (doubleres).png");
+	width: 4em;
+	height: 2em;
+	flex-shrink: 0;
+	background-size: 4em;
+}
+
+.measureBar {
+	position: absolute;
+	border-top: solid black 4px;
+	width: 100%;
+}
+
+.beatBar {
+	position:absolute;
+	border-top: solid grey 2px;
+	width: 100%;
+}
