@@ -70,7 +70,7 @@ header {
 	position: absolute;
 	width: 4em;
 	height: 4em;
-	background-image: url("img/default/_arrow 1x8 (doubleres).png");
+	background-image: url("img/default/arrow.png");
 	background-size: 4em;
 	z-index: 2;
 }
