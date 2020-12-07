@@ -1,12 +1,19 @@
 <html>
 	<head>
-	<title>OpenCVTest</title>
-	<link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>OpenCVTest</title>
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<video width="960" height="720" id="videoInput"></video>
-		<canvas width="960" height="720" id="canvasOutput"></canvas>
-		
+		<div>
+			<video width="640" height="480" id="videoInput"></video>
+			<canvas width="640" height="480" id="canvasOutput"></canvas>
+		</div>
+		<button onclick="printVideoInformation()">Print Video Information</button>
+		<button id="startCV" disabled>Start CV</button>
+
+		<div id="debugConsole"></div>
+
 		<script async src="js/libraries/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
 		<script src="js/OpenCVTest.js"></script>
 	</body>
