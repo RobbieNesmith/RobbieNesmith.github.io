@@ -1,0 +1,20 @@
+{
+	"fancy": {
+		"headerHeight": 32,
+		"transitionWidth": 32,
+		"sideWidth": 4,
+		"footerHeight": 4
+	},
+	"os9": {
+		"headerHeight": 22,
+		"transitionWidth": 16,
+		"sideWidth": 7,
+		"footerHeight": 7
+	},
+	"xp": {
+		"headerHeight": 30,
+		"transitionWidth": 3,
+		"sideWidth": 3,
+		"footerHeight": 3
+	}
+}
