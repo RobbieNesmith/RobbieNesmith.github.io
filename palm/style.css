@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+code {
+    background-color: #f0f0f0;
+    border: solid 1px lightgrey;
+    border-radius: 0.25em;
+    padding: 0 0.25em 0 0.25em;
+}
+
+section {
+    margin-left: 1em;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+#content {
+    max-width: 1024px;
+    background-color: white;
+    padding: 1em 2em 2em 2em;
+    margin: auto;
+    box-shadow: 0 1em 1em rgba(0,0,0,0.1);
+}
+
+#breadcrumb {
+    border-top: solid 1px lightgrey;
+    border-bottom: solid 1px lightgrey;
+    padding: 2px 0 2px 0;
+}
+
+.collectionItem {
+	background-color: #f0f0f0;
+	padding: 1em;
+	margin: 1em;
+	border: solid 1px lightgray;
+	display: table;
+}
+
+.collectionItem:nth-child(even) {
+	text-align: right;
+}
+
+.collectionItem:nth-child(even) > img {
+	float: left;
+}
+
+.collectionItem:nth-child(odd) > img {
+	float: right;
+}
+
+.collectionItem > img {
+	margin: 1em;
+	max-width: 50vw;
+}
+
+.collectionItem > p {
+	margin: 1em;
+}
