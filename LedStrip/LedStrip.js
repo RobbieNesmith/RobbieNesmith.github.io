@@ -56,13 +56,29 @@ function show(which) {
 }
 
 function showAndSetAutoMode() {
-    fetch(`http://${serverName}/auto`);
-    show("auto");
+    fetch(`http://${serverName}/getstate`)
+    .then(function (response) {
+        return response.text();
+    })
+    .then(function (text) {
+        if (text !== "AUTO") {
+            fetch(`http://${serverName}/auto`);
+        }
+        show("auto");
+    });
 }
 
 function showAndSetSunsetMode() {
-    fetch(`http://${serverName}/sunset`);
-    show("sunset");
+    fetch(`http://${serverName}/getstate`)
+    .then(function (response) {
+        return response.text();
+    })
+    .then(function (text) {
+        if (text !== "SUNSET_MODE") {
+            fetch(`http://${serverName}/sunset`);
+        }
+        show("sunset");
+    });
 }
 
 function setManualColor() {
