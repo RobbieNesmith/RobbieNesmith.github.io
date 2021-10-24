@@ -17,6 +17,7 @@
     <div class="tabrow">
       <button id="autotab" class="tab selected" onclick="show('auto');">Automatic</button>
       <button id="mantab" class="tab" onclick="show('manual');">Manual</button>
+      <button id="sunsettab" class="tab" onclick="show('sunset');">Sunset</button>
       <button id="settab" class="tab" onclick="show('settings');">Settings</button>
     </div>
     <div class="tabcontentcontainer">
@@ -39,6 +40,10 @@
             Recent colors:
         </div>
         <div id="recentColorsHolder"></div>
+      </div>
+      <div id="sunsetcontent" class="tabcontent hidden">
+        <h2>Sunset Mode</h2>
+        <p>Displays a fade out to black starting when Sunset Mode is requested.</p>
       </div>
       <div id="setcontent" class="tabcontent hidden">
         <div>Clock status: <span style="color:yellow" id="clockstatus">Connecting...</span></div>

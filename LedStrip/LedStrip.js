@@ -7,32 +7,50 @@ let recentColors = [];
 function show(which) {
     const autoTab = document.getElementById("autotab");
     const manTab = document.getElementById("mantab");
+    const sunsetTab = document.getElementById("sunsettab");
     const setTab = document.getElementById("settab");
     const autoContent = document.getElementById("autocontent");
     const manContent = document.getElementById("mancontent");
+    const sunsetContent = document.getElementById("sunsetcontent");
     const setContent = document.getElementById("setcontent");
     if (which === "auto") {
         autoTab.className = "tab selected";
         manTab.className = "tab";
+        sunsetTab.className = "tab";
         setTab.className = "tab";
         autoContent.className = "tabcontent";
         manContent.className = "tabcontent hidden";
+        sunsetContent.className = "tabcontent hidden";
         setContent.className = "tabcontent hidden";
         fetch(`http://${serverName}/auto`);
     } else if (which === "manual") {
         autoTab.className = "tab";
         manTab.className = "tab selected";
+        sunsetTab.className = "tab";
         setTab.className = "tab";
         autoContent.className = "tabcontent hidden";
         manContent.className = "tabcontent";
+        sunsetContent.className = "tabcontent hidden";
         setContent.className = "tabcontent hidden";
         setManualColor();
+    } else if (which === "sunset") {
+        autoTab.className = "tab";
+        manTab.className = "tab";
+        sunsetTab.className = "tab selected";
+        setTab.className = "tab";
+        autoContent.className = "tabcontent hidden";
+        manContent.className = "tabcontent hidden";
+        sunsetContent.className = "tabcontent";
+        setContent.className = "tabcontent hidden";
+        fetch(`http://${serverName}/sunset`);
     } else {
         autoTab.className = "tab";
         manTab.className = "tab";
+        sunsetTab.className = "tab";
         setTab.className = "tab selected";
         autoContent.className = "tabcontent hidden";
         manContent.className = "tabcontent hidden";
+        sunsetContent.className = "tabcontent hidden";
         setContent.className = "tabcontent";
         getServerTime();
         startClockUpdates();
@@ -96,6 +114,8 @@ function getCurrentState() {
         console.log(`"${text}"`);
         if (text === "FADING" || text === "WAITING_FOR_FADE") {
             show("auto");
+        } else if (text  === "SUNSET_MODE") {
+            show("sunset");
         } else {
             show("manual");
         }
