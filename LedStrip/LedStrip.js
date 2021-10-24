@@ -3,6 +3,7 @@ let currentTime = "";
 let manualColor = "#000000";
 let clockConnected = false;
 let recentColors = [];
+let clockIntervalId = null;
 
 function show(which) {
     const autoTab = document.getElementById("autotab");
@@ -156,10 +157,11 @@ function getCurrentState() {
 }
 
 function startClockUpdates() {
-    if (clockConnected) {
-        currentTime.setSeconds(currentTime.getSeconds() + 1);
-        displayCurrentTime();
-        setTimeout(startClockUpdates, 1000);
+    if (clockConnected && !clockIntervalId) {
+        clockIntervalId = setInterval(() => {
+            currentTime.setSeconds(currentTime.getSeconds() + 1);
+            displayCurrentTime();
+        }, 1000);
     }
 }
 
