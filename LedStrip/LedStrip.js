@@ -3,6 +3,7 @@ let currentTime = "";
 let manualColor = "#000000";
 let clockConnected = false;
 let recentColors = [];
+let clockIntervalId = null;
 
 function show(which) {
     const autoTab = document.getElementById("autotab");
@@ -22,7 +23,6 @@ function show(which) {
         manContent.className = "tabcontent hidden";
         sunsetContent.className = "tabcontent hidden";
         setContent.className = "tabcontent hidden";
-        fetch(`http://${serverName}/auto`);
     } else if (which === "manual") {
         autoTab.className = "tab";
         manTab.className = "tab selected";
@@ -42,7 +42,6 @@ function show(which) {
         manContent.className = "tabcontent hidden";
         sunsetContent.className = "tabcontent";
         setContent.className = "tabcontent hidden";
-        fetch(`http://${serverName}/sunset`);
     } else {
         autoTab.className = "tab";
         manTab.className = "tab";
@@ -55,6 +54,32 @@ function show(which) {
         getServerTime();
         startClockUpdates();
     }
+}
+
+function showAndSetAutoMode() {
+    fetch(`http://${serverName}/getstate`)
+    .then(function (response) {
+        return response.text();
+    })
+    .then(function (text) {
+        if (text !== "AUTO") {
+            fetch(`http://${serverName}/auto`);
+        }
+        show("auto");
+    });
+}
+
+function showAndSetSunsetMode() {
+    fetch(`http://${serverName}/getstate`)
+    .then(function (response) {
+        return response.text();
+    })
+    .then(function (text) {
+        if (text !== "SUNSET_MODE") {
+            fetch(`http://${serverName}/sunset`);
+        }
+        show("sunset");
+    });
 }
 
 function setManualColor() {
@@ -132,10 +157,11 @@ function getCurrentState() {
 }
 
 function startClockUpdates() {
-    if (clockConnected) {
-        currentTime.setSeconds(currentTime.getSeconds() + 1);
-        displayCurrentTime();
-        setTimeout(startClockUpdates, 1000);
+    if (clockConnected && !clockIntervalId) {
+        clockIntervalId = setInterval(() => {
+            currentTime.setSeconds(currentTime.getSeconds() + 1);
+            displayCurrentTime();
+        }, 1000);
     }
 }
 
