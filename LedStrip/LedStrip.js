@@ -114,6 +114,8 @@ function getCurrentState() {
         console.log(`"${text}"`);
         if (text === "FADING" || text === "WAITING_FOR_FADE") {
             show("auto");
+        } else if (text  === "SUNSET_MODE") {
+            show("sunset");
         } else {
             show("manual");
         }
