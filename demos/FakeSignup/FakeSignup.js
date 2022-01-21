@@ -24,7 +24,11 @@ function init() {
         const signUpEl = document.getElementById("signup");
         const serviceNameEl = document.getElementById("serviceName");
         const signupFormEl = document.getElementById("signupForm");
-        signupFormEl.action = returnUrl;
+        signupFormEl.addEventListener("submit", (evt) => {
+            const queryString = new URLSearchParams(new FormData(signupFormEl)).toString()
+            top.location.href = `${returnUrl}?${queryString}`;
+            evt.preventDefault();
+        });
         serviceNameEl.innerText = serviceName;
         signUpEl.classList.remove("hidden");
     }
