@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="FakeSignup.css" />
+    <script src="FakeSignup.js"></script>
+    <title>Fake Signup</title>
+</head>
+
+<body onload="init()">
+    <div id="signup" class="hidden">
+        <h1>Sign up for <span id="serviceName"></span></h1>
+        <form id="signupForm">
+            <div>
+                <label>Username:
+                    <input name="username" /></label>
+            </div>
+            <div>
+                <label>Password:
+                    <input type="password" name="password" /></label>
+            </div>
+            <div>
+                <label>Favorite Color:
+                    <input name="favoritecolor" /></label>
+            </div>
+            <button type="submit">Submit!</button>
+        </form>
+    </div>
+    <div id="error" class="hidden">
+        <h1>Error</h1>
+        <ul id="errorList"></ul>
+    </div>
+</body>
+
+</html>
