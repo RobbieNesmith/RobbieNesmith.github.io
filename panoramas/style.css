@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#panoPreview {
+    width: 640px;
+    height: 480px;
+}
