@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gem Grabber</title>
+</head>
+
+<body>
+	<h1>Game Over!</h1>
+	<div>You got <span id="pointsSpan"></span> points!</div>
+	<a href="/p5/GemGrabber">Play Again</a>
+  <script>
+    document.getElementById("pointsSpan").innerText = localStorage.getItem("gemgrabber.score");
+  </script>
+</body>
+
+</html>
