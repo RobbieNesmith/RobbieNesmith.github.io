@@ -7,15 +7,15 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
+  <script src="HighScores.js"></script>
   <title>Gem Grabber</title>
-  <script src="GameOver.js"></script>
 </head>
 
-<body onLoad="setupGameOver()">
-	<h1>Game Over!</h1>
-	<div>You got <span id="pointsSpan"></span> points!</div>
-	<a href="/p5/GemGrabber/Play.html">Play Again</a>
-	<div id="highScore"></div>
+<body onLoad="setupHighScores()">
+	<h1>Gem Grabber</h1>
+	<ol id="scores">
+	</ol>
+	<a href="/p5/GemGrabber/Play.html">Play!</a>
 </body>
 
 </html>
