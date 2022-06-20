@@ -58,7 +58,7 @@ function update(delta) {
 		swingTimer += delta / 1000;
 	}
 	time -= delta / 1000;
-	if (time <= 0 && extendAmount <= 0 && !gameOver) {
+	if (time <= 0 && extendAmount <= 0 && !gameOver && ! holdingGem) {
 		gameOver = true;
 		localStorage.setItem("gemgrabber.score", score);
 		top.location.href = "GameOver.html";
