@@ -14,6 +14,8 @@ const startingTime = 60;
 let score = 0;
 let time = startingTime + 3;
 
+let gameOver = false;
+
 const numGems = 20;
 
 function setup() {
@@ -56,7 +58,8 @@ function update(delta) {
 		swingTimer += delta / 1000;
 	}
 	time -= delta / 1000;
-	if (time <= 0 && extendAmount <= 0) {
+	if (time <= 0 && extendAmount <= 0 && !gameOver) {
+		gameOver = true;
 		localStorage.setItem("gemgrabber.score", score);
 		top.location.href = "GameOver.html";
 	}
