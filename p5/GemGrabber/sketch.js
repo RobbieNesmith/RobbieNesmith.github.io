@@ -12,7 +12,7 @@ let holdingGem = null;
 
 const startingTime = 60;
 let score = 0;
-let time = startingTime;
+let time = startingTime + 3;
 
 const numGems = 20;
 
@@ -68,9 +68,12 @@ function render() {
 	scale(windowMin / 160);
 	renderClaw();
 	renderGems();
-	text(`Time: ${Math.max(0, Math.floor(time))}`, -72, 16);
+	text(`Time: ${Math.min(60, Math.max(0, Math.floor(time)))}`, -72, 16);
 	textAlign(RIGHT);
 	text(`Score: ${score}`, 72, 16);
+	if (time > startingTime) {
+		renderCountdown();
+	}
 	pop();
 }
 
@@ -105,6 +108,15 @@ function renderGems() {
 	for (let gem of gems) {
 		ellipse(gem.x, gem.y, gem.size, gem.size);
 	}
+	pop();
+}
+
+function renderCountdown() {
+	push();
+	const timeLeft = time - startingTime;
+	textSize(timeLeft * -4 + 52);
+	textAlign(CENTER);
+	text(Math.ceil(timeLeft), 0, 80);
 	pop();
 }
 
@@ -143,7 +155,7 @@ function scaleContent() {
 }
 
 function mousePressed() {
-	if (extendAmount <= 0) {
+	if (extendAmount <= 0 && time < startingTime) {
 		extendAmount = extendSpeed;
 		extending = true;
 	}
