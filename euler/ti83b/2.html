@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Euler Solutions</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico" />
+</head>
+
+<body>
+    <main id="content">
+        <h1>Project Euler Solutions</h1>
+        <div id="breadcrumb">
+            <a href="/">Robbie</a> /
+            <a href="/euler">Euler</a>
+        </div>
+        <section>
+            <h2>Even Fibonacci Numbers (TI-83 BASIC)</h2>
+            <p>
+                Barely optimized from a basic Fibonacci calculation. I used the fact that even numbers are spaced
+                every third number in the sequence and rearranged terms to only need even numbers to calculate the next
+                even number. Using <code>fib<sub>n</sub>=4*fib<sub>n-3</sub>+fib<sub>n-6</sub></code>, I calculated all
+                the required even Fibonacci numbers and summed them.
+            </p>
+            <code class="ti83code">
+                <div>{1,2}→L₁</div>
+                <div>While dim(L₁)&lt;5</div>
+                <div>L₁(dim(L₁)-1)+L₁(dim(L₁))→L₁(dim(L₁)+1)</div>
+                <div>End</div>
+                <div>{L₁(2),L₁(5)}→L₂</div>
+                <div>While L₂(dim(L₂))&lt;4000000:</div>
+                <div>L₂(dim(L₂))*4+L₂(dim(L₂)-1)→L₂(dim(L₂)+1)</div>
+                <div>End</div>
+                <div>dim(L₂)-1→dim(L₂)</div>
+                <div>Disp "SUM:"</div>
+                <div>Disp sum(L₂)</div>
+            </code>
+        </section>
+    </main>
+</body>
+
+</html>

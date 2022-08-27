@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+code {
+    background-color: #f0f0f0;
+    border: solid 1px lightgrey;
+    border-radius: 0.25em;
+    padding: 0 0.25em 0 0.25em;
+}
+
+.ti83code {
+    box-sizing: content-box;
+    font-family: TI83PlusLarge;
+    font-size: 16px;
+    width: 192px;
+    display: block;
+    word-break: break-all;
+    background-color: #9eab88;
+    border: solid black 2px;
+    border-radius: 8px;
+    box-shadow: 0 0 0 32px #ccd1bd, 0 0 0 40px black, 0 0 32px 40px rgba(0, 0, 0, 0.3);
+    padding: 8px 24px;
+    margin: 72px auto;
+}
+
+.ti83code>div::before {
+    content: ":";
+}
+
+section {
+    margin-left: 1em;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+#content {
+    max-width: 1024px;
+    background-color: white;
+    padding: 1em 2em 2em 2em;
+    margin: auto;
+    box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
+}
+
+#breadcrumb {
+    border-top: solid 1px lightgrey;
+    border-bottom: solid 1px lightgrey;
+    padding: 2px 0 2px 0;
+}
+
+.collectionItem {
+    background-color: #f0f0f0;
+    padding: 1em;
+    margin: 1em;
+    border: solid 1px lightgray;
+    display: table;
+}
+
+.collectionItem:nth-child(even) {
+    text-align: right;
+}
+
+.collectionItem:nth-child(even)>img {
+    float: left;
+}
+
+.collectionItem:nth-child(odd)>img {
+    float: right;
+}
+
+.collectionItem>img {
+    margin: 1em;
+    max-width: 50vw;
+}
+
+.collectionItem>p {
+    margin: 1em;
+}
+
+@font-face {
+    font-family: "TI83PlusLarge";
+    src: url(/euler/rsc/ti-83-plus-large.ttf) format('truetype');
+}

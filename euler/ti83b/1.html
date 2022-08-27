@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Euler Solutions</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico" />
+</head>
+
+<body>
+    <main id="content">
+        <h1>Project Euler Solutions</h1>
+        <div id="breadcrumb">
+            <a href="/">Robbie</a> /
+            <a href="/euler">Euler</a>
+        </div>
+        <section>
+            <h2>Multiples of 3 or 5 (TI-83 BASIC)</h2>
+            <p>I didn't want to solve this by just iterating through all the possible numbers, so I generalized the
+                formula of summing 1 through N to allow only counting numbers that are multiples of (in this case) D.
+                The formula is
+                <code>floor((end - start + 1) / divisor) / 2 * ((ceil(start / divisor) + floor(end / divisor)) * divisor</code>.
+                Since the TI-83 has <code>int(A)</code> in place of <code>floor</code> but does not have a
+                <code>ceil</code> function, I substituted <code>-int(-A)</code>.
+            </p>
+            <code class="ti83code">
+                <div>1→S</div>
+                <div>999→E</div>
+                <div>3→L₁(1)</div>
+                <div>5→L₁(2)</div>
+                <div>L₁(1)*L₁(2)→L₁(3)</div>
+                <div>For(I,1,3,1)</div>
+                <div>L₁(I)→D</div>
+                <div>int((E-S+1)/D)/2*((⁻int(⁻S/D))+int(E/D))*D→L₂(I)</div>
+                <div>End</div>
+                <div>Disp "SUM:"</div>
+                <div>Disp L₂(1)+L₂(2)-L₂(3)</div>
+            </code>
+        </section>
+    </main>
+</body>
+
+</html>
