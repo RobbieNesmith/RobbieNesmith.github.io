@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Euler Solutions</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico" />
+</head>
+
+<body>
+    <main id="content">
+        <h1>Project Euler Solutions</h1>
+        <div id="breadcrumb">
+            <a href="/">Robbie</a> /
+            <a href="/euler">Euler</a>
+        </div>
+        <section>
+            <h2>Largest Prime Factor (TI-83 BASIC)</h2>
+            <p>
+                Checks the factors of 600851475143 with trial division. We find the factors in ascending order, and
+                divide them out of the searched number as we go. The remnant only then has prime factors not
+                less than the ones already found. Since finding a factor greater than the square root of the remnant
+                would imply that there is also one smaller than the square root of the remnant, we can limit the search
+                to not exceed the square root of the remnant, since we have already found all smaller factors.
+            </p>
+            <p>
+                Using the following facts, we can speed up the program by memoizing previous factors.
+            </p>
+            <ul>
+                <li>The smallest factor of a natural number is prime</li>
+                <li>If a factor is not divisible by any previous factors, then it is prime</li>
+            </ul>
+            <code class="ti83code">
+                <div>600851475143→A</div>
+                <div>A→B</div>
+                <div>2→C</div>
+                <div>{0}→L₁</div>
+                <div>0→F</div>
+                <div></div>
+                <div>While C≤√(B)</div>
+                <div>B/C→D</div>
+                <div>not(fPart(D))→P</div>
+                <div>1→I</div>
+                <div>1→S</div>
+                <div>While I≤F and P</div>
+                <div>fPart(C/L₁(I)) or C=L₁(I)→P</div>
+                <div>I+1→I</div>
+                <div>End</div>
+                <div>If P</div>
+                <div>Then</div>
+                <div>Disp C</div>
+                <div>D→B</div>
+                <div>F+1→F</div>
+                <div>C→L₁(F)</div>
+                <div>Else</div>
+                <div>C+1+(C≠2)→C</div>
+                <div>End</div>
+                <div>End</div>
+                <div></div>
+                <div>F+1→F</div>
+                <div>B→L₁(F)</div>
+                <div>Disp "LARGEST PRIME"</div>
+                <div>Disp "FACTOR OF"</div>
+                <div>Disp A</div>
+                <div>Disp "IS"</div>
+                <div>Disp B</div>
+            </code>
+        </section>
+    </main>
+</body>
+
+</html>
