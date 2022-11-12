@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/markdown.css">
+</head>
+
+<body>
+    <div id="content">
+        <header>
+            <h1>
+                {% if page.headerIcon %}<img class="headerIcon" src="{{ page.headerIcon }}" alt="" />{% endif %}
+                {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+            </h1>
+        </header>
+        <nav id="breadcrumb">
+            <a href="/">Robbie</a>
+            {% assign crumbs = page.url | split: "/" %}
+            {% for crumb in crumbs offset: 1 %}
+            {% if forloop.last %}
+            / {{ page.title }}
+            {% else %}
+            / <a
+                href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' | replace:'without-plugin/','without-plugins/' }}{% endfor %}">{{
+                crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
+            {% endif %}
+            {% endfor %}
+        </nav>
+        <main>
+            {{ content }}
+        </main>
+    </div>
+</body>
+
+</html>
