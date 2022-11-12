@@ -1,32 +1,15 @@
 ---
-title: index
+layout: gallery
 ---
 
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>{{ site.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" href="script.js"></script>
-</head>
-
-<body>
-    <h1>{{ site.title }}</h1>
-    <div class="preview">
-        {% assign projects = site.pages | where: "category", "project" %}
-        {% for page in projects %}
-        <a href="{{ page.url }}">
-            <div class="displayPane"><img class="displayImage" src="{{ page.image }}">
-                <h3>{{ page.title }}</h3>
-                <p>{{ page.description }}</p>
-            </div>
-        </a>
-        {% endfor %}
+{% assign projects = site.pages | where: "category", "project" %}
+{% for page in projects %}
+<a href="{{ page.url }}">
+    <div class="displayPane">
+        <img class="displayImage" src="{{ page.image }}" alt="">
+        <h3>{{ page.title }}</h3>
+        <p>{{ page.description }}</p>
     </div>
-    <div class="footer">Contact: nesmro01 *at* luther *dot* edu</div>
-</body>
-
-</html>
+</a>
+{% endfor %}
+<div class="footer">Contact: nesmro01 *at* luther *dot* edu</div>

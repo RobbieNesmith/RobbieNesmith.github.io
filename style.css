@@ -15,6 +15,17 @@ body {
   font-family: 'Dosis', sans-serif;
 }
 
+.headerIcon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+h1 {
+  display: inline-block;
+}
+
 h1 {
   background-color: #f8f8f8;
   width: 100%;

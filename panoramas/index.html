@@ -1,26 +1,11 @@
 ---
-title: Panoramas
-description: Some of my panoramas
+title: My Panoramas
+description: Some of my panoramas in a PanoLens.js viewer
 category: project
 image: /img/panoramas.png
+layout: gallery
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/style.css" />
-    <script src="panoramas.js"></script>
-    <title>My Panoramas</title>
-</head>
-
-<body onload="getPanoInfo()">
-    <h1>My Panoramas</h1>
-    <div id="panos"></div>
-</body>
-
-</html>
+<script src="panoramas.js"></script>
+<div id="panos"></div>
+<script>getPanoInfo()</script>
