@@ -1,0 +1,42 @@
+---
+title: ChefEdit
+category: project
+description: A level editor for the game Superstar Chefs
+image: /img/chefs.png
+---
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="Chefedit.css">
+  <script src="tileinfo.js" type="text/javascript"></script>
+  <script src="Chefedit.js" type="text/javascript"></script>
+
+</head>
+
+<body oncontextmenu="return false;" ondragstart="return false;" ondrop="return false;" onload='setup()'
+  onkeypress="getChar(event);">
+  <div id="maincontainer">
+    <div id="toolbar">
+      <button class="toolbaroption" onclick="createDropdown(this, 'file');">file</button>
+      <button class="toolbaroption" onclick="createDropdown(this, 'edit');">edit</button>
+      <button class="toolbaroption" onclick="createDropdown(this, 'view');">view</button>
+      <button class="toolbaroption" onclick="createDropdown(this, 'crash');">crash</button>
+    </div>
+    <div id="subcontainer">
+      <div id="tilepalette" class="noselect"></div>
+      <div id="workspacecontainer">
+        <div id="editing"></div>
+        <div id="workspacepadding">
+          <div id="workspace"></div>
+          <div id="workspacefg"></div>
+        </div>
+      </div>
+      <div id="mobinfo" class="noselect"></div>
+    </div>
+  </div>
+</body>
+
+</html>

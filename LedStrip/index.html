@@ -1,15 +1,22 @@
+---
+title: LED Strip
+description: Client for my ESP8266 LED strip sunrise alarm
+category: project
+image: /img/ledstrip.png
+---
+
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="LedStrip.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.2/main.css">
-<script src="LedStrip.js" type="text/javascript"></script>
-<script src="LedStripFullCalendar.js" type="text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.2/main.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="LedStrip.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.2/main.css">
+  <script src="LedStrip.js" type="text/javascript"></script>
+  <script src="LedStripFullCalendar.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.3.2/main.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
 </head>
 
 <body onload="setup()">
@@ -37,7 +44,7 @@
         </div>
         <input type="color" id="colorinput" onchange="setManualColor();"></input>
         <div>
-            Recent colors:
+          Recent colors:
         </div>
         <div id="recentColorsHolder"></div>
       </div>

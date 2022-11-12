@@ -1,0 +1,53 @@
+---
+title: Stepmania Viewer
+description: View steps in .sm files in your browser
+category: project
+image: /img/stepmania.png
+---
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<html>
+
+<head>
+	<title>Stepmania File Viewer</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="StepmaniaViewer.css">
+	<script src="stepmania.js"></script>
+	<script src="StepmaniaViewer.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="limitWidth">
+			<img src="img/Common window icon.png" class="headerImg"></img>
+			<h1>Stepmania File Viewer</h1>
+		</div>
+	</header>
+	<section id="fileSelect" class="limitWidth">
+		<h2>File Selection</h2>
+		<div>
+			<input id="fileInput" type="file" onchange="readSimFile();"></input>
+		</div>
+	</section>
+	<section id="fileInfo" class="limitWidth">
+		<h2>Song Information</h2>
+		<div id="songInfo"></div>
+	</section>
+	<section id="steps" class="limitWidth">
+		<h2>Steps</h2>
+		<div>
+			<select id="mode" onchange="showDifficultiesForMode()">
+			</select>
+			<select id="difficulty" onchange="showStepsForModeAndDifficulty()">
+			</select>
+		</div>
+		<div id="stepsArea">
+		</div>
+	</section>
+</body>
+
+</html>

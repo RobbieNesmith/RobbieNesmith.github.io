@@ -1,36 +1,30 @@
+---
+title: index
+---
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>The Musings of Robbie Nesmith</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
     <script type="text/javascript" href="script.js"></script>
 </head>
 
 <body>
-    <h1>The Musings of Robbie Nesmith</h1>
+    <h1>{{ site.title }}</h1>
     <div class="preview">
-        <a href="fakeWin/FakeWin.html"><div class="displayPane"><img class="displayImage" src="img/fakeWin.png"><div>Windows 10 mockup for the web</div></div></a>
-        <a href="windowDesigner/windowDesignerGrid.html"><div class="displayPane"><img class="displayImage" src="img/windowDesigner.png"><div>Build custom windows</div></div></a>
-        <a href="MCChestSim/MCChestSim.html"><div class="displayPane"><img class="displayImage" src="img/MCChestSim.png"><div>An old Minecraft Chest Simulator translated to JavaScript</div></div></a>
-        <a href="http://robbienesmithcommongood.blogspot.com"><div class="displayPane"><img class="displayImage" src="img/sf.png"><div>January Term Blog - Entrepreneurship and the Common Good</div></div></a>
-        <a href="lightsout/index.html"><div class="displayPane"><img class="displayImage" src="img/LightsOut.png"><div>Lights out game</div></div></a>
-        <a href="lswcheats/lswcheats.htm"><div class="displayPane"><img class="displayImage" src="img/lswcheats.png"><div>Lego Star Wars (GBA) cheat code selector</div></div></a>
-        <a href="scattergories/scattergories.html"><div class="displayPane"><img class="displayImage" src="img/scattergories.png"><div>Scattergories trainer</div></div></a>
-        <a href="slideshow/Slideshow.html"><div class="displayPane"><img class="displayImage" src="img/vrheadset.jpg"><div>Slideshow of VR images</div></div></a>
-        <a href="Chefedit/Chefedit.html"><div class="displayPane"><img class="displayImage" src="img/chefs.png"><div>Level editor for the game Superstar Chefs</div></div></a>
-        <a href="placeclient/placeclient.html"><div class="displayPane"><img class="displayImage" src="img/placeclient.png"><div>Client for /r/place remake on NodeMCU</div></div></a>
-        <a href="dmc-palette/index.html"><div class="displayPane"><img class="displayImage" src="img/gimpthread.png"><div>DMC thread color to GIMP Palette converter</div></div></a>
-        <a href="LedStrip/LedStrip.html"><div class="displayPane"><img class="displayImage" src="img/ledstrip.png"><div>Client for my ESP8266 LED strip sunrise alarm</div></div></a>
-        <a href="weather/weather.html"><div class="displayPane"><img class="displayImage" src="img/noimg.png"><div>Display weather GIFs from IAState</div></div></a>
-        <a href="robbies-dumb-client/robbies-dumb-client.html"><div class="displayPane"><img class="displayImage" src="img/dumbClient.png"><div>Robbie's Dumb Client (PWA Test)</div></div></a>
-        <a href="mcstatsclient/mcstatsclient.html"><div class="displayPane"><img class="displayImage" src="img/noimg.png"><div>Raubriecraft stats and leaderboards</div></div></a>
-        <a href="StepmaniaViewer/StepmaniaViewer.html"><div class="displayPane"><img class="displayImage" src="img/stepmania.png"><div>Stepmania file viewer</div></div></a>
-        <a href="palm/index.html"><div class="displayPane"><img class="displayImage" src="img/palm.jpg"><div>Robbie's Palm Page</div></div></a>
-        <a href="p5"><div class="displayPane"><img class="displayImage" src="img/p5.png"><div>p5.js Sketches</div></div></a>
-        <a href="panoramas"><div class="displayPane"><img class="displayImage" src="img/panoramas.png"><div>Panoramas</div></div></a>
+        {% assign projects = site.pages | where: "category", "project" %}
+        {% for page in projects %}
+        <a href="{{ page.url }}">
+            <div class="displayPane"><img class="displayImage" src="{{ page.image }}">
+                <h3>{{ page.title }}</h3>
+                <p>{{ page.description }}</p>
+            </div>
+        </a>
+        {% endfor %}
     </div>
     <div class="footer">Contact: nesmro01 *at* luther *dot* edu</div>
 </body>
