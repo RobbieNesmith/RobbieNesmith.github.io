@@ -7,13 +7,13 @@ headerIcon: /p5/img/p5icon.png
 layout: gallery
 ---
 
-<a href="EmojiSpinner/">
-    <div class="displayPane"><img class="displayImage" src="img/EmojiSpinner.png">
-        <div>Emoji spinner</div>
+{% assign sketches = site.pages | where: "category", "sketch" %}
+{% for page in sketches %}
+<a href="{{ page.url }}">
+    <div class="displayPane">
+        <img class="displayImage" src="{{ page.image }}" alt="">
+        <h3>{{ page.title }}</h3>
+        <p>{{ page.description }}</p>
     </div>
 </a>
-<a href="GemGrabber">
-    <div class="displayPane"><img class="displayImage" src="img/GemGrabber.jpg">
-        <div>Gem Grabber</div>
-    </div>
-</a>
+{% endfor %}
