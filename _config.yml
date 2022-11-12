@@ -1,0 +1,16 @@
+# Site settings
+title: "The Musings of Robbie Nesmith"
+baseurl: "/" # the subpath of your site, e.g. /blog/
+description: "Random things I've made over the years"
+
+# Build settings
+# Jekyll 3 now only supports Kramdown for Markdown
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
+permalink: /:title/
