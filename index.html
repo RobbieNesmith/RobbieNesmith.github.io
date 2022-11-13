@@ -2,7 +2,7 @@
 layout: gallery
 ---
 
-{% assign projects = site.pages | where: "category", "project" %}
+{% assign projects = site.pages | where: "category", "project" | concat: site.data.otherPages | sort: "title" %}
 {% for page in projects %}
 <a href="{{ page.url }}">
     <div class="displayPane">
