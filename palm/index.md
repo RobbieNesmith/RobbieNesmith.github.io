@@ -43,3 +43,4 @@ layout: markdown
 - [Using Handspring Visor with Linux](https://tldp.org/HOWTO/Handspring-Visor/)
 - [Archive.org search for Palm OS](https://archive.org/search.php?query=Palm+OS)
 - [Sony Clie info site](http://sonyclie.org/)
+- [Till's Palm Pages](http://harbaum.org/till/palm/) and [Github](https://github.com/harbaum/palmos)
