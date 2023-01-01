@@ -1,0 +1,113 @@
+body {
+  color: white;
+  background-color: black;
+}
+
+a {
+  color: #33ccff;
+}
+
+a:visited {
+  color: #cc66cc;
+}
+
+button {
+  height: 2rem;
+}
+
+main {
+  width: 400px;
+  margin: 0 auto;
+}
+
+input {
+  background: #222222;
+  margin: 0 0.5rem;
+  border: none;
+  border-bottom: dashed white 1px;
+  color: white;
+  font-size: 2rem;
+}
+
+.guess {
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+.reveal {
+  height: 200px;
+}
+
+.colorHolder {
+  width: 100%;
+  display: flex;
+}
+
+.inputHolder {
+  width: 100%;
+  display: flex;
+  font-size: 2rem;
+}
+
+.inputHolder input {
+  width: 0;
+  flex-grow: 1;
+}
+
+.calibrate {
+  width: 100%;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.swatch {
+  width: 100%;
+  height: 100%;
+  border: solid black 1px;
+}
+
+.red {
+  background-color: #ff0000;
+}
+
+.green {
+  background-color: #00ff00;
+}
+
+.blue {
+  background-color: #0000ff;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.tal {
+  text-align: left;
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    width: 100%;
+    text-align: center;
+  }
+
+  .guess {
+    width: 100%;
+  }
+
+  .colorHolder {
+    flex-direction: column;
+  }
+
+  .calibrate {
+    flex-direction: row;
+    height: 100px;
+  }
+}

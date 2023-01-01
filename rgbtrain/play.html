@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="hsluv-1.0.0.min.js"></script>
+  <script src="spaces.js"></script>
+  <script src="play.js"></script>
+  <title>Color Trainer</title>
+</head>
+
+<body onload="startRound()">
+  <main>
+    <form action="guess.html">
+      <div id="behindTheScenes"></div>
+      <div class="colorHolder">
+        <div id="colorToGuess" class="guess"></div>
+        <div class="calibrate">
+          <div class="swatch red"></div>
+          <div class="swatch green"></div>
+          <div class="swatch blue"></div>
+        </div>
+      </div>
+      <div id="guessHolder" class="mt-1"></div>
+      <button class="mt-1 w-100">Guess</button>
+    </form>
+    <div class="mt-1">
+      <a href=".">Choose another color space</a>
+    </div>
+  </main>
+</body>
+
+</html>
