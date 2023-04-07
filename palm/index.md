@@ -15,9 +15,11 @@ layout: markdown
 - [`pilot-link` sources](https://github.com/desrod/pilot-link)
 - [Palm SDKs](https://github.com/jichu4n/palm-os-sdk)
 - [PRC Tools Remix (for 64 bit OSes)](https://github.com/jichu4n/prc-tools-remix)
+- [Info about PRC format](http://web.mit.edu/tytso/www/pilot/prc-format.html)
 
 ## Tools
 - [Extract Eyemodule Images](https://maple.pet/eyemodtool/)
+- [PDB File Converter](https://www.cs.tufts.edu/~nr/pilot/pdb/)
 
 ## Emulators
 - [Mu Emulator](https://meepingsnesroms.github.io/) - [(source)](https://github.com/meepingsnesroms/Mu)
