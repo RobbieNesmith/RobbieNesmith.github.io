@@ -1,0 +1,492 @@
+[
+  {
+    "title": "Random number generators and tests:",
+    "link": "http://www.cacert.at/cgi-bin/rngresults",
+    "categories": [
+      "Security",
+      "Programming"
+    ]
+  },
+  {
+    "title": "open graphics library:",
+    "link": "http://taichi.graphics/",
+    "categories": [
+      "Programming",
+      "Graphics"
+    ]
+  },
+  {
+    "title": "Open source game clones:",
+    "link": "https://osgameclones.com/",
+    "categories": [
+      "Programming",
+      "Games"
+    ]
+  },
+  {
+    "title": "Open game art",
+    "link": "https://opengameart.org/",
+    "categories": [
+      "Games",
+      "Graphics",
+      "Art"
+    ]
+  },
+  {
+    "title": "Game source code",
+    "link": "https://archive.org/details/gamesourcecode",
+    "categories": [
+      "Programming",
+      "Games"
+    ]
+  },
+  {
+    "title": "Dungeon generation",
+    "link": "https://journal.stuffwithstuff.com/2014/12/21/rooms-and-mazes/",
+    "categories": [
+      "Programming",
+      "Games"
+    ]
+  },
+  {
+    "title": "VLF natural radio",
+    "link": "http://abelian.org/vlf/",
+    "categories": [
+      "Radio"
+    ]
+  },
+  {
+    "title": "Everything?",
+    "link": "http://everything2.com",
+    "categories": [
+      "Oddball"
+    ]
+  },
+  {
+    "title": "Video game randomizers",
+    "link": "https://www.debigare.com/randomizers/",
+    "categories": [
+      "Games",
+      "Programming"
+    ]
+  },
+  {
+    "title": "Goldmine Elec",
+    "link": "https://www.goldmine-elec-products.com/",
+    "categories": [
+      "Electronics"
+    ]
+  },
+  {
+    "title": "MPJA",
+    "link": "https://www.mpja.com",
+    "categories": [
+      "Electronics"
+    ]
+  },
+  {
+    "title": "Concurrency tutorial",
+    "link": "https://deadlockempire.github.io/#main",
+    "categories": [
+      "Programming",
+      "Learning"
+    ]
+  },
+  {
+    "title": "Parse HTML",
+    "link": "https://www.w3.org/TR/2011/WD-html5-20110113/parsing.html",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "title": "Wave function collapse",
+    "link": "https://github.com/mxgmn/WaveFunctionCollapse",
+    "categories": [
+      "Programming",
+      "Games",
+      "Graphics"
+    ]
+  },
+  {
+    "title": "Service worker tutorial game",
+    "link": "serviceworkies.com",
+    "categories": [
+      "Programming",
+      "Games",
+      "Learning"
+    ]
+  },
+  {
+    "title": "Light transport TU Wien",
+    "link": "https://www.youtube.com/playlist?list=PLujxSBD-JXgnGmsn7gEyN28P1DnRZG7qi",
+    "categories": [
+      "Graphics",
+      "Learning"
+    ]
+  },
+  {
+    "title": "Wrapping images around fractals: ",
+    "link": "http://bamia.net/articles/fractals/index.html",
+    "categories": [
+      "Programming",
+      "Graphics",
+      "Art"
+    ]
+  },
+  {
+    "title": "Insecure IP cameras",
+    "link": "https://www.insecam.org/",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "title": "CR radio frequencies",
+    "link": "https://www.radioreference.com/apps/db/?tab=reports&mid=120&rpt=1",
+    "categories": [
+      "Radio"
+    ]
+  },
+  {
+    "title": "Slack client alternatives",
+    "link": "https://news.ycombinator.com/item?id=20500880",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "title": "Interactive GH readme:",
+    "link": "https://github.com/veggiedefender/typing",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "title": "File formats:",
+    "link": "http://fileformats.archiveteam.org/",
+    "categories": [
+      "Programming",
+      "Files"
+    ]
+  },
+  {
+    "title": "Python graphing calc:",
+    "link": "https://numworks.com",
+    "categories": [
+      "Programming",
+      "Math"
+    ]
+  },
+  {
+    "title": "Handheld linux terminal:",
+    "link": "https://clockworkpi.com",
+    "categories": [
+      "Programming",
+      "Electronics"
+    ]
+  },
+  {
+    "title": "Hexagonal grids:",
+    "link": "https://www.redblobgames.com/grids/hexagons/",
+    "categories": [
+      "Programming",
+      "Games",
+      "Learning"
+    ]
+  },
+  {
+    "title": "Computer History Wiki:",
+    "link": "https://gunkies.org/wiki/Main_Page",
+    "categories": [
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "High res chip images:",
+    "link": "https://siliconpr0n.org/",
+    "categories": [
+      "Electronics",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Calvin and Hobbes search:",
+    "link": "http://michaelyingling.com/random/calvin_and_hobbes/",
+    "categories": [
+      "Art"
+    ]
+  },
+  {
+    "title": "Points at your pointer:",
+    "link": "pointerpointer.com",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "title": "A bunch of weird sites:",
+    "link": "https://virtualvault.neocities.org/",
+    "categories": [
+      "Programming",
+      "Oddball"
+    ]
+  },
+  {
+    "title": "Online DOS games:",
+    "link": "https://dos.zone/en",
+    "categories": [
+      "Games",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Lost Nintendo History:",
+    "link": "https://lostnintendohistory.github.io/",
+    "categories": [
+      "Games",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Speech to birdsong conversion:",
+    "link": "http://www.windytan.com/2021/03/speech-to-birdsong-conversion.html?m=1",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "title": "Web browser engineering (tutorial):",
+    "link": "https://browser.engineering/index.html",
+    "categories": [
+      "Programming",
+      "Learning"
+    ]
+  },
+  {
+    "title": "Terminal OSM map (telnet):",
+    "link": "https://mapscii.me",
+    "code": "https://github.com/rastapasta/mapscii",
+    "categories": [
+      "Programming",
+      "Graphics",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "LEGO SNOT techniques:",
+    "link": "https://swooshable.com",
+    "categories": [
+      "LEGO"
+    ]
+  },
+  {
+    "title": "Games inspire good UI:",
+    "link": "https://jenson.org/games/",
+    "categories": [
+      "Programming",
+      "Games"
+    ]
+  },
+  {
+    "title": "Movie editing with Python:",
+    "link": "https://zulko.github.io/moviepy/#",
+    "categories": [
+      "Programming",
+      "Graphics"
+    ]
+  },
+  {
+    "title": "Modular softsynth:",
+    "link": "http://www.bespokesynth.com/",
+    "categories": [
+      "Programming",
+      "Music"
+    ]
+  },
+  {
+    "title": "Collaborative ASCII art",
+    "link": "https://ascii-collab.app/",
+    "code": "https: //github.com/MartinSStewart/ascii-collab",
+    "categories": [
+      "Programming",
+      "Games"
+    ]
+  },
+  {
+    "title": "Apple ii games:",
+    "link": "http://asciiexpress.net/gameserver/",
+    "categories": [
+      "Games",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Manx vintage computer docs db:",
+    "link": "https://github.com/LegalizeAdulthood/manx",
+    "categories": [
+      "Programming",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Fujinet for vintage computers:",
+    "link": "https://fujinet.online/",
+    "categories": [
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Free photography workflow:",
+    "link": "https://blog.fidelramos.net/photography/photography-workflow",
+    "categories": [
+      "Graphics",
+      "Art"
+    ]
+  },
+  {
+    "title": "YouTube spectrogram:",
+    "link": "https://github.com/mfcc64/youtube-musical-spectrum",
+    "categories": [
+      "Programming",
+      "Music",
+      "Graphics"
+    ]
+  },
+  {
+    "title": "Docfetcher file search:",
+    "link": "https://docfetcher.sourceforge.net/en/index.html",
+    "categories": [
+      "Programming",
+      "Files"
+    ]
+  },
+  {
+    "title": "Folding distance estimations:",
+    "link": "http://blog.hvidtfeldts.net/index.php/2011/08/distance-estimated-3d-fractals-iii-folding-space/",
+    "categories": [
+      "Programming",
+      "Graphics"
+    ]
+  },
+  {
+    "title": "Apple ii peeks and pokes:",
+    "link": "http://textfiles.com/apple/peekpoke.app",
+    "categories": [
+      "Programming",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Minimalist TOTP gen python:",
+    "link": "https://github.com/susam/mintotp",
+    "categories": [
+      "Programming",
+      "Security"
+    ]
+  },
+  {
+    "title": "Bike camera 3d scanning",
+    "link": "https://jakecoppinger.com/2022/12/creating-aerial-imagery-with-a-bike-helmet-camera-and-opendronemap/",
+    "categories": [
+      "Graphics"
+    ]
+  },
+  {
+    "title": "Stable diffusion generating riffs",
+    "link": "https://www.riffusion.com/about",
+    "categories": [
+      "Graphics",
+      "AI",
+      "Music"
+    ]
+  },
+  {
+    "title": "Mandelbrot map",
+    "link": "https://kottke.org/22/12/vintage-map-mandelbrot-set",
+    "categories": [
+      "Graphics",
+      "Math",
+      "Art"
+    ]
+  },
+  {
+    "title": "Tiny code Christmas demoscene",
+    "link": "https://tcc.lovebyte.party/",
+    "categories": [
+      "Programming",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Wobbly clock",
+    "link": "https://somethingorotherwhatever.com/wobble-clock/",
+    "categories": [
+      "Graphics"
+    ]
+  },
+  {
+    "title": "Jazz Database",
+    "link": "https://jazzomat.hfm-weimar.de/dbformat/dboverview.html",
+    "categories": [
+      "Music"
+    ]
+  },
+  {
+    "title": "Typescript and Set Theory:",
+    "link": "https://blog.thoughtspile.tech/2023/01/23/typescript-sets/",
+    "categories": [
+      "Programming",
+      "Math"
+    ]
+  },
+  {
+    "title": "DOS JS environment:",
+    "link": "https://github.com/SuperIlu/DOjS",
+    "categories": [
+      "Programming",
+      "Graphics",
+      "Games",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "RetroComputing info/screenshots:",
+    "link": "http://www.typewritten.org/",
+    "categories": [
+      "Graphics",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Windows XP activation:",
+    "link": "https://tinyapps.org/blog/202304230700_xp_wpa.html",
+    "categories": [
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Snark Barker Sound blaster clone:",
+    "link": "https://github.com/schlae/snark-barker",
+    "categories": [
+      "Electronics",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Calculating GPS coordinates from raw data:",
+    "link": "https://www.telesens.co/2017/07/17/calculating-position-from-raw-gps-data/",
+    "categories": [
+      "Programming",
+      "Radio",
+      "Math"
+    ]
+  },
+  {
+    "title": "DC-DC voltage converters:",
+    "link": "https://lcamtuf.substack.com/p/the-magic-of-dc-dc-voltage-conversion",
+    "categories": [
+      "Electronics"
+    ]
+  }
+]

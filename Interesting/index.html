@@ -1,0 +1,35 @@
+---
+title: Interesting
+description: Interesting links I've found over time
+category: project
+image: /img/Interesting.png
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interesting Links</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <h1>Interesting Links</h1>
+  <ul>
+    {% for link in site.data.interestingLinks %}
+    <li data-categories="link.categories.">
+      <div>
+        {{ link.title }}
+        <span class="Category {{ category }}">{{ category }}</span>
+        {% endfor %}
+      </div>
+      <a href="{{link.link}}">{{link.link}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</body>
+
+</html>
