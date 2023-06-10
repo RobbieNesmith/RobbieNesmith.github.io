@@ -1,0 +1,59 @@
+.Category {
+  border-radius: 0.5rem;
+  height: 1rem;
+  margin: 0.5rem, 0.125rem;
+  padding: 0.125rem;
+  color: white;
+}
+
+.Programming {
+  background-color: #7f0000;
+}
+
+.Graphics {
+  background-color: #8f4f00;
+}
+
+.Games {
+  background-color: #7f7f00;
+}
+
+.Security {
+  background-color: #007f00;
+}
+
+.AI {
+  background-color: #007f7f;
+}
+
+.RetroComputing {
+  background-color: #0000a0;
+}
+
+.Electronics {
+  background-color: #7f007f;
+}
+
+.Radio {
+  background-color: #3f3f3f;
+}
+
+.Oddball {
+  background-color: #7f0000;
+}
+
+.Art {
+  background-color: #8f4f00;
+}
+
+.Music {
+  background-color: #7f7f00;
+}
+
+.Math {
+  background-color: #007f00;
+}
+
+.LEGO {
+  background-color: #007f7f;
+}
