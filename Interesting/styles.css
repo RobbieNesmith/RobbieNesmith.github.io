@@ -89,3 +89,22 @@ h1 {
   margin: 1rem;
   padding: 1rem;
 }
+
+.searchContainer {
+  padding: 0 1rem;
+}
+
+.innerSearchContainer {
+  max-width: 80rem;
+  display: flex;
+  margin: auto;
+}
+
+.searchContainer input {
+  width: 100%;
+  flex-shrink: 1;
+}
+
+.searchContainer button {
+  flex-shrink: 0;
+}

@@ -18,6 +18,9 @@ image: /img/Interesting.png
 
 <body>
   <h1>Interesting Links</h1>
+  <div class="searchContainer">
+    <span class="innerSearchContainer"><input /><button>Search</button></span>
+  </div>
   <ul class="interestingLinksList">
     {% for link in site.data.interestingLinks %}
     <li class="interestingLink" data-categories="{% for category in link.categories %}{{ category }} {% endfor %}">
