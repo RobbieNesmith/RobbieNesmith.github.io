@@ -1,6 +1,6 @@
 [
   {
-    "title": "Random number generators and tests:",
+    "title": "Random number generators and tests",
     "link": "http://www.cacert.at/cgi-bin/rngresults",
     "categories": [
       "Security",
@@ -8,7 +8,7 @@
     ]
   },
   {
-    "title": "open graphics library:",
+    "title": "open graphics library",
     "link": "http://taichi.graphics/",
     "categories": [
       "Programming",
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "title": "Open source game clones:",
+    "title": "Open source game clones",
     "link": "https://osgameclones.com/",
     "categories": [
       "Programming",
@@ -156,14 +156,14 @@
     ]
   },
   {
-    "title": "Interactive GH readme:",
+    "title": "Interactive GH readme",
     "link": "https://github.com/veggiedefender/typing",
     "categories": [
       "Programming"
     ]
   },
   {
-    "title": "File formats:",
+    "title": "File formats",
     "link": "http://fileformats.archiveteam.org/",
     "categories": [
       "Programming",
@@ -171,7 +171,7 @@
     ]
   },
   {
-    "title": "Python graphing calc:",
+    "title": "Python graphing calc",
     "link": "https://numworks.com",
     "categories": [
       "Programming",
@@ -179,7 +179,7 @@
     ]
   },
   {
-    "title": "Handheld linux terminal:",
+    "title": "Handheld linux terminal",
     "link": "https://clockworkpi.com",
     "categories": [
       "Programming",
@@ -187,7 +187,7 @@
     ]
   },
   {
-    "title": "Hexagonal grids:",
+    "title": "Hexagonal grids",
     "link": "https://www.redblobgames.com/grids/hexagons/",
     "categories": [
       "Programming",
@@ -196,14 +196,14 @@
     ]
   },
   {
-    "title": "Computer History Wiki:",
+    "title": "Computer History Wiki",
     "link": "https://gunkies.org/wiki/Main_Page",
     "categories": [
       "RetroComputing"
     ]
   },
   {
-    "title": "High res chip images:",
+    "title": "High res chip images",
     "link": "https://siliconpr0n.org/",
     "categories": [
       "Electronics",
@@ -211,21 +211,21 @@
     ]
   },
   {
-    "title": "Calvin and Hobbes search:",
+    "title": "Calvin and Hobbes search",
     "link": "http://michaelyingling.com/random/calvin_and_hobbes/",
     "categories": [
       "Art"
     ]
   },
   {
-    "title": "Points at your pointer:",
+    "title": "Points at your pointer",
     "link": "pointerpointer.com",
     "categories": [
       "Programming"
     ]
   },
   {
-    "title": "A bunch of weird sites:",
+    "title": "A bunch of weird sites",
     "link": "https://virtualvault.neocities.org/",
     "categories": [
       "Programming",
@@ -233,7 +233,7 @@
     ]
   },
   {
-    "title": "Online DOS games:",
+    "title": "Online DOS games",
     "link": "https://dos.zone/en",
     "categories": [
       "Games",
@@ -241,7 +241,7 @@
     ]
   },
   {
-    "title": "Lost Nintendo History:",
+    "title": "Lost Nintendo History",
     "link": "https://lostnintendohistory.github.io/",
     "categories": [
       "Games",
@@ -249,14 +249,14 @@
     ]
   },
   {
-    "title": "Speech to birdsong conversion:",
+    "title": "Speech to birdsong conversion",
     "link": "http://www.windytan.com/2021/03/speech-to-birdsong-conversion.html?m=1",
     "categories": [
       "Programming"
     ]
   },
   {
-    "title": "Web browser engineering (tutorial):",
+    "title": "Web browser engineering (tutorial)",
     "link": "https://browser.engineering/index.html",
     "categories": [
       "Programming",
@@ -264,7 +264,7 @@
     ]
   },
   {
-    "title": "Terminal OSM map (telnet):",
+    "title": "Terminal OSM map (telnet)",
     "link": "https://mapscii.me",
     "code": "https://github.com/rastapasta/mapscii",
     "categories": [
@@ -274,14 +274,14 @@
     ]
   },
   {
-    "title": "LEGO SNOT techniques:",
+    "title": "LEGO SNOT techniques",
     "link": "https://swooshable.com",
     "categories": [
       "LEGO"
     ]
   },
   {
-    "title": "Games inspire good UI:",
+    "title": "Games inspire good UI",
     "link": "https://jenson.org/games/",
     "categories": [
       "Programming",
@@ -289,7 +289,7 @@
     ]
   },
   {
-    "title": "Movie editing with Python:",
+    "title": "Movie editing with Python",
     "link": "https://zulko.github.io/moviepy/#",
     "categories": [
       "Programming",
@@ -297,7 +297,7 @@
     ]
   },
   {
-    "title": "Modular softsynth:",
+    "title": "Modular softsynth",
     "link": "http://www.bespokesynth.com/",
     "categories": [
       "Programming",
@@ -314,7 +314,7 @@
     ]
   },
   {
-    "title": "Apple ii games:",
+    "title": "Apple ii games",
     "link": "http://asciiexpress.net/gameserver/",
     "categories": [
       "Games",
@@ -322,7 +322,7 @@
     ]
   },
   {
-    "title": "Manx vintage computer docs db:",
+    "title": "Manx vintage computer docs db",
     "link": "https://github.com/LegalizeAdulthood/manx",
     "categories": [
       "Programming",
@@ -330,14 +330,14 @@
     ]
   },
   {
-    "title": "Fujinet for vintage computers:",
+    "title": "Fujinet for vintage computers",
     "link": "https://fujinet.online/",
     "categories": [
       "RetroComputing"
     ]
   },
   {
-    "title": "Free photography workflow:",
+    "title": "Free photography workflow",
     "link": "https://blog.fidelramos.net/photography/photography-workflow",
     "categories": [
       "Graphics",
@@ -345,7 +345,7 @@
     ]
   },
   {
-    "title": "YouTube spectrogram:",
+    "title": "YouTube spectrogram",
     "link": "https://github.com/mfcc64/youtube-musical-spectrum",
     "categories": [
       "Programming",
@@ -354,7 +354,7 @@
     ]
   },
   {
-    "title": "Docfetcher file search:",
+    "title": "Docfetcher file search",
     "link": "https://docfetcher.sourceforge.net/en/index.html",
     "categories": [
       "Programming",
@@ -362,7 +362,7 @@
     ]
   },
   {
-    "title": "Folding distance estimations:",
+    "title": "Folding distance estimations",
     "link": "http://blog.hvidtfeldts.net/index.php/2011/08/distance-estimated-3d-fractals-iii-folding-space/",
     "categories": [
       "Programming",
@@ -370,7 +370,7 @@
     ]
   },
   {
-    "title": "Apple ii peeks and pokes:",
+    "title": "Apple ii peeks and pokes",
     "link": "http://textfiles.com/apple/peekpoke.app",
     "categories": [
       "Programming",
@@ -378,7 +378,7 @@
     ]
   },
   {
-    "title": "Minimalist TOTP gen python:",
+    "title": "Minimalist TOTP gen python",
     "link": "https://github.com/susam/mintotp",
     "categories": [
       "Programming",
@@ -433,7 +433,7 @@
     ]
   },
   {
-    "title": "Typescript and Set Theory:",
+    "title": "Typescript and Set Theory",
     "link": "https://blog.thoughtspile.tech/2023/01/23/typescript-sets/",
     "categories": [
       "Programming",
@@ -441,7 +441,7 @@
     ]
   },
   {
-    "title": "DOS JS environment:",
+    "title": "DOS JS environment",
     "link": "https://github.com/SuperIlu/DOjS",
     "categories": [
       "Programming",
@@ -451,7 +451,7 @@
     ]
   },
   {
-    "title": "RetroComputing info/screenshots:",
+    "title": "RetroComputing info/screenshots",
     "link": "http://www.typewritten.org/",
     "categories": [
       "Graphics",
@@ -459,14 +459,14 @@
     ]
   },
   {
-    "title": "Windows XP activation:",
+    "title": "Windows XP activation",
     "link": "https://tinyapps.org/blog/202304230700_xp_wpa.html",
     "categories": [
       "RetroComputing"
     ]
   },
   {
-    "title": "Snark Barker Sound blaster clone:",
+    "title": "Snark Barker Sound blaster clone",
     "link": "https://github.com/schlae/snark-barker",
     "categories": [
       "Electronics",
@@ -474,7 +474,7 @@
     ]
   },
   {
-    "title": "Calculating GPS coordinates from raw data:",
+    "title": "Calculating GPS coordinates from raw data",
     "link": "https://www.telesens.co/2017/07/17/calculating-position-from-raw-gps-data/",
     "categories": [
       "Programming",
@@ -483,7 +483,7 @@
     ]
   },
   {
-    "title": "DC-DC voltage converters:",
+    "title": "DC-DC voltage converters",
     "link": "https://lcamtuf.substack.com/p/the-magic-of-dc-dc-voltage-conversion",
     "categories": [
       "Electronics"
