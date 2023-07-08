@@ -18,13 +18,18 @@ image: /img/Interesting.png
 
 <body>
   <h1>Interesting Links</h1>
-  <ul>
+  <ul class="interestingLinksList">
     {% for link in site.data.interestingLinks %}
-    <li data-categories="link.categories.">
+    <li class="interestingLink" data-categories="{% for category in link.categories %}{{ category }} {% endfor %}">
       <div>
-        {{ link.title }}
-        <span class="Category {{ category }}">{{ category }}</span>
-        {% endfor %}
+        <h2>
+          {{ link.title }}
+        </h2>
+        <div class="categories">
+          {% for category in link.categories %}
+          <span class="Category {{ category }}">{{ category }}</span>
+          {% endfor %}
+        </div>
       </div>
       <a href="{{link.link}}">{{link.link}}</a>
     </li>
