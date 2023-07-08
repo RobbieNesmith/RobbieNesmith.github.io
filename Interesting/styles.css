@@ -65,6 +65,7 @@
 
 h1 {
   text-align: center;
+  font-size: 4rem;
 }
 
 .categories {
@@ -88,4 +89,17 @@ h1 {
   height: 16rem;
   margin: 1rem;
   padding: 1rem;
+}
+
+.searchContainer {
+  padding: 0 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.searchContainer input {
+  width: 100%;
+  border: solid black 1px;
+  font-size: 2rem;
+  text-align: center;
 }
