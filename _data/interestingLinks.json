@@ -488,5 +488,132 @@
     "categories": [
       "Electronics"
     ]
+  },
+  {
+    "title": "List of P2P File Sharing tools",
+    "link": "https://gist.github.com/SMUsamaShah/fd6e275e44009b72f64d0570256bb3b2",
+    "categories": [
+      "Programming",
+      "Files"
+    ]
+  },
+  {
+    "title": "Roll Your Own All-Sky, Raspberry Pi Camera",
+    "link": "https://spectrum.ieee.org/all-sky-camera",
+    "categories": [
+      "Electronics",
+      "Programming",
+      "Learning"
+    ]
+  },
+  {
+    "title": "Mastodon for Apple II",
+    "link": "https://www.colino.net/wordpress/en/mastodon-for-apple-ii/",
+    "categories": [
+      "Programming",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Things Every Hacker Once Knew",
+    "link": "http://www.catb.org/~esr/faqs/things-every-hacker-once-knew/",
+    "categories": [
+      "Programming",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Interactive GCC Repl",
+    "link": "https://github.com/alexandru-dinu/igcc",
+    "categories": [
+      "Programming",
+      "Learning"
+    ]
+  },
+  {
+    "title": "RegEx combinations",
+    "link": "http://phylactery.org/antimirov/",
+    "categories": [
+      "Programming",
+      "Learning"
+    ]
+  },
+  {
+    "title": "BASIC games in newer languages",
+    "link": "https://github.com/coding-horror/basic-computer-games",
+    "categories": [
+      "Programming",
+      "RetroComputing",
+      "Games"
+    ]
+  },
+  {
+    "title": "WTF Python?",
+    "link": "https://github.com/satwikkansal/wtfpython",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "title": "WTF JavaScript?",
+    "link": "https://wtfjs.com/",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "title": "Time, Phase, Frequency",
+    "link": "http://www.libinst.com/tpfd.htm",
+    "categories": [
+      "Math",
+      "Music",
+      "Electronics"
+    ]
+  },
+  {
+    "title": "Homebrew N6QW Projects",
+    "link": "https://n6qw.com/",
+    "categories": [
+      "Electronics",
+      "Radio"
+    ]
+  },
+  {
+    "title": "Beta Wiki",
+    "link": "https://betawiki.net/wiki/Main_Page",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "title": "Hardware Pong Game",
+    "link": "https://beletronics.wordpress.com/pong-game/",
+    "categories": [
+      "Electronics",
+      "Games",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Subpixel Distance Transform for Font Rendering",
+    "link": "https://acko.net/blog/subpixel-distance-transform/",
+    "categories": [
+      "Programming",
+      "Graphics"
+    ]
+  },
+  {
+    "title": "OpenCamera Sensors",
+    "link": "https://github.com/MobileRoboticsSkoltech/OpenCamera-Sensors",
+    "categories": [
+      "Graphics"
+    ]
+  },
+  {
+    "title": "Gyroflow Stabilization",
+    "link": "http://gyroflow.xyz/",
+    "categories": [
+      "Graphics"
+    ]
   }
 ]
