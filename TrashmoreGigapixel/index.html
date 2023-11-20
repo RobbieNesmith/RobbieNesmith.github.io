@@ -17,6 +17,24 @@
 
 <body onload="setup()">
   <div id="map"></div>
+  <div id="sidebarContainer">
+    <button id="sidebarToggle" onclick="toggleSidebar()">...</button>
+    <div>
+      <div>
+        <label>
+          <div>Choose a Panorama</div>
+          <select onchange="changeSource(event)">
+            <option value="0">
+              Trashmore 1
+            </option>
+            <option value="1">
+              Trashmore 2
+            </option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
