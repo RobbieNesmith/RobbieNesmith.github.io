@@ -615,5 +615,36 @@
     "categories": [
       "Graphics"
     ]
+  },
+  {
+    "title": "Mac OS X Wallpapers Upscaled",
+    "link": "https://512pixels.net/projects/default-mac-wallpapers-in-5k/",
+    "categories": [
+      "Graphics",
+      "Art"
+    ]
+  },
+  {
+    "title": "Mac OS 9 Wallpapers Upscaled",
+    "link": "https://512pixels.net/projects/mac-os-9-5k-wallpapers/",
+    "categories": [
+      "Graphics",
+      "Art"
+    ]
+  },
+  {
+    "title": "Mathematical and Puzzle Fonts",
+    "link": "https://erikdemaine.org/fonts/",
+    "categories": [
+      "Math",
+      "Art"
+    ]
+  },
+  {
+    "title": "Vintage Computing Commandments",
+    "link": "http://oldvcr.blogspot.com/2024/02/thou-shalt-follow-these-vintage.html?m=1",
+    "categories": [
+      "Retrocomputing"
+    ]
   }
 ]
