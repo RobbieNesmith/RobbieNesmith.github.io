@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/three.min.js"></script>
+    <script src="js/panolens.min.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Panorama Viewer</title>
+</head>
+
+<body>
+    <h1>Panorama Viewer</h1>
+    <div class="preview">
+        <div id="panoPreview">
+        </div>
+    </div>
+    <script>
+        const usp = new URLSearchParams(location.search);
+        const panoFile = usp.get("pano");
+        const container = document.getElementById("panoPreview");
+        if (panoFile) {
+            const panorama = new PANOLENS.ImagePanorama(panoFile);
+            const viewer = new PANOLENS.Viewer({ container: container });
+            viewer.add(panorama);
+        }
+    </script>
+</body>
+
+</html>
