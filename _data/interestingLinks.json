@@ -646,5 +646,21 @@
     "categories": [
       "Retrocomputing"
     ]
+  },
+  {
+    "title": "CC0 Textures and Models",
+    "link": "https://www.sharetextures.com/",
+    "categories": [
+      "Art",
+      "Graphics"
+    ]
+  },
+  {
+    "title": "Universal CNC Firmware for Microcontrollers",
+    "link": "https://github.com/Paciente8159/uCNC/wiki",
+    "categories": [
+      "Electronics",
+      "Programming"
+    ]
   }
 ]
