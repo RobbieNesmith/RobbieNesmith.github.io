@@ -671,5 +671,22 @@
       "Programming",
       "Games"
     ]
+  },
+  {
+    "title": "CSS Drawing with a single div",
+    "link": "https://a.singlediv.com",
+    "categories": [
+      "Programming",
+      "Graphics",
+      "Art"
+    ]
+  },
+  {
+    "title": "Old Windows Icons",
+    "link": "https://oldwindowsicons.tumblr.com/",
+    "categories": [
+      "RetroComputing",
+      "Art"
+    ]
   }
 ]
