@@ -688,5 +688,53 @@
       "RetroComputing",
       "Art"
     ]
+  },
+  {
+    "title": "Tips for hacking a TV",
+    "link": "https://news.ycombinator.com/item?id=41855403",
+    "categories": [
+      "Electronics",
+      "Programming",
+      "Security"
+    ]
+  },
+  {
+    "title": "Old Radioshack Catalogs",
+    "link": "https://radioshackcatalogs.com/",
+    "categories": [
+      "Electronics",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Kaitai Struct Binary Parser",
+    "link": "https://kaitai.io",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "title": "Android VHF HT",
+    "link": "https://kv4p.com",
+    "categories": [
+      "Electronics",
+      "Radio"
+    ]
+  },
+  {
+    "title": "Graphite node based editor",
+    "link": "https://graphite.rs/",
+    "categories": [
+      "Graphics",
+      "Art"
+    ]
+  },
+  {
+    "title": "Brainfuck Enterprise Solutions",
+    "link": "https://github.com/bf-enterprise-solutions",
+    "categories": [
+      "Programming",
+      "Art"
+    ]
   }
 ]
