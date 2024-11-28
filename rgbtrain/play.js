@@ -31,4 +31,26 @@ function startRound() {
   correctInput.type = "hidden";
   behindTheScenes.appendChild(spaceInput);
   behindTheScenes.appendChild(correctInput);
+  
+  const history = document.getElementById("history");
+  
+  const guessListString = window.localStorage.getItem("guessList");
+  let guessList = [];
+  
+  if (guessListString) {
+    guessList = JSON.parse(guessListString);
+  }
+  
+  for (let guess of guessList) {
+    const holder = document.createElement("div");
+    const guessed = document.createElement("div");
+    const correct = document.createElement("div");
+    
+    guessed.style.backgroundColor = cspaceObj.getCss(guess.guess);
+    correct.style.backgroundColor = cspaceObj.getCss(guess.correct);
+    
+    holder.appendChild(guessed);
+    holder.appendChild(correct);
+    history.appendChild(holder);
+  }
 }
