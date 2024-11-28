@@ -97,6 +97,11 @@ input {
   overflow-x: scroll;
 }
 
+#history > div {
+  display: inline-block;
+  margin-right:0.25rem;
+}
+
 .historyItem {
   width: 1rem;
   height: 1rem;

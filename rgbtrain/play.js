@@ -48,9 +48,12 @@ function startRound() {
     
     guessed.style.backgroundColor = cspaceObj.getCss(guess.guess);
     correct.style.backgroundColor = cspaceObj.getCss(guess.correct);
-    
-    holder.appendChild(guessed);
+
+    guessed.className = "historyItem";
+    correct.className = "historyItem";
+
     holder.appendChild(correct);
+    holder.appendChild(guessed);
     history.appendChild(holder);
   }
 }
