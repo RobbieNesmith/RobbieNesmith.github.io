@@ -92,6 +92,16 @@ input {
   text-align: left;
 }
 
+#history {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.historyItem {
+  width: 1rem;
+  height: 1rem;
+}
+
 @media screen and (max-width: 480px) {
   main {
     width: 100%;

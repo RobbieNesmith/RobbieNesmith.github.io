@@ -13,6 +13,15 @@ function showResults() {
 
   console.log(correct);
   console.log(guess);
+  
+  // add result to local storage
+  const guessListString = window.localStorage.getItem("guessList");
+  let guessList = [];
+  if (guessListString) {
+    guessList = JSON.parse(guessListString);
+  }
+  guessList.push({correct, guess});
+  window.localStorage.setItem("guessList", JSON.stringify(guessList));
 
   const colorToGuess = document.getElementById("colorToGuess");
   colorToGuess.style.backgroundColor = correctCss;
