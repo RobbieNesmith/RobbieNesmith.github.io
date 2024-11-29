@@ -92,9 +92,21 @@ input {
   text-align: left;
 }
 
-#history {
-  width: 100%;
+#historyHolder {
+  display:flex;
+}
+
+#historyLabel {
+  margin-right: 0.5rem;
+}
+
+#historyScroller {
   overflow-x: scroll;
+  width: 100%;
+}
+
+#history {
+  width: max-content;
 }
 
 #history > div {
@@ -124,5 +136,9 @@ input {
   .calibrate {
     flex-direction: row;
     height: 100px;
+  }
+
+  #history {
+    text-align: left;
   }
 }
