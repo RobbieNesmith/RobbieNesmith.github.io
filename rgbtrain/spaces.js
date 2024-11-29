@@ -19,7 +19,7 @@ const spaces = {
       }
     ],
     "getCss": color => `rgb(${color.r} ${color.g} ${color.b})`,
-    "getDisplay": color => `rgb(${color.r} ${color.g} ${color.b})`,
+    "getDisplay": color => `rgb(${color.r}, ${color.g}, ${color.b})`,
     "getInput": () => {
       const inputHolder = document.createElement("div");
       const inputR = document.createElement("input");
@@ -102,7 +102,7 @@ const spaces = {
       }
     ],
     "getCss": color => `hsl(${color.h} ${color.s}% ${color.l}%)`,
-    "getDisplay": color => `hsl(${color.h} ${color.s}% ${color.l}%)`,
+    "getDisplay": color => `hsl(${color.h}, ${color.s}%, ${color.l}%)`,
     "getInput": () => {
       const inputHolder = document.createElement("div");
       const inputH = document.createElement("input");
@@ -154,7 +154,7 @@ const spaces = {
       conv.rgbToHex();
       return conv.hex;
     },
-    "getDisplay": color => `HSLuv(${color.h} ${color.s}% ${color.l}%)`,
+    "getDisplay": color => `HSLuv(${color.h}, ${color.s}%, ${color.l}%)`,
     "getInput": () => {
       const inputHolder = document.createElement("div");
       const inputH = document.createElement("input");
@@ -207,7 +207,7 @@ const spaces = {
       return conv.hex;
     },
     "getDisplay": color => {
-      return `HPLuv(${color.h} ${color.p} ${color.l})`
+      return `HPLuv(${color.h}, ${color.p}, ${color.l})`
     },
     "getInput": () => {
       const inputHolder = document.createElement("div");
