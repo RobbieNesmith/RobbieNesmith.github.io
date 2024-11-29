@@ -41,7 +41,7 @@ function startRound() {
     guessList = JSON.parse(guessListString);
   }
   
-  for (let guess of guessList) {
+  for (let guess of guessList.filter(item => item.cspace === cspace)) {
     const holder = document.createElement("div");
     const guessed = document.createElement("div");
     const correct = document.createElement("div");

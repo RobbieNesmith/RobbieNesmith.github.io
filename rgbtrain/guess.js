@@ -20,7 +20,7 @@ function showResults() {
   if (guessListString) {
     guessList = JSON.parse(guessListString);
   }
-  guessList.push({correct, guess});
+  guessList.push({cspace, correct, guess});
   window.localStorage.setItem("guessList", JSON.stringify(guessList));
 
   const colorToGuess = document.getElementById("colorToGuess");
