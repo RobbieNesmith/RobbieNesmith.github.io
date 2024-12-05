@@ -1,0 +1,2556 @@
+{
+  "type": "FeatureCollection",
+  "name": "grocerystores",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "Type": "Retail",
+        "Address": "717 A Avenue NE",
+        "Name": "A Avenue Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66331541437388,
+          41.98288150707923
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "Type": "Retail",
+        "Address": "128 3rd Avenue SW",
+        "Name": "A & J Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6729322555683,
+          41.97447788757189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "Type": "Retail",
+        "Address": "621 16th Street NE",
+        "Name": "A & L Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65516936316276,
+          41.99374172591767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "Type": "Retail",
+        "Address": "712 3rd Avenue SE",
+        "Name": "A & P Food Store"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66108761499963,
+          41.98072497429951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "Type": "Retail",
+        "Address": "222 3rd Avenue SW",
+        "Name": "A & P Food Store Super Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67415604732163,
+          41.974061071786075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "Type": "Retail",
+        "Address": "1005 5th Avenue SE",
+        "Name": "Abdo Grocery & Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65558219093985,
+          41.98059627079681
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "Type": "Retail",
+        "Address": "512 5th Street SE",
+        "Name": "Abraham Abr S"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66155381661919,
+          41.97720339487523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "Type": "Retail",
+        "Address": "342 5th Avenue SW",
+        "Name": "Allick Emil"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67376601880885,
+          41.97186370707255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9,
+        "Type": "Retail",
+        "Address": "1401 N Street SW",
+        "Name": "Allick Ollie S"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67322711151526,
+          41.964097812602745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "Type": "Retail",
+        "Address": "1446 1st Avenue E",
+        "Name": "Ann's Cupboard"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65283839484346,
+          41.988165973813274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "Type": "Retail",
+        "Address": "2324 J Street SW",
+        "Name": "Aossey Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66753720821157,
+          41.95520202254585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "Type": "Retail",
+        "Address": "2228 Bowling Street SW",
+        "Name": "Aossey Wm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6579142299829,
+          41.95648215650332
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13,
+        "Type": "Retail",
+        "Address": "1106 15th Avenue SW",
+        "Name": "Avondale Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68392954697751,
+          41.963091288586156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 14,
+        "Type": "Retail",
+        "Address": "1000 10th Street SW",
+        "Name": "Bahls Arth"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68298875569985,
+          41.966502053564405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 15,
+        "Type": "Retail",
+        "Address": "519 1st Avenue SW",
+        "Name": "Baumgartner Floyd E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67867226159895,
+          41.97431166464859
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 16,
+        "Type": "Retail",
+        "Address": "829 5th Street SE",
+        "Name": "Beck's Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6588533375295,
+          41.97397149953092
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 17,
+        "Type": "Retail",
+        "Address": "529 8th Street SE",
+        "Name": "Berry Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65826378729822,
+          41.978489318363465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 18,
+        "Type": "Retail",
+        "Address": "601 15th Avenue SW",
+        "Name": "Blaha Louis"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67732989563339,
+          41.96267467808129
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 19,
+        "Type": "Retail",
+        "Address": "727 1st Street SW",
+        "Name": "Boalbey's Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66880003283826,
+          41.97022240662189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 20,
+        "Type": "Retail",
+        "Address": "1006 2nd Street SW",
+        "Name": "Briles Albert F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6690655943766,
+          41.96731881126223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 21,
+        "Type": "Retail",
+        "Address": "1509 1st Avenue E",
+        "Name": "Buehlers Markets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65170820772443,
+          41.988233082645436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 22,
+        "Type": "Retail",
+        "Address": "102 1st Street SE",
+        "Name": "Buehlers Markets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66937646425421,
+          41.9779227208869
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 23,
+        "Type": "Retail",
+        "Address": "719 8th Avenue SE",
+        "Name": "Burgess Jas F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65626484525568,
+          41.976211637998134
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 24,
+        "Type": "Retail",
+        "Address": "1021 E Avenue NW",
+        "Name": "Burt's Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68661003248984,
+          41.977837476827574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 25,
+        "Type": "Retail",
+        "Address": "2220 C Street SW",
+        "Name": "C & L Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65150777985248,
+          41.958150368182004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 26,
+        "Type": "Retail",
+        "Address": "1801 Johnson Avenue NW",
+        "Name": "Cambridge Clover Farm Store"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.69696492951543,
+          41.97425859974094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 27,
+        "Type": "Retail",
+        "Address": "1400 3rd Street SE",
+        "Name": "Carl's Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65654574796753,
+          41.96903560360041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 28,
+        "Type": "Retail",
+        "Address": "1600 E Avenue NE",
+        "Name": "Central Park Grocery and Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65457730556992,
+          41.99378456872551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 29,
+        "Type": "Retail",
+        "Address": "901 11th Street NE",
+        "Name": "Chadima Frank J"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66634139632251,
+          41.99618671112233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 30,
+        "Type": "Retail",
+        "Address": "215 15th Street NW",
+        "Name": "Chandler Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.69154653921699,
+          41.97244462812261
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 31,
+        "Type": "Retail",
+        "Address": "603 8th Avenue SE",
+        "Name": "Charlie's Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65776376683603,
+          41.97539285967597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 32,
+        "Type": "Retail",
+        "Address": "1327 1st Avenue E",
+        "Name": "College Fruit Store"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65442458788934,
+          41.986640986976745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 33,
+        "Type": "Retail",
+        "Address": "111 13th Street SE",
+        "Name": "College Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65530005424864,
+          41.98577216851798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 34,
+        "Type": "Retail",
+        "Address": "1600 32nd Street NE",
+        "Name": "Combs Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65976552458208,
+          42.01071235404755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 35,
+        "Type": "Retail",
+        "Address": "1001 14th Avenue SE",
+        "Name": "Community Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65147032405775,
+          41.972019897963904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 36,
+        "Type": "Retail",
+        "Address": "109 5th Avenue SW",
+        "Name": "Corsello Anthony J"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67105340697799,
+          41.97247240458196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 37,
+        "Type": "Retail",
+        "Address": "2700 1st Ave E",
+        "Name": "Country Club Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.63505903507574,
+          42.00353376224397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 38,
+        "Type": "Retail",
+        "Address": "1700 4th Avenue SE",
+        "Name": "D & B Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.64636822209707,
+          41.98369802599223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 39,
+        "Type": "Retail",
+        "Address": "923 F Avenue NW",
+        "Name": "David Saml J"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6858722141606,
+          41.97886099907132
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 40,
+        "Type": "Retail",
+        "Address": "901 Oakland Road NE",
+        "Name": "Daniels Park Foods"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65991649968731,
+          41.99581327567393
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 41,
+        "Type": "Retail",
+        "Address": "124 3rd Avenue SW",
+        "Name": "Dicus Meat Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67285213321267,
+          41.974501142740024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 42,
+        "Type": "Retail",
+        "Address": "1532 Ellis Boulevard",
+        "Name": "Dlask Food Shop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68242739396106,
+          41.98851844406464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 43,
+        "Type": "Retail",
+        "Address": "527 3rd Avenue SW",
+        "Name": "Don's Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67785274931322,
+          41.972383894273584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 44,
+        "Type": "Retail",
+        "Address": "1917 Mt. Vernon Road SE",
+        "Name": "Drapela Leon L"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.64178063257094,
+          41.97700681605879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 45,
+        "Type": "Retail",
+        "Address": "216 13th Street NW",
+        "Name": "Dulin Jesse E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68952606088548,
+          41.97263678222113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 46,
+        "Type": "Retail",
+        "Address": "523 3rd Avenue SE",
+        "Name": "Duster's Super Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66270720373343,
+          41.97916387318138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 47,
+        "Type": "Retail",
+        "Address": "1725 Center Point Road NE",
+        "Name": "Eicherly Food Shop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66000429365494,
+          42.00649707613271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 48,
+        "Type": "Retail",
+        "Address": "700 E Avenue NW",
+        "Name": "Ellis Boulevard Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68215898663115,
+          41.97815447076782
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 49,
+        "Type": "Retail",
+        "Address": "601 5th Avenue SE",
+        "Name": "Farah Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66038734496473,
+          41.97785305368898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 50,
+        "Type": "Retail",
+        "Address": "956 Center Point Road NE",
+        "Name": "Fauchier's Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66240716761241,
+          41.99740162980503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 51,
+        "Type": "Retail",
+        "Address": "628 5th Avenue SE",
+        "Name": "Fifth Avenue Grocery & Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65996613943277,
+          41.97851603047382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 52,
+        "Type": "Retail",
+        "Address": "1201 5th Street SE",
+        "Name": "Fifth Street Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65556726294608,
+          41.971558090999714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 53,
+        "Type": "Retail",
+        "Address": "428 1st Street SW",
+        "Name": "First Street Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67102377702028,
+          41.97284317988317
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 54,
+        "Type": "Retail",
+        "Address": "1202 1st Street NW",
+        "Name": "Fladiy Adolph"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67599369663839,
+          41.98383494501518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 55,
+        "Type": "Retail",
+        "Address": "866 5th Avenue SE",
+        "Name": "Food Center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65669053633225,
+          41.980424189927284
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 56,
+        "Type": "Retail",
+        "Address": "324 A Avenue NW",
+        "Name": "Forbes Walter"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67747338464164,
+          41.976390535972385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 57,
+        "Type": "Retail",
+        "Address": "819 3rd Avenue SW",
+        "Name": "G & H Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68129700833481,
+          41.971082093703146
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 58,
+        "Type": "Retail",
+        "Address": "4550 Mt. Vernon Road SE",
+        "Name": "G & O Sales House"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.59851096138811,
+          41.97699890612811
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 59,
+        "Type": "Retail",
+        "Address": "1021 5th Street NW",
+        "Name": "Patrick H Gallagher"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67940964622362,
+          41.98224904437521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 60,
+        "Type": "Retail",
+        "Address": "828 A Avenue NE",
+        "Name": "Goldstein Harry"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66242609851216,
+          41.983981485479475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 61,
+        "Type": "Retail",
+        "Address": "2011 Linn Boulevard SE",
+        "Name": "Graham Bert N"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.63175581990869,
+          41.99258349696347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 62,
+        "Type": "Retail",
+        "Address": "1001 6th Street SE",
+        "Name": "Milo Grubhoffer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65655991673941,
+          41.97345642501546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 63,
+        "Type": "Retail",
+        "Address": "928 3rd Street SE",
+        "Name": "Gureno Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66017857921652,
+          41.972404351476584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 64,
+        "Type": "Retail",
+        "Address": "1100 7th Street SE",
+        "Name": "Haddy Andrew"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65427309490589,
+          41.973549032955674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 65,
+        "Type": "Retail",
+        "Address": "600 B Avenue NE",
+        "Name": "Haddy Thos G"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66588982545402,
+          41.98316748594973
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 66,
+        "Type": "Retail",
+        "Address": "76 16th Avenue SE",
+        "Name": "Harold's Food Store"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66123343894036,
+          41.96477849566282
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 67,
+        "Type": "Retail",
+        "Address": "1600 4th Avenue SE",
+        "Name": "Hladky's Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6476693054576,
+          41.983749248775126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 68,
+        "Type": "Retail",
+        "Address": "3209 1st Avenue E",
+        "Name": "Homsey's Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.63465428981863,
+          42.010129170061546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 69,
+        "Type": "Retail",
+        "Address": "1626 5th Avenue SE",
+        "Name": "Idlewild Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.64690043037585,
+          41.98272454021901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 70,
+        "Type": "Retail",
+        "Address": "511 M Avenue NW",
+        "Name": "Igram & Son"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68018530712452,
+          41.98663512050258
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 71,
+        "Type": "Retail",
+        "Address": "820 6th Street SW",
+        "Name": "Ingram Hassen K"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67751156019034,
+          41.96796096191173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 72,
+        "Type": "Retail",
+        "Address": "1104 J Avenue NW",
+        "Name": "J Avenue Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68731641792135,
+          41.98294062849391
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 73,
+        "Type": "Retail",
+        "Address": "1301 K Street SW",
+        "Name": "Jensen J Henry"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66842108696346,
+          41.96475725647355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 74,
+        "Type": "Retail",
+        "Address": "1035 2nd Avenue SE",
+        "Name": "Kacere Food Market No 1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65766812923061,
+          41.983390172457334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 75,
+        "Type": "Retail",
+        "Address": "1043 3rd Avenue SE",
+        "Name": "Kacere Food Market No 2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65636630384883,
+          41.98274915865795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 76,
+        "Type": "Retail",
+        "Address": "1500 J Street SW",
+        "Name": "Kadler Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66749710336373,
+          41.96251044093373
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 77,
+        "Type": "Retail",
+        "Address": "835 Center Point Road NE",
+        "Name": "Kalell's Grocery & Mkt"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66277030719974,
+          41.993915763148415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 78,
+        "Type": "Retail",
+        "Address": "3334 1st Avenue E",
+        "Name": "Kenmore Food Shop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.63540557410889,
+          42.01203147278323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 79,
+        "Type": "Retail",
+        "Address": "1100 19th Avenue SW",
+        "Name": "Kenney's Food Store"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68379418711815,
+          41.959972314515646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 80,
+        "Type": "Retail",
+        "Address": "1516 Mt. Vernon Road SE",
+        "Name": "Knowles Edw B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.64965604202209,
+          41.97757827847675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 81,
+        "Type": "Retail",
+        "Address": "1000 7th Street SE",
+        "Name": "Koury Michl J"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65512151552937,
+          41.97434318725932
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 82,
+        "Type": "Retail",
+        "Address": "930 9th Street SE",
+        "Name": "Krejci Wm W"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65309470060103,
+          41.975874159084185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 83,
+        "Type": "Retail",
+        "Address": "1209 1st Avenue E",
+        "Name": "Lazio Jos"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65746991985954,
+          41.984857395378306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 84,
+        "Type": "Retail",
+        "Address": "2251 Blakely Boulevard SE",
+        "Name": "Mac's Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.63379041456304,
+          41.956718270620776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 85,
+        "Type": "Retail",
+        "Address": "1229 J Avenue NE",
+        "Name": "McHugh Bros Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66287865967736,
+          41.999486312063226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 86,
+        "Type": "Retail",
+        "Address": "1211 - 13 4th Avenue SE",
+        "Name": "McKinley Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65476252323555,
+          41.9824027913739
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 87,
+        "Type": "Retail",
+        "Address": "402 12th Street SE",
+        "Name": "Meatall Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65499860701048,
+          41.98233641900758
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 88,
+        "Type": "Retail",
+        "Address": "1201 6th Avenue SE",
+        "Name": "Meis H A Food Shop"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65307664294536,
+          41.98082333528032
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 89,
+        "Type": "Retail",
+        "Address": "1734 B Avenue NW",
+        "Name": "Meyer Herbert G"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.69631614228183,
+          41.97522276069214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 90,
+        "Type": "Retail",
+        "Address": "2300 Johnson Avenue NW",
+        "Name": "Mineck's Foods"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.70498793466349,
+          41.974759977220884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 91,
+        "Type": "Retail",
+        "Address": "837 3rd Avenue SW",
+        "Name": "Modern Food No 2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68181749611165,
+          41.97090692815608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 92,
+        "Type": "Retail",
+        "Address": "98 16th Avenue SW",
+        "Name": "Monarch Foods"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66166494309712,
+          41.96432175307828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 93,
+        "Type": "Retail",
+        "Address": "719 3rd Street SW",
+        "Name": "Moses Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67146376676853,
+          41.96950418200196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 94,
+        "Type": "Retail",
+        "Address": "700 8th Street SE",
+        "Name": "Moses Wm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65624177566225,
+          41.977211002422344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 95,
+        "Type": "Retail",
+        "Address": "1066 Center Point Road NE",
+        "Name": "Murray Hassan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66249486740197,
+          41.9994807223588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 96,
+        "Type": "Retail",
+        "Address": "328 8th Avenue SW",
+        "Name": "Nassif Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67218336413232,
+          41.96894930550668
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 97,
+        "Type": "Retail",
+        "Address": "1729 Ellis Boulevard NW",
+        "Name": "Nelson Ann Mrs"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6819641206312,
+          41.99237118433284
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 98,
+        "Type": "Retail",
+        "Address": "3201 1st Avenue E",
+        "Name": "Nelson's Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.63466377105622,
+          42.0099311921232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 99,
+        "Type": "Retail",
+        "Address": "1512 Mt. Vernon Road SE",
+        "Name": "Nemer Eli T"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6498591835422,
+          41.97759407107622
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 100,
+        "Type": "Retail",
+        "Address": "829 9th Street SE",
+        "Name": "Ninth Street Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65472978888045,
+          41.97693156482941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 101,
+        "Type": null,
+        "Address": "329 1st Street SW",
+        "Name": "Nite Owl Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67138322149147,
+          41.974251415278125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 102,
+        "Type": "Retail",
+        "Address": "314 Center Point Road NE",
+        "Name": "O'Donnel Omer J"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65719494453487,
+          41.98809290773845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 103,
+        "Type": "Retail",
+        "Address": "935 16th Avenue SE",
+        "Name": "Oujiri Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65110552857175,
+          41.97049549120272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 104,
+        "Type": null,
+        "Address": "924 1st Avenue W",
+        "Name": "Palumbo Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68429961785607,
+          41.97286566207068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 105,
+        "Type": "Retail",
+        "Address": "3401 Mt. Vernon Road SE",
+        "Name": "Palumbo Mike Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.61814272955421,
+          41.97658649349888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 106,
+        "Type": "Retail",
+        "Address": "801 3rd Street SW",
+        "Name": "Palumbo's Food Store"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67111915891662,
+          41.96894919318424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 107,
+        "Type": "Retail",
+        "Address": "1000 2nd Ave SE",
+        "Name": "Peoples Foodway"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65879166433292,
+          41.983181069105214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 108,
+        "Type": "Retail",
+        "Address": "1010 2nd Avenue SW",
+        "Name": "Plotz Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68452287615396,
+          41.97151273840853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 109,
+        "Type": null,
+        "Address": "1403 Mt. Vernon Road SE",
+        "Name": "Plotz Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6517003269141,
+          41.97749785331497
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 110,
+        "Type": "Retail",
+        "Address": "864 5th Avenue SE",
+        "Name": "Polehna's Markets (No 2)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65697734177753,
+          41.98026834207331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 111,
+        "Type": "Retail",
+        "Address": "1449 B Avenue NE",
+        "Name": "Polk School Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65407200057506,
+          41.9896248973083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 112,
+        "Type": "Retail",
+        "Address": "643 10th Street SE",
+        "Name": "Pusateri Frank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65562312944773,
+          41.97930365652263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 113,
+        "Type": "Retail",
+        "Address": "511 4th Avenue SE",
+        "Name": "Pusateri Green Square Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66222043163987,
+          41.978181584246315
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 114,
+        "Type": "Retail",
+        "Address": "1111 2nd Avenue SW",
+        "Name": "Quality Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68531985207568,
+          41.97093482186629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 115,
+        "Type": "Retail",
+        "Address": "1113 C Avenue NW",
+        "Name": "Roosevelt School Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68757568807551,
+          41.975782005339155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 116,
+        "Type": "Retail",
+        "Address": "1127 3rd Street SE",
+        "Name": "Reilly's Superite"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65842531814756,
+          41.97022026521307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 117,
+        "Type": "Retail",
+        "Address": "1401 K Street SW",
+        "Name": "Rinderknechts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66845360930978,
+          41.96374608642605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 118,
+        "Type": "Retail",
+        "Address": "1059 17th Street NE",
+        "Name": "Rstom's Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65453985318292,
+          41.99907344093928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 119,
+        "Type": "Retail",
+        "Address": "331 E Avenue NW",
+        "Name": "Schlass Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67823265755511,
+          41.97776403162578
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 120,
+        "Type": "Retail",
+        "Address": "316 1st Avenue W",
+        "Name": "Schultz Food Store"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6764053292179,
+          41.975738700494524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 121,
+        "Type": "Retail",
+        "Address": "700 2nd Street SW",
+        "Name": "Scolaro Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67090856870712,
+          41.97025764882951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 122,
+        "Type": "Retail",
+        "Address": "138 F Avenue NW",
+        "Name": "Scolaro's Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67596578535662,
+          41.97912941724624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 123,
+        "Type": "Retail",
+        "Address": "2900 1st Avenue E",
+        "Name": "Scolaro Fred A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.63512915966581,
+          42.00626440053851
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 124,
+        "Type": "Retail",
+        "Address": "830 18th Avenue SW",
+        "Name": "Scroggins Louis W"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68094745051137,
+          41.96097960152751
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 125,
+        "Type": "Retail",
+        "Address": "1407 15th Street SE",
+        "Name": "Scurlock Geo S"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.64920566754,
+          41.97172387420091
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 126,
+        "Type": "Retail",
+        "Address": "1111 Ellis Boulevard NW",
+        "Name": "Seeley Geo E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68186173732906,
+          41.98332688331081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 127,
+        "Type": "Retail",
+        "Address": "401 8th Avenue SW",
+        "Name": "Shadid Frank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67489562739574,
+          41.96819684355281
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 128,
+        "Type": "Retail",
+        "Address": "1332 Ellis Boulevard NW",
+        "Name": "Shadid's Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6823319937632,
+          41.98635332343232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 129,
+        "Type": "Retail",
+        "Address": "1436 L Street SW",
+        "Name": "Sheronick Aleck K"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67172606628864,
+          41.962810292745594
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 130,
+        "Type": "Retail",
+        "Address": "803 Ellis Boulevard NW",
+        "Name": "Sheronick Sine J"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68186958622172,
+          41.98025221868507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 131,
+        "Type": "Retail",
+        "Address": "700 6th Street SE",
+        "Name": "Sixth Street Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65870393376409,
+          41.976142439816705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 132,
+        "Type": "Retail",
+        "Address": "1135 Ellis Boulevard NW",
+        "Name": "Skaff Paul E"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68189229685015,
+          41.983943471760675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 133,
+        "Type": "Retail",
+        "Address": "612 A Avenue NW",
+        "Name": "Skinrood Alf N"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68083832158094,
+          41.97526226160884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 134,
+        "Type": "Retail",
+        "Address": "2704 Mt. Vernon Road SE",
+        "Name": "Slaman Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.62788635223413,
+          41.97669530549559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 135,
+        "Type": "Retail",
+        "Address": "1558 B Avenue NE",
+        "Name": "Sramek Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65232149786782,
+          41.991035093656976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 136,
+        "Type": "Retail",
+        "Address": "1831 J Street SW",
+        "Name": "Sramek's Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66704318571311,
+          41.95974440891708
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 137,
+        "Type": "Retail",
+        "Address": "510 K Avenue NW",
+        "Name": "Stempfle Gilbert J"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68010917506106,
+          41.98422315518413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 138,
+        "Type": "Retail",
+        "Address": "304-06 F Avenue NW",
+        "Name": "Sterling Grocery Store"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67769887337987,
+          41.97912845925033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 139,
+        "Type": "Retail",
+        "Address": "629 2nd Avenue SW",
+        "Name": "Stoddard Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6798333447383,
+          41.972802124793965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 140,
+        "Type": null,
+        "Address": "1300 G Avenue NE",
+        "Name": "Stodol's Food Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66213017578748,
+          41.99291722628592
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 141,
+        "Type": "Retail",
+        "Address": "1001 11th Street NE",
+        "Name": "Stratton Claude L"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66647417605742,
+          41.997779811494986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 142,
+        "Type": "Retail",
+        "Address": "65 16th Avenue SW",
+        "Name": "Stusak & Co"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66051797444754,
+          41.9650373687999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 143,
+        "Type": "Retail",
+        "Address": "901 9th Street SW",
+        "Name": "Subotnik Abe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68101213694598,
+          41.96742112389941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 144,
+        "Type": "Retail",
+        "Address": "2405 Mt. Vernon Road SE",
+        "Name": "Sun Mart Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.63292166936252,
+          41.97661529764841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 145,
+        "Type": "Retail",
+        "Address": "4600 Mt. Vernon Road SE",
+        "Name": "Sunny Crest Grocery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.59621690285536,
+          41.97708303939172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 146,
+        "Type": "Retail",
+        "Address": "1201 4th Avenue SE",
+        "Name": "Thrifty Food Store"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65713506860939,
+          41.97063162155751
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 147,
+        "Type": "Retail",
+        "Address": "1906 Mt. Vernon Road SE",
+        "Name": "Town & Country Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.64236845828142,
+          41.97739040682339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 148,
+        "Type": "Retail",
+        "Address": "1100 6th Street NW",
+        "Name": "Trumpold Ernest B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68101673089441,
+          41.982962473770755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 149,
+        "Type": "Retail",
+        "Address": "1128 8th Street SW",
+        "Name": "Tyler School Grocery & Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68005897930064,
+          41.96592165137248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 150,
+        "Type": "Retail",
+        "Address": "1223 3rd Street SE",
+        "Name": "Vondracek's Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65882103749107,
+          41.96883774648225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 151,
+        "Type": null,
+        "Address": "74 16th Avenue SW",
+        "Name": "Vondracek's Market"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6611613239147,
+          41.964874163718505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 152,
+        "Type": "Retail",
+        "Address": "1134 9th Street SE",
+        "Name": "Wehby Geo L"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.65130879139346,
+          41.97406082104202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 153,
+        "Type": "Retail",
+        "Address": "1005 3rd Avenue SW",
+        "Name": "West Sun Mart Corp"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.68409407436047,
+          41.97053642129405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 154,
+        "Type": "Retail",
+        "Address": "1028 12th Avenue SE",
+        "Name": "Zachar Bros"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.64989233329511,
+          41.973952020079345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 155,
+        "Type": "Wholesale",
+        "Address": "600 1st Street SE",
+        "Name": "Blaul's John Sons Co The"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6651558900609,
+          41.973840049858374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 156,
+        "Type": "Wholesale",
+        "Address": "501 3rd Street SE",
+        "Name": "Nash Finch Co"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66409994981532,
+          41.975767263051246
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 157,
+        "Type": "Wholesale",
+        "Address": "508 1st Street SE",
+        "Name": "Western Grocer Div of Consolidated Grocers Corp"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66590346112645,
+          41.97456563853945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 158,
+        "Type": "Wholesale",
+        "Address": "305 2nd Street SE",
+        "Name": "Witwer Grocer Co"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66691863131739,
+          41.97679222305277
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 159,
+        "Type": "Wholesale",
+        "Address": "921 3rd Street SE",
+        "Name": "Witwer Grocer Co"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66057675040261,
+          41.9723257686314
+        ]
+      }
+    }
+  ]
+}
