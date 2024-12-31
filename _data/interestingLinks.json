@@ -736,5 +736,69 @@
       "Programming",
       "Art"
     ]
+  },
+  {
+    "title": "Oimo's Works",
+    "link": "https://oimo.io/works",
+    "categories": [
+      "Programming",
+      "Art"
+    ]
+  },
+  {
+    "title": "Manx Docs",
+    "link": "https://manx-docs.org",
+    "categories": [
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Tokyo Digital Twin",
+    "link": "https://info.tokyo-digitaltwin.metro.tokyo.lg.jp",
+    "categories": [
+      "Graphics"
+    ]
+  },
+  {
+    "title": "IMG_0001",
+    "link": "https://walzr.com/IMG_0001/",
+    "categories": [
+      "Programming",
+      "Art"
+    ]
+  },
+  {
+    "title": "Recreating UIs on the Web",
+    "link": "https://news.ycombinator.com/item?id=42060961",
+    "categories": [
+      "Programming",
+      "Graphics",
+      "Art"
+    ]
+  },
+  {
+    "title": "Stock 360° Panoramic Images",
+    "link": "https://www.360cities.net",
+    "categories": [
+      "Graphics",
+      "Art"
+    ]
+  },
+  {
+    "title": "QuickBMS Generic Files Extractor",
+    "link": "https://aluigi.altervista.org/quickbms.htm",
+    "categories": [
+      "Programming",
+      "Games",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Oasis Model (AI Minecraft)",
+    "link": "https://oasis-model.github.io",
+    "categories": [
+      "AI",
+      "Games"
+    ]
   }
 ]
