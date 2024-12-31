@@ -2551,6 +2551,54 @@
           41.9723257686314
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 160,
+        "Type": "Retail",
+        "Address": "1552-56 1st Avenue NE",
+        "Name": "Me Too"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6510986473896,
+          41.989248593309895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 161,
+        "Type": "Retail",
+        "Address": "206 3rd Avenue SE",
+        "Name": "Me Too"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66675304084714,
+          41.97735216981256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 162,
+        "Type": "Retail",
+        "Address": "59 16th Avenue SW",
+        "Name": "Me Too"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.66045954592268,
+          41.96511260814926
+        ]
+      }
     }
   ]
 }
