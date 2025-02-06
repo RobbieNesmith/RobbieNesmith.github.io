@@ -800,5 +800,53 @@
       "AI",
       "Games"
     ]
+  },
+  {
+    "title": "Linux From Scratch",
+    "link": "https://www.linuxfromscratch.org/",
+    "categories": [
+      "Learning",
+      "Programming"
+    ]
+  },
+  {
+    "title": "Video Game History Foundation",
+    "link": "https://gamehistory.org",
+    "categories": [
+      "Games",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Samplette Crate Digging",
+    "link": "https://samplette.io",
+    "categories": [
+      "Music"
+    ]
+  },
+  {
+    "title": "Gamedev Link Aggregator",
+    "link": "https://gamedev.city",
+    "categories": [
+      "Games",
+      "Programming"
+    ]
+  },
+  {
+    "title": "IBM Files",
+    "link": "http://ibmfiles.com",
+    "categories": [
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "The Theory and Technique of Electronic Music",
+    "link": "https://msp.ucsd.edu/techniques.htm",
+    "categories": [
+      "Music",
+      "Math",
+      "Programming",
+      "Learning"
+    ]
   }
 ]
