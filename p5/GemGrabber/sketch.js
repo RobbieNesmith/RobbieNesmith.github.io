@@ -25,6 +25,17 @@ let grabSounds = [];
 let missSounds = [];
 let jawsOpenSounds = [];
 
+let gemSprites;
+let gemColors = [
+	"#fc92c0",
+	"#f25a46",
+	"#fcad37",
+	"#fced62",
+	"#6fe84a",
+	"#64b8fc",
+	"#ac3cf2",
+	];
+
 function playSoundFromArray(soundArray, pan) {
 	const sound = soundArray[Math.floor(Math.random() * soundArray.length)];
 	sound.pan(pan);
@@ -66,12 +77,15 @@ function preload() {
 	retractSounds.push(loadSound("assets/sounds/RetractLoop.wav"));
 	jawsOpenSounds.push(loadSound("assets/sounds/JawsOpen1.wav"));
 	jawsOpenSounds.push(loadSound("assets/sounds/JawsOpen2.wav"));
+
+	gemSprites = loadImage("assets/images/GemGrabberGems.png");
 }
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	scaleContent();
 	generateGems(numGems);
+	imageMode(CENTER);
 }
 
 function draw() {
@@ -149,10 +163,7 @@ function renderClaw() {
 	if (holdingGem) {
 		push();
 		translate(pos.x, pos.y);
-		rotate(theta);
-		noStroke();
-		fill(127,127,0);
-		ellipse(2, 0, holdingGem.size, holdingGem.size);
+		renderGem(holdingGem, 2 * cos(theta), 2 * sin(theta));
 		pop();
 	}
 	if (extendAmount <= 0) {
@@ -167,14 +178,17 @@ function renderClaw() {
 	ellipse(pos.x, pos.y, 4, 4);
 }
 
-function renderGems() {
+function renderGem(gem, x, y) {
 	push();
-	noStroke();
-	fill(127,127, 0);
-	for (let gem of gems) {
-		ellipse(gem.x, gem.y, gem.size, gem.size);
-	}
+	tint(gem.color);
+	image(gem.sprite, x, y, gem.size * 2, gem.size * 2);
 	pop();
+}
+
+function renderGems() {
+	for (let gem of gems) {
+		renderGem(gem, gem.x, gem.y);
+	}
 }
 
 function renderCountdown() {
@@ -199,11 +213,21 @@ function getClawPosition() {
 }
 
 function generateGems(numGems) {
+	const imageWidth = gemSprites.width;
+	const imageHeight = gemSprites.height;
+	const xSpriteCount = 4;
+	const ySpriteCount = 4;
+	const xSpriteSize = imageWidth / xSpriteCount;
+	const ySpriteSize = imageHeight / ySpriteCount
 	for (let i = 0; i < numGems; i++) {
+		const spriteX = Math.floor(Math.random() * 4);
+		const spriteY = Math.floor(Math.random() * 4);
 		gems.push({
 			x: Math.random() * 150 - 75,
 			y: Math.random() * 110 + 40,
-			size: Math.random() * 4 + 4
+			size: Math.random() * 4 + 4,
+			sprite: gemSprites.get(spriteX * xSpriteSize, spriteY * ySpriteSize, xSpriteSize, ySpriteSize),
+			color: gemColors[Math.floor(Math.random() * gemColors.length)],
 		});
 	}
 }
