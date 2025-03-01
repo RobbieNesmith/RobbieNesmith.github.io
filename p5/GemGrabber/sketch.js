@@ -31,6 +31,28 @@ function playSoundFromArray(soundArray, pan) {
 	sound.play();
 }
 
+function loopSoundFromArray(soundArray, pan) {
+	const sound = soundArray[Math.floor(Math.random() * soundArray.length)];
+	sound.pan(pan);
+	sound.loop();
+}
+
+function panSoundFromArray(soundArray, pan) {
+	for (let sound of soundArray) {
+		if (sound.isLooping || sound.isPlaying) {
+			sound.pan(pan);
+		}
+	}
+}
+
+function stopSoundFromArray(soundArray) {
+	for(let sound of soundArray) {
+		if (sound.isLooping || sound.isPlaying) {
+			sound.stop();
+		}
+	}
+}
+
 function preload() {
 	clockSounds.push(loadSound("assets/sounds/Clock1.wav"));
 	clockSounds.push(loadSound("assets/sounds/Clock2.wav"));
@@ -68,9 +90,9 @@ function update(delta) {
 		elapsed -= 1000;
 	}
 	if (extendAmount > 0) {
+		const pos = getClawPosition();
 		if (extending) {
 			extendAmount += baseExtendSpeed * extendSpeed * delta / 1000;
-			const pos = getClawPosition();
 			holdingGem = gems.find(g => Math.abs(g.x - pos.x) < 5 && Math.abs(g.y - pos.y) < 5 );
 			if(pos.x < -80 || pos.y < -80 || pos.x >= 80 || pos.y >= 160 || holdingGem) {
 				if (holdingGem) {
@@ -78,6 +100,7 @@ function update(delta) {
 				} else {
 					playSoundFromArray(missSounds, pos.x / 160);
 				}
+				loopSoundFromArray(retractSounds, pos.x / 160);
 				extending = false;
 				extendSpeed = holdingGem ? 4 / holdingGem.size : 1;
 				if(holdingGem) {
@@ -86,6 +109,7 @@ function update(delta) {
 			}
 		} else {
 			extendAmount -= baseExtendSpeed * extendSpeed * delta / 1000;
+			panSoundFromArray(retractSounds, pos.x / 160);
 		}
 	} else {
 		if (holdingGem) {
@@ -93,6 +117,7 @@ function update(delta) {
 			holdingGem = null;
 			extendSpeed = 1;
 		}
+		stopSoundFromArray(retractSounds);
 		swingTimer += delta / 1000;
 	}
 	time -= delta / 1000;
