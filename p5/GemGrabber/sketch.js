@@ -25,8 +25,9 @@ let grabSounds = [];
 let missSounds = [];
 let jawsOpenSounds = [];
 
-function playSoundFromArray(soundArray) {
+function playSoundFromArray(soundArray, pan) {
 	const sound = soundArray[Math.floor(Math.random() * soundArray.length)];
+	sound.pan(pan);
 	sound.play();
 }
 
@@ -63,7 +64,7 @@ function draw() {
 function update(delta) {
 	elapsed += delta;
 	if (elapsed > 1000 && time > 1) {
-		playSoundFromArray(clockSounds);
+		playSoundFromArray(clockSounds, 0);
 		elapsed -= 1000;
 	}
 	if (extendAmount > 0) {
@@ -73,9 +74,9 @@ function update(delta) {
 			holdingGem = gems.find(g => Math.abs(g.x - pos.x) < 5 && Math.abs(g.y - pos.y) < 5 );
 			if(pos.x < -80 || pos.y < -80 || pos.x >= 80 || pos.y >= 160 || holdingGem) {
 				if (holdingGem) {
-					playSoundFromArray(grabSounds);
+					playSoundFromArray(grabSounds, pos.x / 160);
 				} else {
-					playSoundFromArray(missSounds);
+					playSoundFromArray(missSounds, pos.x / 160);
 				}
 				extending = false;
 				extendSpeed = holdingGem ? 4 / holdingGem.size : 1;
@@ -198,6 +199,6 @@ function mousePressed() {
 	if (extendAmount <= 0 && time < startingTime) {
 		extendAmount = extendSpeed;
 		extending = true;
-		playSoundFromArray(jawsOpenSounds);
+		playSoundFromArray(jawsOpenSounds, 0);
 	}
 }
