@@ -13,10 +13,37 @@ let holdingGem = null;
 const startingTime = 60;
 let score = 0;
 let time = startingTime + 3;
+let elapsed = 0;
 
 let gameOver = false;
 
 const numGems = 20;
+
+let clockSounds = [];
+let retractSounds = [];
+let grabSounds = [];
+let missSounds = [];
+let jawsOpenSounds = [];
+
+function playSoundFromArray(soundArray) {
+	const sound = soundArray[Math.floor(Math.random() * soundArray.length)];
+	sound.play();
+}
+
+function preload() {
+	clockSounds.push(loadSound("assets/sounds/Clock1.wav"));
+	clockSounds.push(loadSound("assets/sounds/Clock2.wav"));
+	clockSounds.push(loadSound("assets/sounds/Clock3.wav"));
+	clockSounds.push(loadSound("assets/sounds/Clock4.wav"));
+	grabSounds.push(loadSound("assets/sounds/Grab1.wav"));
+	grabSounds.push(loadSound("assets/sounds/Grab2.wav"));
+	grabSounds.push(loadSound("assets/sounds/Grab2.wav"));
+	missSounds.push(loadSound("assets/sounds/Miss1.wav"));
+	missSounds.push(loadSound("assets/sounds/Miss2.wav"));
+	retractSounds.push(loadSound("assets/sounds/RetractLoop.wav"));
+	jawsOpenSounds.push(loadSound("assets/sounds/JawsOpen1.wav"));
+	jawsOpenSounds.push(loadSound("assets/sounds/JawsOpen2.wav"));
+}
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -34,12 +61,22 @@ function draw() {
 }
 
 function update(delta) {
+	elapsed += delta;
+	if (elapsed > 1000 && time > 1) {
+		playSoundFromArray(clockSounds);
+		elapsed -= 1000;
+	}
 	if (extendAmount > 0) {
 		if (extending) {
 			extendAmount += baseExtendSpeed * extendSpeed * delta / 1000;
 			const pos = getClawPosition();
 			holdingGem = gems.find(g => Math.abs(g.x - pos.x) < 5 && Math.abs(g.y - pos.y) < 5 );
 			if(pos.x < -80 || pos.y < -80 || pos.x >= 80 || pos.y >= 160 || holdingGem) {
+				if (holdingGem) {
+					playSoundFromArray(grabSounds);
+				} else {
+					playSoundFromArray(missSounds);
+				}
 				extending = false;
 				extendSpeed = holdingGem ? 4 / holdingGem.size : 1;
 				if(holdingGem) {
@@ -161,5 +198,6 @@ function mousePressed() {
 	if (extendAmount <= 0 && time < startingTime) {
 		extendAmount = extendSpeed;
 		extending = true;
+		playSoundFromArray(jawsOpenSounds);
 	}
 }
