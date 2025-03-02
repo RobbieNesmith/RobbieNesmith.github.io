@@ -179,10 +179,7 @@ function renderClaw() {
 }
 
 function renderGem(gem, x, y) {
-	push();
-	tint(gem.color);
 	image(gem.sprite, x, y, gem.size * 2, gem.size * 2);
-	pop();
 }
 
 function renderGems() {
@@ -218,16 +215,28 @@ function generateGems(numGems) {
 	const xSpriteCount = 4;
 	const ySpriteCount = 4;
 	const xSpriteSize = imageWidth / xSpriteCount;
-	const ySpriteSize = imageHeight / ySpriteCount
+	const ySpriteSize = imageHeight / ySpriteCount;
 	for (let i = 0; i < numGems; i++) {
+		const overlayImage = createImage(xSpriteSize, ySpriteSize);
 		const spriteX = Math.floor(Math.random() * 4);
 		const spriteY = Math.floor(Math.random() * 4);
+		const gemSprite = gemSprites.get(spriteX * xSpriteSize, spriteY * ySpriteSize, xSpriteSize, ySpriteSize);
+		const gemColor = color(gemColors[Math.floor(Math.random() * gemColors.length)])
+		overlayImage.loadPixels();
+		gemSprite.loadPixels();
+		for (let i = 0; i < overlayImage.width * overlayImage.height; i++) {
+			overlayImage.pixels[i * 4] = red(gemColor);
+			overlayImage.pixels[i * 4 + 1] = green(gemColor);
+			overlayImage.pixels[i * 4 + 2] = blue(gemColor);
+			overlayImage.pixels[i * 4 + 3] = gemSprite.pixels[i * 4 + 3];
+		}
+		overlayImage.updatePixels();
+		gemSprite.blend(overlayImage, 0, 0, xSpriteSize, ySpriteSize, 0, 0, xSpriteSize, ySpriteSize, OVERLAY);
 		gems.push({
 			x: Math.random() * 150 - 75,
 			y: Math.random() * 110 + 40,
 			size: Math.random() * 4 + 4,
-			sprite: gemSprites.get(spriteX * xSpriteSize, spriteY * ySpriteSize, xSpriteSize, ySpriteSize),
-			color: gemColors[Math.floor(Math.random() * gemColors.length)],
+			sprite: gemSprite,
 		});
 	}
 }
