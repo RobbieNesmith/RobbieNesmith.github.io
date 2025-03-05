@@ -26,6 +26,7 @@ let missSounds = [];
 let jawsOpenSounds = [];
 
 let gemSprites;
+let gameBackground;
 let gemColors = [
 	"#fc92c0",
 	"#f25a46",
@@ -79,6 +80,7 @@ function preload() {
 	jawsOpenSounds.push(loadSound("assets/sounds/JawsOpen2.wav"));
 
 	gemSprites = loadImage("assets/images/GemGrabberGems.png");
+	gameBackground = loadImage("assets/images/Background.png");
 }
 
 function setup() {
@@ -146,6 +148,7 @@ function render() {
 	push();
 	translate(width / 2, windowY);
 	scale(windowMin / 160);
+	image(gameBackground, 0, 80, 160, 160);
 	renderClaw();
 	renderGems();
 	text(`Time: ${Math.min(60, Math.max(0, Math.floor(time)))}`, -72, 16);
