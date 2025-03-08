@@ -848,5 +848,38 @@
       "Programming",
       "Learning"
     ]
+  },
+  {
+    "title": "Audacity in Browser",
+    "link": "https://wavacity.com/",
+    "categories": [
+        "Music",
+      ]
+  },
+  {
+    "title": "Chip 8 Archive",
+    "link": "https://johnearnest.github.io/chip8Archive/",
+    "categories": [
+        "Games",
+        "Programming",
+        "RetroComputing"
+      ]
+  },
+  {
+    "title": "Planetary Computer",
+    "link": "https://planetarycomputer.microsoft.com/",
+    "categories": [
+        "Programming",
+        "Data",
+        "Geospatial"
+      ]
+  },
+{
+    "title": "Python Help Features",
+    "link": "https://www.pythonmorsels.com/help-features/",
+    "categories": [
+        "Programming",
+        "Learning"
+      ]
   }
 ]
