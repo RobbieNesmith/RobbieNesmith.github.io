@@ -67,6 +67,14 @@
   background-color: #0000a0;
 }
 
+.Data {
+  background-color: #7f007f;
+}
+
+.Geospatial {
+  background-color: #3f3f3f;
+}
+
 h1 {
   text-align: center;
   font-size: 4rem;
