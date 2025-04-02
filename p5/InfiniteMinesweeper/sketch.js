@@ -35,6 +35,8 @@ let unknownTile = null;
 let flagTile = null;
 let deadTile = null;
 
+let dead = false;
+
 let chunks = [];
 
 let backgroundGraphics = null;
@@ -52,6 +54,17 @@ function setupMines() {
   for (let mineCount = 0; mineCount < 9; mineCount++) {
     mineNumbers.push(allMinesImage.get((mineCount % 4) * IMAGE_TILE_SIZE, (1 + Math.floor(mineCount / 4)) * IMAGE_TILE_SIZE, IMAGE_TILE_SIZE, IMAGE_TILE_SIZE));
   }
+}
+
+function reset() {
+  windowX = 0;
+  windowY = 0;
+  chunks = [];
+  dead = false;
+  const gameOverModalHolder = document.getElementById("game-over-modal-holder");
+  gameOverModalHolder.style.display = "none";
+  renderBackground(backgroundGraphics);
+  drawBackground(backgroundGraphics);
 }
 
 function setup() {
@@ -96,7 +109,12 @@ function renderBackground(graphicsObject) {
       renderChunk(getChunk(col, row), windowX + mouseDragX + col * CHUNK_SIZE * RENDERED_TILE_SIZE, windowY + mouseDragY + row * CHUNK_SIZE * RENDERED_TILE_SIZE, graphicsObject);
     }
   }
-  graphicsObject.pop();
+  if (dead) {
+    graphicsObject.noStroke();
+    graphicsObject.fill(0, 0, 0, 128);
+    graphicsObject.rect(0, 0, width, height);
+    graphicsObject.pop();
+  }
 }
 
 function drawBackground(backgroundGraphics) {
@@ -112,6 +130,9 @@ function windowResized() {
 }
 
 function mousePressed() {
+  if (dead) {
+    return;
+  }
   mouseClickX = mouseX;
   mouseClickY = mouseY;
   clickTime = millis();
@@ -119,6 +140,9 @@ function mousePressed() {
 }
 
 function mouseDragged() {
+  if (dead) {
+    return;
+  }
   const dx = mouseX - mouseClickX;
   const dy = mouseY - mouseClickY;
   if (mag(dx, dy) > TOUCH_SLOP) {
@@ -134,6 +158,9 @@ function mouseDragged() {
 }
 
 function mouseReleased() {
+  if (dead) {
+    return;
+  }
   if (dragging) {
     windowX += mouseDragX;
     windowY += mouseDragY;
@@ -246,6 +273,11 @@ function revealTile(tileX, tileY) {
         }
       }
     }
+  }
+  if (tile.mine) {
+    dead = true;
+    const gameOverModalHolder = document.getElementById("game-over-modal-holder");
+    gameOverModalHolder.style.display = "flex";
   }
 }
 

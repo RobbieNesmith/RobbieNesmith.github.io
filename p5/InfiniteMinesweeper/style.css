@@ -1,0 +1,28 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(64, 64, 64);
+  overflow: hidden;
+}
+
+#game-over-modal-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: none;
+}
+
+#game-over-modal {
+  background-color: white;
+  padding: 1rem;
+}
+
+#game-over-modal h2 {
+  margin-top: 0;
+}
