@@ -3,6 +3,8 @@ const RENDERED_TILE_SIZE = 32;
 const TILE_SCALE = RENDERED_TILE_SIZE / IMAGE_TILE_SIZE;
 const CHUNK_SIZE = 16;
 const TOUCH_SLOP = 8;
+const HOLD_DELAY = 200;
+const HOLD_TIME = 500;
 const MINE_DENSITY = 0.2;
 
 STATE_BLANK = 0;
@@ -23,6 +25,8 @@ let mouseDragY = 0;
 let dragging = false;
 let windowX = 0;
 let windowY = 0;
+
+let clickTime = 0;
 
 let allMinesImage = null;
 let mineNumbers = [];
@@ -82,6 +86,7 @@ function windowResized() {
 function mousePressed() {
   mouseClickX = mouseX;
   mouseClickY = mouseY;
+  clickTime = millis();
 }
 
 function mouseDragged() {
@@ -104,7 +109,12 @@ function mouseReleased() {
   } else {
     const tileX = Math.floor((mouseX - windowX) / RENDERED_TILE_SIZE);
     const tileY = Math.floor((mouseY - windowY) / RENDERED_TILE_SIZE);
-    handleClick(tileX, tileY);
+    const now = millis();
+    if (now - clickTime > HOLD_DELAY + HOLD_TIME) {
+      handleLongClick(tileX, tileY);
+    } else {
+      handleClick(tileX, tileY);
+    }
   }
   dragging = false;
   mouseDragX = 0;
@@ -163,6 +173,17 @@ function handleClick(tileX, tileY) {
   const tile = getTile(tileX, tileY);
   if (tile.state === STATE_BLANK) {
     revealTile(tileX, tileY);
+  }
+}
+
+function handleLongClick(tileX, tileY) {
+  const tile = getTile(tileX, tileY);
+  if (tile.state === STATE_BLANK) {
+    tile.state = STATE_FLAGGED;
+  } else if (tile.state === STATE_FLAGGED) {
+    tile.state = STATE_UNKNOWN;
+  } else if (tile.state === STATE_UNKNOWN) {
+    tile.state = STATE_BLANK;
   }
 }
 
