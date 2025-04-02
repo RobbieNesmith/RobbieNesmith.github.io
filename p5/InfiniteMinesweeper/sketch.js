@@ -82,9 +82,9 @@ function draw() {
 function render(graphicsObject) {
   graphicsObject.push();
   graphicsObject.background(200);
-  const minChunkX = Math.floor(-windowX / (CHUNK_SIZE * RENDERED_TILE_SIZE));
+  const minChunkX = Math.floor((-windowX - mouseDragX) / (CHUNK_SIZE * RENDERED_TILE_SIZE));
   const maxChunkX = Math.ceil(minChunkX + width / (CHUNK_SIZE * RENDERED_TILE_SIZE) + 1);
-  const minChunkY = Math.floor(-windowY / (CHUNK_SIZE * RENDERED_TILE_SIZE));
+  const minChunkY = Math.floor((-windowY - mouseDragY) / (CHUNK_SIZE * RENDERED_TILE_SIZE));
   const maxChunkY = Math.ceil(minChunkY + height / (CHUNK_SIZE * RENDERED_TILE_SIZE) + 1);
   for (row = minChunkY; row < maxChunkY; row++) {
     for (col = minChunkX; col < maxChunkX; col++) {
