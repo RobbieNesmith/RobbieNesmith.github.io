@@ -52,10 +52,11 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   setupMines();
   noSmooth();
+  noLoop();
+  render();
 }
 
 function draw() {
-  render();
 }
 
 function render() {
@@ -75,6 +76,7 @@ function render() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  render();
 }
 
 function mousePressed() {
@@ -92,6 +94,7 @@ function mouseDragged() {
     mouseDragX = mouseX - mouseClickX;
     mouseDragY = mouseY - mouseClickY;
   }
+  render();
 }
 
 function mouseReleased() {
@@ -106,6 +109,7 @@ function mouseReleased() {
   dragging = false;
   mouseDragX = 0;
   mouseDragY = 0;
+  render();
 }
 
 function generateChunk(chunkX, chunkY, mineDensity) {
