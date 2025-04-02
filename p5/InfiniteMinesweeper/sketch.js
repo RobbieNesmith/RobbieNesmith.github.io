@@ -37,6 +37,8 @@ let deadTile = null;
 
 let chunks = [];
 
+let backgroundGraphics = null;
+
 function preload() {
   allMinesImage = loadImage("assets/images/8x8mines.png");
 }
@@ -54,33 +56,35 @@ function setupMines() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  backgroundGraphics = createGraphics(windowWidth, windowHeight);
+  backgroundGraphics.noSmooth();
   setupMines();
   noSmooth();
-  noLoop();
-  render();
+  render(backgroundGraphics);
 }
 
 function draw() {
+  image(backgroundGraphics, 0, 0);
 }
 
-function render() {
-  push();
-  background(200);
+function render(graphicsObject) {
+  graphicsObject.push();
+  graphicsObject.background(200);
   const minChunkX = Math.floor(-windowX / (CHUNK_SIZE * RENDERED_TILE_SIZE));
   const maxChunkX = Math.ceil(minChunkX + width / (CHUNK_SIZE * RENDERED_TILE_SIZE) + 1);
   const minChunkY = Math.floor(-windowY / (CHUNK_SIZE * RENDERED_TILE_SIZE));
   const maxChunkY = Math.ceil(minChunkY + height / (CHUNK_SIZE * RENDERED_TILE_SIZE) + 1);
   for (row = minChunkY; row < maxChunkY; row++) {
     for (col = minChunkX; col < maxChunkX; col++) {
-      renderChunk(getChunk(col, row), windowX + mouseDragX + col * CHUNK_SIZE * RENDERED_TILE_SIZE, windowY + mouseDragY + row * CHUNK_SIZE * RENDERED_TILE_SIZE);
+      renderChunk(getChunk(col, row), windowX + mouseDragX + col * CHUNK_SIZE * RENDERED_TILE_SIZE, windowY + mouseDragY + row * CHUNK_SIZE * RENDERED_TILE_SIZE, graphicsObject);
     }
   }
-  pop();
+  graphicsObject.pop();
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  render();
+  render(backgroundGraphics);
 }
 
 function mousePressed() {
@@ -99,7 +103,7 @@ function mouseDragged() {
     mouseDragX = mouseX - mouseClickX;
     mouseDragY = mouseY - mouseClickY;
   }
-  render();
+  render(backgroundGraphics);
 }
 
 function mouseReleased() {
@@ -119,7 +123,7 @@ function mouseReleased() {
   dragging = false;
   mouseDragX = 0;
   mouseDragY = 0;
-  render();
+  render(backgroundGraphics);
 }
 
 function generateChunk(chunkX, chunkY, mineDensity) {
@@ -137,14 +141,14 @@ function generateChunk(chunkX, chunkY, mineDensity) {
   return {x: chunkX, y: chunkY, chunk};
 }
 
-function renderChunk(chunk, x, y) {
-  push();
-  translate(x, y);
-  scale(TILE_SCALE);
+function renderChunk(chunk, x, y, graphicsObject) {
+  graphicsObject.push();
+  graphicsObject.translate(x, y);
+  graphicsObject.scale(TILE_SCALE);
   for(let row = 0; row < CHUNK_SIZE; row++) {
     for (let col = 0; col < CHUNK_SIZE; col++) {
       if (chunk === undefined) {
-        image(blankTile, row * IMAGE_TILE_SIZE, col * IMAGE_TILE_SIZE);
+        graphicsObject.image(blankTile, row * IMAGE_TILE_SIZE, col * IMAGE_TILE_SIZE);
         continue;
       }
       const tileMine = chunk.chunk[row][col].mine;
@@ -152,21 +156,21 @@ function renderChunk(chunk, x, y) {
       const tileNeighborMines = chunk.chunk[row][col].neighborMines;
 
       if (tileState === STATE_BLANK) {
-        image(blankTile, row * IMAGE_TILE_SIZE, col * IMAGE_TILE_SIZE);
+        graphicsObject.image(blankTile, row * IMAGE_TILE_SIZE, col * IMAGE_TILE_SIZE);
       } else if (tileState === STATE_REVEALED) {
         if (tileMine) {
-          image(deadTile, row * IMAGE_TILE_SIZE, col * IMAGE_TILE_SIZE);
+          graphicsObject.image(deadTile, row * IMAGE_TILE_SIZE, col * IMAGE_TILE_SIZE);
         } else if (tileNeighborMines !== undefined) {
-          image(mineNumbers[tileNeighborMines], row * IMAGE_TILE_SIZE, col * IMAGE_TILE_SIZE);
+          graphicsObject.image(mineNumbers[tileNeighborMines], row * IMAGE_TILE_SIZE, col * IMAGE_TILE_SIZE);
         }
       } else if (tileState === STATE_FLAGGED) {
-        image(flagTile, row * IMAGE_TILE_SIZE, col * IMAGE_TILE_SIZE);
+        graphicsObject.image(flagTile, row * IMAGE_TILE_SIZE, col * IMAGE_TILE_SIZE);
       } else if (tileState === STATE_UNKNOWN) {
-        image(unknownTile, row * IMAGE_TILE_SIZE, col * IMAGE_TILE_SIZE);
+        graphicsObject.image(unknownTile, row * IMAGE_TILE_SIZE, col * IMAGE_TILE_SIZE);
       }
     }
   }
-  pop();
+  graphicsObject.pop();
 }
 
 function handleClick(tileX, tileY) {
