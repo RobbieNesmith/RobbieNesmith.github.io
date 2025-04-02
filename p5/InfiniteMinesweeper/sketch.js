@@ -96,6 +96,8 @@ function render(graphicsObject) {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  backgroundGraphics = createGraphics(windowWidth, windowHeight);
+  backgroundGraphics.noSmooth();
   render(backgroundGraphics);
 }
 
