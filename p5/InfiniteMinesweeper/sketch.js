@@ -277,6 +277,34 @@ function revealTile(tileX, tileY) {
   if (tile.mine) {
     dead = true;
     const gameOverModalHolder = document.getElementById("game-over-modal-holder");
+    const uncoveredCounter = document.getElementById("uncovered-counter");
+    const markedCounter = document.getElementById("marked-counter");
+    const correctMarkedCounter = document.getElementById("correct-marked-counter");
+    const unknownCounter = document.getElementById("unknown-counter");
+    let uncoveredCount = 0;
+    let markedCount = 0;
+    let correctMarkedCount = 0;
+    let unknownCount = 0;
+    for (let chunk of chunks) {
+      for (let col of chunk.chunk) {
+        for (let tile of col) {
+          if (tile.state === STATE_REVEALED) {
+            uncoveredCount++;
+          } else if (tile.state === STATE_FLAGGED) {
+            markedCount++;
+            if (tile.mine) {
+              correctMarkedCount++;
+            }
+          } else if (tile.state === STATE_UNKNOWN) {
+            unknownCount++;
+          }
+        }
+      }
+    }
+    uncoveredCounter.innerText = uncoveredCount;
+    markedCounter.innerText = markedCount;
+    correctMarkedCounter.innerText = correctMarkedCount;
+    unknownCounter.innerText = unknownCount;
     gameOverModalHolder.style.display = "flex";
   }
 }

@@ -21,7 +21,9 @@
   <div id="game-over-modal-holder">
     <div id="game-over-modal">
       <h2>Game Over!</h2>
-      <p>You stepped on a mine after uncovering <span>X</span> tiles.</p>
+      <p>You stepped on a mine after uncovering <span id="uncovered-counter">X</span> tiles.</p>
+      <p>You flagged <span id="marked-counter">X</span> tiles as mines, <span id="correct-marked-counter">X</span> of which were correct.</p>
+      <p>You were not sure about <span id="unknown-counter">X</span> tiles.</p>
       <div>
         <button onclick="reset()">Play Again</button>
       </div>
