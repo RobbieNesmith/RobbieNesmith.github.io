@@ -65,6 +65,18 @@ function setup() {
 
 function draw() {
   image(backgroundGraphics, 0, 0);
+  if (mouseIsPressed && !dragging) {
+    const now = millis();
+    const holdTime = now - clickTime;
+    if (holdTime > HOLD_DELAY) {
+      push();
+      noFill();
+      stroke(0, 255, 0);
+      strokeWeight(4);
+      arc(mouseX, mouseY, RENDERED_TILE_SIZE, RENDERED_TILE_SIZE, 0, min((holdTime - HOLD_DELAY) / HOLD_TIME * TWO_PI, TWO_PI));
+      pop();
+    }
+  }
 }
 
 function render(graphicsObject) {
