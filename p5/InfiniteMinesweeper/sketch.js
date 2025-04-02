@@ -60,11 +60,13 @@ function setup() {
   backgroundGraphics.noSmooth();
   setupMines();
   noSmooth();
-  render(backgroundGraphics);
+  noLoop();
+  renderBackground(backgroundGraphics);
+  drawBackground(backgroundGraphics);
 }
 
 function draw() {
-  image(backgroundGraphics, 0, 0);
+  drawBackground(backgroundGraphics);
   if (mouseIsPressed && !dragging) {
     const now = millis();
     const holdTime = now - clickTime;
@@ -76,10 +78,13 @@ function draw() {
       arc(mouseX, mouseY, RENDERED_TILE_SIZE, RENDERED_TILE_SIZE, 0, min((holdTime - HOLD_DELAY) / HOLD_TIME * TWO_PI, TWO_PI));
       pop();
     }
+    if (holdTime > HOLD_DELAY + HOLD_TIME) {
+      noLoop();
+    }
   }
 }
 
-function render(graphicsObject) {
+function renderBackground(graphicsObject) {
   graphicsObject.push();
   graphicsObject.background(200);
   const minChunkX = Math.floor((-windowX - mouseDragX) / (CHUNK_SIZE * RENDERED_TILE_SIZE));
@@ -94,17 +99,23 @@ function render(graphicsObject) {
   graphicsObject.pop();
 }
 
+function drawBackground(backgroundGraphics) {
+  image(backgroundGraphics, 0, 0);
+}
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   backgroundGraphics = createGraphics(windowWidth, windowHeight);
   backgroundGraphics.noSmooth();
-  render(backgroundGraphics);
+  renderBackground(backgroundGraphics);
+  drawBackground(backgroundGraphics);
 }
 
 function mousePressed() {
   mouseClickX = mouseX;
   mouseClickY = mouseY;
   clickTime = millis();
+  loop();
 }
 
 function mouseDragged() {
@@ -116,8 +127,10 @@ function mouseDragged() {
   if (dragging) {
     mouseDragX = mouseX - mouseClickX;
     mouseDragY = mouseY - mouseClickY;
+    noLoop();
+    renderBackground(backgroundGraphics);
+    drawBackground(backgroundGraphics);
   }
-  render(backgroundGraphics);
 }
 
 function mouseReleased() {
@@ -137,7 +150,9 @@ function mouseReleased() {
   dragging = false;
   mouseDragX = 0;
   mouseDragY = 0;
-  render(backgroundGraphics);
+  renderBackground(backgroundGraphics);
+  drawBackground(backgroundGraphics);
+  noLoop();
 }
 
 function generateChunk(chunkX, chunkY, mineDensity) {
