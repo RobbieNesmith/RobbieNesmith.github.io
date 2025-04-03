@@ -3,6 +3,7 @@ body {
   margin: 0;
   background-color: rgb(64, 64, 64);
   overflow: hidden;
+  user-select: none;
 }
 
 #game-over-modal-holder {
