@@ -129,7 +129,7 @@ function windowResized() {
   drawBackground(backgroundGraphics);
 }
 
-function mousePressed() {
+function handleClickStart() {
   if (dead) {
     return;
   }
@@ -155,6 +155,16 @@ function mouseDragged() {
     renderBackground(backgroundGraphics);
     drawBackground(backgroundGraphics);
   }
+}
+
+function touchStarted() {
+  if (touches.length === 1) {
+    handleClickStart();
+  }
+}
+
+function mousePressed() {
+  handleClickStart();
 }
 
 function mouseReleased() {
