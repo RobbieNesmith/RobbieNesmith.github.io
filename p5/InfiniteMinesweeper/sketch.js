@@ -94,13 +94,17 @@ function draw() {
     if (holdTime > HOLD_DELAY) {
       push();
       noFill();
-      stroke(0, 255, 0);
+      if (holdTime > HOLD_DELAY + HOLD_TIME) {
+        stroke(0, 255, 0);
+      } else {
+        stroke(255, 255, 0);
+      }
       strokeWeight(10);
       arc(mouseX, mouseY, RENDERED_TILE_SIZE * 2, RENDERED_TILE_SIZE * 2, 0, min((holdTime - HOLD_DELAY) / HOLD_TIME * TWO_PI, TWO_PI));
       pop();
-    }
-    if (holdTime > HOLD_DELAY + HOLD_TIME) {
-      noLoop();
+      if (holdTime > HOLD_DELAY + HOLD_TIME) {
+        noLoop();
+      }
     }
   }
 }
