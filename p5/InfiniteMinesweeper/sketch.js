@@ -18,6 +18,7 @@ const tile = {
   neighborMines: undefined,
 }
 
+let clickedOnCanvas = false;
 let mouseClickX = 0;
 let mouseClickY = 0;
 let mouseDragX = 0;
@@ -54,6 +55,13 @@ function setupMines() {
   for (let mineCount = 0; mineCount < 9; mineCount++) {
     mineNumbers.push(allMinesImage.get((mineCount % 4) * IMAGE_TILE_SIZE, (1 + Math.floor(mineCount / 4)) * IMAGE_TILE_SIZE, IMAGE_TILE_SIZE, IMAGE_TILE_SIZE));
   }
+}
+
+function returnHome() {
+  windowX = 0;
+  windowY = 0;
+  renderBackground(backgroundGraphics);
+  drawBackground(backgroundGraphics);
 }
 
 function reset() {
@@ -140,6 +148,9 @@ function handleClickStart() {
 }
 
 function mouseDragged() {
+  if (!clickedOnCanvas) {
+    return;
+  }
   if (dead) {
     return;
   }
@@ -166,13 +177,21 @@ function touchStarted() {
   }
 }
 
-function mousePressed() {
+function mousePressed(event) {
+  if (event.target !== canvas) {
+    return;
+  }
+  clickedOnCanvas = true;
   if (mouseButton !== RIGHT) {
     handleClickStart();
   }
 }
 
 function mouseReleased() {
+  if (!clickedOnCanvas) {
+    return;
+  }
+  clickedOnCanvas = false;
   if (dead) {
     return;
   }

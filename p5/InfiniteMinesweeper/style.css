@@ -9,6 +9,14 @@ body {
   overflow: hidden;
 }
 
+#home-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
 #game-over-modal-holder {
   position: absolute;
   top: 0;
