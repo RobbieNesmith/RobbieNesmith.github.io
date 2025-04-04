@@ -240,10 +240,7 @@ function renderChunk(chunk, x, y, graphicsObject) {
 }
 
 function handleClick(tileX, tileY) {
-  const tile = getTile(tileX, tileY);
-  if (tile.state === STATE_BLANK) {
-    revealTile(tileX, tileY);
-  }
+  revealTile(tileX, tileY);
 }
 
 function handleLongClick(tileX, tileY) {
@@ -262,11 +259,22 @@ function revealTile(tileX, tileY) {
   const chunkY = Math.floor(tileY / CHUNK_SIZE);
   let chunk = getChunk(chunkX, chunkY);
   if (chunk === undefined) {
-    chunk = generateChunk(chunkX, chunkY, MINE_DENSITY)
+    chunk = generateChunk(chunkX, chunkY, MINE_DENSITY);
+    const subTileX = tileX - chunkX * CHUNK_SIZE;
+    const subTileY = tileY - chunkY * CHUNK_SIZE;
+    for (let col = -1; col < 2; col++) {
+      const x = subTileX + col;
+      for (let row = -1; row < 2; row++) {
+        const y = subTileY + row;
+        if (x > 0 && x < CHUNK_SIZE - 1 && y > 0 && y < CHUNK_SIZE - 1) {
+          chunk.chunk[x][y].mine = false;
+        }
+      }
+    }
     chunks.push(chunk);
   }
   const tile = getTile(tileX, tileY);
-  if (tile.state === STATE_REVEALED) {
+  if (tile.state !== STATE_BLANK) {
     return;
   }
   tile.state = STATE_REVEALED;
