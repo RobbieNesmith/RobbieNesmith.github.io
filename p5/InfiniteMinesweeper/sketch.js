@@ -175,7 +175,11 @@ function mouseDragged() {
   }
 }
 
-function touchStarted() {
+function touchStarted(event) {
+  if (event.target !== canvas) {
+    return;
+  }
+  clickedOnCanvas = true;
   if (touches.length === 1) {
     handleClickStart();
   }
