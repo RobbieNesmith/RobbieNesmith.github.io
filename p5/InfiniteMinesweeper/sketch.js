@@ -88,7 +88,7 @@ function draw() {
       noFill();
       stroke(0, 255, 0);
       strokeWeight(10);
-      arc(mouseX, mouseY, RENDERED_TILE_SIZE * 1.5, RENDERED_TILE_SIZE * 1.5, 0, min((holdTime - HOLD_DELAY) / HOLD_TIME * TWO_PI, TWO_PI));
+      arc(mouseX, mouseY, RENDERED_TILE_SIZE * 2, RENDERED_TILE_SIZE * 2, 0, min((holdTime - HOLD_DELAY) / HOLD_TIME * TWO_PI, TWO_PI));
       pop();
     }
     if (holdTime > HOLD_DELAY + HOLD_TIME) {
