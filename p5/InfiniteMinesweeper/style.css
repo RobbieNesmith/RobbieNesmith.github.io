@@ -1,9 +1,12 @@
+* {
+  user-select: none;
+}
+
 body {
   padding: 0;
   margin: 0;
   background-color: rgb(64, 64, 64);
   overflow: hidden;
-  user-select: none;
 }
 
 #game-over-modal-holder {
