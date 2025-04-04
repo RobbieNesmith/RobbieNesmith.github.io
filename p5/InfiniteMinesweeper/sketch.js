@@ -143,6 +143,9 @@ function mouseDragged() {
   if (dead) {
     return;
   }
+  if (mouseButton === RIGHT) {
+    return;
+  }
   const dx = mouseX - mouseClickX;
   const dy = mouseY - mouseClickY;
   if (mag(dx, dy) > TOUCH_SLOP) {
@@ -164,24 +167,32 @@ function touchStarted() {
 }
 
 function mousePressed() {
-  handleClickStart();
+  if (mouseButton !== RIGHT) {
+    handleClickStart();
+  }
 }
 
 function mouseReleased() {
   if (dead) {
     return;
   }
-  if (dragging) {
-    windowX += mouseDragX;
-    windowY += mouseDragY;
-  } else {
+  if (mouseButton === RIGHT) {
     const tileX = Math.floor((mouseX - windowX) / RENDERED_TILE_SIZE);
     const tileY = Math.floor((mouseY - windowY) / RENDERED_TILE_SIZE);
-    const now = millis();
-    if (now - clickTime > HOLD_DELAY + HOLD_TIME) {
-      handleLongClick(tileX, tileY);
-    } else {
-      handleClick(tileX, tileY);
+    handleLongClick(tileX, tileY);
+  } else {
+    if (dragging) {
+      windowX += mouseDragX;
+      windowY += mouseDragY;
+    } else if (mouseButton === LEFT) {
+      const tileX = Math.floor((mouseX - windowX) / RENDERED_TILE_SIZE);
+      const tileY = Math.floor((mouseY - windowY) / RENDERED_TILE_SIZE);
+      const now = millis();
+      if (now - clickTime > HOLD_DELAY + HOLD_TIME) {
+        handleLongClick(tileX, tileY);
+      } else {
+        handleClick(tileX, tileY);
+      }
     }
   }
   dragging = false;
