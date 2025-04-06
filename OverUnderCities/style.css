@@ -6,3 +6,7 @@
 .map-holder {
   display: inline-block;
 }
+
+#answer {
+  display: none;
+}
