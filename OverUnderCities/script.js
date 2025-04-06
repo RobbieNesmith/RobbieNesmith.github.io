@@ -88,27 +88,27 @@ async function setup() {
 
   if (city1Map === null) {
     city1Map = L.map("city1");
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      minZoom: 10,
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(city1Map);
   }
   city1Map
     .setMaxBounds(L.latLngBounds(L.latLng(city1Coords[0], city1Coords[1]), L.latLng(city1Coords[0], city1Coords[1])))
     .setView(city1Coords, 10);
+
   if (city2Map === null) {
      city2Map = L.map("city2");
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      minZoom: 10,
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(city2Map);
   }
   city2Map
     .setMaxBounds(L.latLngBounds(L.latLng(city2Coords[0], city2Coords[1]), L.latLng(city2Coords[0], city2Coords[1])))
     .setView(city2Coords, 10);
-
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    minZoom: 10,
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(city1Map);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    minZoom: 10,
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(city2Map);
 
   if (city1Marker === null) {
     city1Marker = L.marker(city1Coords)
@@ -134,27 +134,26 @@ function reveal() {
   rightCityText.innerText = rightCity.properties.CITY_NAME;
 
   if (answerMap === null) {
-     answerMap = L.map("answer-map")
+    answerMap = L.map("answer-map")
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(answerMap);
   }
   answerMap
     .fitBounds([city1Coords, city2Coords]);
 
   if (city1AnswerMarker === null) {
-    L.marker(city1Coords)
+    city1AnswerMarker = L.marker(city1Coords)
       .addTo(answerMap);
   } else {
     city1AnswerMarker.setLatLng(city1Coords);
   }
 
   if (city2AnswerMarker === null) {
-    L.marker(city2Coords)
+    city2AnswerMarker = L.marker(city2Coords)
       .addTo(answerMap);
   } else {
     city2AnswerMarker.setLatLng(city2Coords);
   }
-
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(answerMap);
 }
