@@ -1,0 +1,8 @@
+.city-map {
+  width: 640px;
+  height: 480px;
+}
+
+.map-holder {
+  display: inline-block;
+}
