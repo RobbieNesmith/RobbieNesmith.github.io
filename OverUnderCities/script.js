@@ -4,6 +4,14 @@ let city1 = null;
 let city2 = null;
 let city1Map = null;
 let city2Map = null;
+let city1Coords = null;
+let city2Coords = null;
+let answerMap = null;
+
+let city1Marker = null;
+let city2Marker = null;
+let city1AnswerMarker = null;
+let city2AnswerMarker = null;
 
 let worldCities = null;
 
@@ -47,6 +55,8 @@ function further(direction, cityA, cityB) {
 }
 
 async function setup() {
+  const answerHolder = document.getElementById("answer");
+  answerHolder.style.display = "none";
   direction = directions[Math.floor(Math.random() * directions.length)];
   const directionText = document.getElementById("direction");
   directionText.innerText = direction;
@@ -67,8 +77,8 @@ async function setup() {
 
   city2 = filteredCities[Math.floor(Math.random() * filteredCities.length)];
 
-  const city1Coords = [city1.geometry.coordinates[1], city1.geometry.coordinates[0]];
-  const city2Coords = [city2.geometry.coordinates[1], city2.geometry.coordinates[0]];
+  city1Coords = [city1.geometry.coordinates[1], city1.geometry.coordinates[0]];
+  city2Coords = [city2.geometry.coordinates[1], city2.geometry.coordinates[0]];
 
   const city1NameText = document.getElementById("city1-name");
   const city2NameText = document.getElementById("city2-name");
@@ -76,12 +86,19 @@ async function setup() {
   city1NameText.innerText = `${city1.properties.CITY_NAME}, ${city1.properties.ADMIN_NAME}, ${city1.properties.CNTRY_NAME}`;
   city2NameText.innerText = `${city2.properties.CITY_NAME}, ${city2.properties.ADMIN_NAME}, ${city2.properties.CNTRY_NAME}`;
 
-  city1Map = L.map("city1")
+  if (city1Map === null) {
+    city1Map = L.map("city1");
+  }
+  city1Map
     .setMaxBounds(L.latLngBounds(L.latLng(city1Coords[0], city1Coords[1]), L.latLng(city1Coords[0], city1Coords[1])))
     .setView(city1Coords, 10);
-  city2Map = L.map("city2")
+  if (city2Map === null) {
+     city2Map = L.map("city2");
+  }
+  city2Map
     .setMaxBounds(L.latLngBounds(L.latLng(city2Coords[0], city2Coords[1]), L.latLng(city2Coords[0], city2Coords[1])))
     .setView(city2Coords, 10);
+
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     minZoom: 10,
     maxZoom: 19,
@@ -92,6 +109,20 @@ async function setup() {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(city2Map);
+
+  if (city1Marker === null) {
+    city1Marker = L.marker(city1Coords)
+      .addTo(city1Map);
+  } else {
+    city1Marker.setLatLng(city1Coords);
+  }
+
+  if (city2Marker === null) {
+    city2Marker = L.marker(city2Coords)
+      .addTo(city2Map);
+  } else {
+    city2Marker.setLatLng(city2Coords);
+  }
 }
 
 function reveal() {
@@ -99,6 +130,31 @@ function reveal() {
   const answerHolder = document.getElementById("answer");
   const rightCityText = document.getElementById("right-city");
 
-  answerHolder.style.display = "block";
+  answerHolder.style.display = "flex";
   rightCityText.innerText = rightCity.properties.CITY_NAME;
+
+  if (answerMap === null) {
+     answerMap = L.map("answer-map")
+  }
+  answerMap
+    .fitBounds([city1Coords, city2Coords]);
+
+  if (city1AnswerMarker === null) {
+    L.marker(city1Coords)
+      .addTo(answerMap);
+  } else {
+    city1AnswerMarker.setLatLng(city1Coords);
+  }
+
+  if (city2AnswerMarker === null) {
+    L.marker(city2Coords)
+      .addTo(answerMap);
+  } else {
+    city2AnswerMarker.setLatLng(city2Coords);
+  }
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(answerMap);
 }

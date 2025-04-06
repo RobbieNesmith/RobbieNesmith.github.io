@@ -28,9 +28,13 @@
         <button onclick="reveal()">Pick</button>
       </div>
     </div>
-    <div id="answer">
-      The correct answer is <span id="right-city"></span>
-    </div>
   </main>
+  <div class="modal-backdrop" id="answer">
+    <div>
+      <h2>The correct answer is <span id="right-city"></span></h2>
+      <div id="answer-map" class="city-map"></div>
+      <button onclick="setup()">Play Again</button>
+    </div>
+  </div>
 </body>
 </html>
