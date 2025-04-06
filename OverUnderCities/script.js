@@ -46,13 +46,19 @@ async function setup() {
   city1NameText.innerText = `${city1.properties.CITY_NAME}, ${city1.properties.ADMIN_NAME}, ${city1.properties.CNTRY_NAME}`;
   city2NameText.innerText = `${city2.properties.CITY_NAME}, ${city2.properties.ADMIN_NAME}, ${city2.properties.CNTRY_NAME}`;
 
-  city1Map = L.map("city1").setView(city1Coords, 10);
-  city2Map = L.map("city2").setView(city2Coords, 10);
+  city1Map = L.map("city1")
+    .setMaxBounds(L.latLngBounds(L.latLng(city1Coords[0], city1Coords[1]), L.latLng(city1Coords[0], city1Coords[1])))
+    .setView(city1Coords, 10);
+  city2Map = L.map("city2")
+    .setMaxBounds(L.latLngBounds(L.latLng(city2Coords[0], city2Coords[1]), L.latLng(city2Coords[0], city2Coords[1])))
+    .setView(city2Coords, 10);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    minZoom: 10,
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(city1Map);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    minZoom: 10,
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(city2Map);
