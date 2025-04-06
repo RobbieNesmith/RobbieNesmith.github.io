@@ -1,6 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   margin: 0;
+}
+
+h1 {
+  text-align: center;
 }
 
 main {
@@ -27,6 +35,8 @@ main {
   flex-grow: 1;
   width: 100%;
   height: 0;
+  padding: 1rem;
+  padding-top: 0;
 }
 
 #answer {
