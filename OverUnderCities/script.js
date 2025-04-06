@@ -19,9 +19,6 @@ function closeLon(cityA, cityB) {
 }
 
 function further(direction, cityA, cityB) {
-  console.log(cityA);
-  console.log(cityB);
-  console.log(direction);
   const cityACoords = [cityA.geometry.coordinates[1], cityA.geometry.coordinates[0]];
   const cityBCoords = [cityB.geometry.coordinates[1], cityB.geometry.coordinates[0]];
 
