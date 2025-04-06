@@ -20,17 +20,18 @@
       <div class="map-holder">
         <h2 id="city1-name">City1 Name</h2>
         <div id="city1" class="city-map"></div>
-        <button onclick="reveal()">Pick</button>
+        <button onclick="reveal(city1)">Pick</button>
       </div>
       <div class="map-holder">
         <h2 id="city2-name">City2 Name</h2>
         <div id="city2" class="city-map"></div>
-        <button onclick="reveal()">Pick</button>
+        <button onclick="reveal(city2)">Pick</button>
       </div>
     </div>
   </main>
   <div class="modal-backdrop" id="answer">
     <div>
+      <h1 id="answer-header"></h1>
       <h2>The correct answer is <span id="right-city"></span></h2>
       <div id="answer-map" class="city-map"></div>
       <button onclick="setup()">Play Again</button>

@@ -125,13 +125,16 @@ async function setup() {
   }
 }
 
-function reveal() {
+function reveal(guessedCity) {
   const rightCity = further(direction, city1, city2);
   const answerHolder = document.getElementById("answer");
+  const headerText = document.getElementById("answer-header");
   const rightCityText = document.getElementById("right-city");
 
   answerHolder.style.display = "flex";
-  rightCityText.innerText = rightCity.properties.CITY_NAME;
+
+  headerText.innerText = guessedCity.properties.OBJECTID === rightCity.properties.OBJECTID ? "You were right!" : "You were wrong!";
+  rightCityText.innerText = `${rightCity.properties.CITY_NAME}, ${rightCity.properties.ADMIN_NAME}, ${rightCity.properties.CNTRY_NAME}`;
 
   if (answerMap === null) {
     answerMap = L.map("answer-map")
