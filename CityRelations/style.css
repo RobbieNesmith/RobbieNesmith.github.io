@@ -5,9 +5,15 @@
 body {
   height: 100vh;
   margin: 0;
+  background-color: #dde;
 }
 
 h1 {
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 0.5rem 0;
   text-align: center;
 }
 
@@ -18,7 +24,7 @@ main {
 }
 
 button {
-  margin: 0.5rem 0;
+  margin: 0.75rem 0 0 0;
   font-size: 2rem;
   border: solid #46f 2px;
   box-shadow: 0 0.5rem #24a;
@@ -51,6 +57,8 @@ button:focus {
   width: 100%;
   height: 100%;
   flex-shrink: 1;
+  border: solid #46f 2px;
+  box-shadow: 0 0.5rem #24a;
 }
 
 .map-holder {
