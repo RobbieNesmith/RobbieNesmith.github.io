@@ -17,6 +17,30 @@ main {
   height: 100%;
 }
 
+button {
+  margin: 0.5rem 0;
+  font-size: 2rem;
+  border: solid #46f 2px;
+  box-shadow: 0 0.5rem #24a;
+  background-color: #46c;
+  position: relative;
+  color: white;
+}
+
+button:hover {
+  top: -0.25rem;
+  box-shadow: 0 0.75rem #24a;
+}
+
+button:active {
+  top: 0.25rem;
+  box-shadow: 0 0.25rem #24a;
+}
+
+button:focus {
+  border: solid #88f 2px;
+}
+
 #map-arranger {
   display: flex;
   flex-direction: column;
