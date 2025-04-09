@@ -1,4 +1,5 @@
-const CLOSE_THRESHOLD = 5;
+let closeThreshold = 5;
+let dataset = "world_10k";
 
 let city1 = null;
 let city2 = null;
@@ -19,11 +20,11 @@ let direction = null;
 let directions = ["North", "South", "East", "West"];
 
 function closeLat(cityA, cityB) {
-  return Math.abs(cityA.geometry.coordinates[1] - cityB.geometry.coordinates[1]) < CLOSE_THRESHOLD;
+  return Math.abs(cityA.geometry.coordinates[1] - cityB.geometry.coordinates[1]) < closeThreshold;
 }
 
 function closeLon(cityA, cityB) {
-  return Math.abs(cityA.geometry.coordinates[0] - cityB.geometry.coordinates[0]) < CLOSE_THRESHOLD;
+  return Math.abs(cityA.geometry.coordinates[0] - cityB.geometry.coordinates[0]) < closeThreshold;
 }
 
 function further(direction, cityA, cityB) {
@@ -55,12 +56,15 @@ function further(direction, cityA, cityB) {
 }
 
 async function setup() {
+  const usp = new URLSearchParams(location.search);
+  closeThreshold = usp.get("closeThreshold");
+  dataset = usp.get("dataset");
   const answerHolder = document.getElementById("answer");
   answerHolder.style.display = "none";
   direction = directions[Math.floor(Math.random() * directions.length)];
   const directionText = document.getElementById("direction");
   directionText.innerText = direction;
-  const worldCitiesResp = await fetch("World_Cities.geojson");
+  const worldCitiesResp = await fetch(`${dataset}.geojson`);
   worldCities = await worldCitiesResp.json();
 
   const featuresList = worldCities.features;
