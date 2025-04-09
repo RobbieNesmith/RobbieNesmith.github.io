@@ -7,42 +7,47 @@ image: /img/CityRelations.png
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>City Relations</title>
-  <!-- Leaflet Stuff -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <!-- My Stuff-->
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
-</head>
-<body onload="setup();">
-  <main>
-    <h1>Which of these two cities is further <span id="direction"></span>?</h1>
-    <div id="map-arranger">
-      <div class="map-holder">
-        <h2 id="city1-name">City1 Name</h2>
-        <div id="city1" class="city-map"></div>
-        <button onclick="reveal(city1)">Pick</button>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Relations</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>City Relations</h1>
+    <p>A game where you guess the relative location of two cities.</p>
+    <p>You will be given two cities and a direction and you must pick the one that is the furthest in that direction.</p>
+    <form action="play.html">
+      <div>
+        <label>
+          Choose a dataset
+          <select name="dataset">
+            <optgroup label="Iowa">
+              <option value="iowacities">Cities in Iowa</option>
+            </optgroup>
+            <optgroup label="United States">
+              <option value="us_1k">US Cities >1k population</option>
+              <option value="us_10k">US Cities >10k population</option>
+              <option value="us_100k">US Cities >100k population</option>
+            </optgroup>
+            <optgroup label="World">
+              <option value="world_1k">World Cities >1k population</option>
+              <option value="world_10k">World Cities >10k population</option>
+              <option value="world_100k">World Cities >100k population</option>
+            </optgroup>
+          </select>
+        </label>
       </div>
-      <div class="map-holder">
-        <h2 id="city2-name">City2 Name</h2>
-        <div id="city2" class="city-map"></div>
-        <button onclick="reveal(city2)">Pick</button>
+      <div>
+        <label>Choose a distance</label>
+        <select name="degree_diff">
+          <option value="2">2 degrees (Harder)</option>
+          <option value="5" selected>5 degrees (Normal)</option>
+          <option value="10">10 degrees (Easier)</option>
+        </select>
       </div>
-    </div>
-  </main>
-  <div class="modal-backdrop" id="answer">
-    <div>
-      <h1 id="answer-header"></h1>
-      <h2>The correct answer is <span id="right-city"></span></h2>
-      <div id="answer-map" class="city-map"></div>
-      <button onclick="setup()">Play Again</button>
-    </div>
-  </div>
-</body>
+      <button type="submit">Play!</button>
+    </form>
+  </body>
 </html>
