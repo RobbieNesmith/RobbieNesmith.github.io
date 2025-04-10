@@ -23,6 +23,33 @@ main {
   height: 100%;
 }
 
+.card {
+  background-color: white;
+  max-width: 1024px;
+  min-width: 512px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.menuitem {
+  margin-bottom: 0.5rem;
+}
+
+.menuitem > label {
+  display:flex;
+}
+
+.menuitem > label > select {
+  margin-left: 1rem;
+  flex-grow: 1;
+}
+
+.centered {
+  width: 100%;
+  text-align: center;
+}
+
 button {
   margin: 0.75rem 0 0 0;
   font-size: 2rem;

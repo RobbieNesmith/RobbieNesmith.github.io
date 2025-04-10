@@ -16,39 +16,45 @@ image: /img/CityRelations.png
   </head>
   <body>
     <h1>City Relations</h1>
-    <p>A game where you guess the relative location of two cities.</p>
-    <p>You will be given two cities and a direction and you must pick the one that is the furthest in that direction.</p>
-    <p>City data is taken from simplemaps.com's <a href="https://simplemaps.com/data/world-cities">World Cities Database</a> and <a href="https://simplemaps.com/data/us-cities">US Cities Database</a>.</p>
-    <form action="play.html">
-      <div>
-        <label>
-          Choose a dataset
-          <select name="dataset">
-            <optgroup label="Iowa">
-              <option value="iowacities">Cities in Iowa</option>
-            </optgroup>
-            <optgroup label="United States">
-              <option value="us_1k">US Cities >1k population</option>
-              <option value="us_10k">US Cities >10k population</option>
-              <option value="us_100k">US Cities >100k population</option>
-            </optgroup>
-            <optgroup label="World">
-              <option value="world_1k">World Cities >1k population</option>
-              <option value="world_10k">World Cities >10k population</option>
-              <option value="world_100k">World Cities >100k population</option>
-            </optgroup>
-          </select>
-        </label>
-      </div>
-      <div>
-        <label>Choose a distance</label>
-        <select name="difficulty">
-          <option value="easy">Easy</option>
-          <option value="normal" selected>Normal</option>
-          <option value="hard">Hard</option>
-        </select>
-      </div>
-      <button type="submit">Play!</button>
-    </form>
+    <div class="card">
+      <p>A game where you guess the relative location of two cities.</p>
+      <p>You will be given two cities and a direction and you must pick the one that is the furthest in that direction.</p>
+      <p>City data is taken from simplemaps.com's <a href="https://simplemaps.com/data/world-cities">World Cities Database</a> and <a href="https://simplemaps.com/data/us-cities">US Cities Database</a>.</p>
+      <form action="play.html">
+        <div class="menuitem">
+          <label>
+            <span>Choose a dataset:</span>
+            <select name="dataset">
+              <optgroup label="Iowa">
+                <option value="iowacities">Cities in Iowa</option>
+              </optgroup>
+              <optgroup label="United States">
+                <option value="us_1k">US Cities >1k population</option>
+                <option value="us_10k">US Cities >10k population</option>
+                <option value="us_100k">US Cities >100k population</option>
+              </optgroup>
+              <optgroup label="World">
+                <option value="world_1k">World Cities >1k population</option>
+                <option value="world_10k">World Cities >10k population</option>
+                <option value="world_100k">World Cities >100k population</option>
+              </optgroup>
+            </select>
+          </label>
+        </div>
+        <div class="menuitem">
+          <label>
+            <span>Choose a difficulty:</span>
+            <select name="difficulty">
+              <option value="easy">Easy</option>
+              <option value="normal" selected>Normal</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+        </div>
+        <div class="centered">
+          <button type="submit">Play!</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
