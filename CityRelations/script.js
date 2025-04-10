@@ -55,10 +55,41 @@ function further(direction, cityA, cityB) {
   throw "Bad direction provided";
 }
 
+function getCloseThreshold(difficulty, dataset) {
+  if (dataset.startsWith("world")) {
+    if (difficulty === "easy") {
+      return 10;
+    } else if (difficulty === "normal") {
+      return 5;
+    } else {
+      return 2;
+    }
+  } else if (dataset.startsWith("us")) {
+    if (difficulty === "easy") {
+      return 5;
+    } else if (difficulty === "normal") {
+      return 2;
+    } else {
+      return 1;
+    }
+  } else {
+    if (difficulty === "easy") {
+      return 3;
+    } else if (difficulty === "normal") {
+      return 1;
+    } else {
+      return 0.5;
+    }
+  }
+}
+
 async function setup() {
   const usp = new URLSearchParams(location.search);
-  closeThreshold = usp.get("closeThreshold");
+  const difficulty = usp.get("difficulty");
   dataset = usp.get("dataset");
+
+  closeThreshold = getCloseThreshold(difficulty, dataset);
+
   const answerHolder = document.getElementById("answer");
   answerHolder.style.display = "none";
   direction = directions[Math.floor(Math.random() * directions.length)];
