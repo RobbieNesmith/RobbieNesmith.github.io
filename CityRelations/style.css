@@ -26,7 +26,6 @@ main {
 .card {
   background-color: white;
   max-width: 1024px;
-  min-width: 512px;
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
@@ -38,6 +37,15 @@ main {
 
 .menuitem > label {
   display:flex;
+}
+
+@media (max-width: 500px) {
+  .menuitem > label {
+    display: block;
+  }
+  .menuitem > label > select {
+    width: 100%;
+  }
 }
 
 .menuitem > label > select {
