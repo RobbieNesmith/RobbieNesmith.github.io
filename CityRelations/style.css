@@ -50,6 +50,7 @@ main {
   text-align: center;
 }
 
+.button,
 button {
   margin: 0.75rem 0 0 0;
   font-size: 2rem;
@@ -58,18 +59,23 @@ button {
   background-color: #46c;
   position: relative;
   color: white;
+  text-decoration: none;
+  font-family: sans-serif;
 }
 
+.button:hover,
 button:hover {
   top: -0.25rem;
   box-shadow: 0 0.75rem #24a;
 }
 
+.button:active,
 button:active {
   top: 0.25rem;
   box-shadow: 0 0.25rem #24a;
 }
 
+.button:focus,
 button:focus {
   border: solid #88f 2px;
 }
