@@ -58,6 +58,11 @@ main {
   text-align: center;
 }
 
+.play-button {
+  width: 256px;
+  max-width: 80%;
+}
+
 .button,
 button {
   margin: 0.75rem 0 0 0;
