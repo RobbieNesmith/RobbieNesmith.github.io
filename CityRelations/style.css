@@ -144,6 +144,14 @@ button:focus {
   padding-top: 0;
 }
 
+#direction-arrow {
+  display: none;
+  height: 2rem;
+  position: relative;
+  top: 0.5rem;
+  margin-left: 0.25rem;
+}
+
 #answer {
   display: none;
 }

@@ -93,8 +93,12 @@ async function setup() {
   const answerHolder = document.getElementById("answer");
   answerHolder.style.display = "none";
   direction = directions[Math.floor(Math.random() * directions.length)];
+  const directionImageSrc = `assets/img/${direction}Arrow.png`;
   const directionText = document.getElementById("direction");
+  const directionImage = document.getElementById("direction-arrow");
   directionText.innerText = direction;
+  directionImage.src = directionImageSrc;
+  directionImage.style.display = "inline";
   const worldCitiesResp = await fetch(`${dataset}.geojson`);
   worldCities = await worldCitiesResp.json();
 
