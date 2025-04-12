@@ -104,18 +104,21 @@ async function setup() {
 
   const featuresList = worldCities.features;
 
-  city1 = featuresList[Math.floor(Math.random() * featuresList.length)];
+  city1 = undefined;
+  city2 = undefined;
+  while (!city1 || !city2) {
+    city1 = featuresList[Math.floor(Math.random() * featuresList.length)];
 
-  const filteredCities = featuresList.filter(city => {
-    if (direction === "North" || direction === "South") {
-      return closeLat(city, city1);
-    } else {
-      return closeLon(city, city1);
-    }
-  });
+    const filteredCities = featuresList.filter(city => {
+      if (direction === "North" || direction === "South") {
+        return closeLat(city, city1) && !closeLon(city, city1) ;
+      } else {
+        return closeLon(city, city1) && !closeLat(city, city1);
+      }
+    });
 
-  city2 = filteredCities[Math.floor(Math.random() * filteredCities.length)];
-
+    city2 = filteredCities[Math.floor(Math.random() * filteredCities.length)];
+  }
   city1Coords = [city1.geometry.coordinates[1], city1.geometry.coordinates[0]];
   city2Coords = [city2.geometry.coordinates[1], city2.geometry.coordinates[0]];
 
