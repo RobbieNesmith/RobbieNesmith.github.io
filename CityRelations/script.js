@@ -11,8 +11,8 @@ let answerMap = null;
 
 let city1Marker = null;
 let city2Marker = null;
-let city1AnswerMarker = null;
-let city2AnswerMarker = null;
+let city1AnswerPopup = null;
+let city2AnswerPopup = null;
 
 let worldCities = null;
 
@@ -167,6 +167,32 @@ async function setup() {
   }
 }
 
+function ddToDms(dd) {
+  const sign = Math.sign(dd);
+  const absDegrees = Math.abs(dd);
+  const d = Math.floor(absDegrees);
+  const m = Math.floor((absDegrees - d) * 60);
+  const s = Math.floor(((absDegrees * 3600) % 60));
+
+  return `${sign > 0 ? "" : "-"}${d}° ${m}' ${s}"`;
+}
+
+function generateContent(cityName, thisCityCoords, otherCityCoords, direction) {
+  if (direction === "North" || direction === "South") {
+    if (thisCityCoords[0] > otherCityCoords[0]) {
+      return `${cityName} is ${ddToDms(thisCityCoords[0] - otherCityCoords[0])} North`;
+    } else {
+      return `${cityName} is ${ddToDms(otherCityCoords[0] - thisCityCoords[0])} South`;
+    }
+  } else {
+    if (thisCityCoords[1] > otherCityCoords[1]) {
+      return `${cityName} is ${ddToDms(thisCityCoords[1] - otherCityCoords[1])} East`;
+    } else {
+      return `${cityName} is ${ddToDms(otherCityCoords[1] - thisCityCoords[1])} West`;
+    }
+  }
+}
+
 function reveal(guessedCity) {
   const rightCity = further(direction, city1, city2);
   const answerHolder = document.getElementById("answer");
@@ -188,17 +214,25 @@ function reveal(guessedCity) {
   answerMap
     .fitBounds([city1Coords, city2Coords]);
 
-  if (city1AnswerMarker === null) {
-    city1AnswerMarker = L.marker(city1Coords)
+  if (city1AnswerPopup === null) {
+    city1AnswerPopup = L.popup()
+      .setLatLng(city1Coords)
+      .setContent(generateContent(city1.properties.CITY_NAME, city1Coords, city2Coords, direction))
       .addTo(answerMap);
   } else {
-    city1AnswerMarker.setLatLng(city1Coords);
+    city1AnswerPopup
+      .setLatLng(city1Coords)
+      .setContent(generateContent(city1.properties.CITY_NAME, city1Coords, city2Coords, direction));
   }
 
-  if (city2AnswerMarker === null) {
-    city2AnswerMarker = L.marker(city2Coords)
+  if (city2AnswerPopup === null) {
+    city2AnswerPopup = L.popup()
+      .setLatLng(city2Coords)
+      .setContent(generateContent(city2.properties.CITY_NAME, city2Coords, city1Coords, direction))
       .addTo(answerMap);
   } else {
-    city2AnswerMarker.setLatLng(city2Coords);
+    city2AnswerPopup
+      .setLatLng(city2Coords)
+      .setContent(generateContent(city2.properties.CITY_NAME, city2Coords, city1Coords, direction));
   }
 }
