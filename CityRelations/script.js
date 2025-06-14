@@ -19,6 +19,9 @@ let worldCities = null;
 let direction = null;
 let directions = ["North", "South", "East", "West"];
 
+let correctGuessCount = 0;
+let totalGuessCount = 0;
+
 function closeLat(cityA, cityB) {
   return Math.abs(cityA.geometry.coordinates[1] - cityB.geometry.coordinates[1]) < closeThreshold;
 }
@@ -198,10 +201,21 @@ function reveal(guessedCity) {
   const answerHolder = document.getElementById("answer");
   const headerText = document.getElementById("answer-header");
   const rightCityText = document.getElementById("right-city");
+  const guessRatioText = document.getElementById("guess-ratio");
 
   answerHolder.style.display = "flex";
 
-  headerText.innerText = guessedCity.properties.OBJECTID === rightCity.properties.OBJECTID ? "You were right!" : "You were wrong!";
+  totalGuessCount += 1;
+
+  if (guessedCity.properties.OBJECTID === rightCity.properties.OBJECTID) {
+    headerText.innerText = "You were right!";
+    correctGuessCount += 1;
+  } else {
+    headerText.innerText = "You were wrong!";
+  }
+
+  guessRatioText.innerText = `(${correctGuessCount}/${totalGuessCount} correct)`;
+
   rightCityText.innerText = `${rightCity.properties.CITY_NAME}, ${rightCity.properties.ADMIN_NAME}, ${rightCity.properties.CNTRY_NAME}`;
 
   if (answerMap === null) {

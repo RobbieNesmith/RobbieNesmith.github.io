@@ -156,6 +156,10 @@ button:focus {
   display: none;
 }
 
+#guess-ratio {
+  margin-top: 0;
+}
+
 @media (min-aspect-ratio: 1) {
   #map-arranger {
     display: flex;
