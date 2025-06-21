@@ -881,5 +881,27 @@
         "Programming",
         "Learning"
       ]
+  },
+  {
+    "title": "Building an NES Controller",
+    "link": "https://ksmith.info/projects/nes-controller/",
+    "categories": [
+      "RetroComputing",
+      "Electronics"
+    ]
+  },
+  {
+    "title": "Portable Python Interpreter",
+    "link": "https://pocketpy.dev/",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "title": "Design for 3D Printing",
+    "link": "https://blog.rahix.de/design-for-3d-printing/",
+    "categories": [
+      "Learning"
+    ]
   }
 ]
