@@ -116,7 +116,7 @@ function handleClick() {
     }
     if (state === STATE_IDLE) {
         state = STATE_CREATE;
-    } else if (state === STATE_MOVE) {
+    } else if (state === STATE_MOVE && activeNode) {
         tempNode = {
           position: createVector(mouseX, mouseY),
           weight: 20,
