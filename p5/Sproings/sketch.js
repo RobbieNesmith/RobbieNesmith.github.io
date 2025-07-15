@@ -15,6 +15,7 @@ let springs = [];
 
 let state = STATE_IDLE;
 let activeNode = null;
+let tempNode = null;
 let clickStart = null;
 
 let grabButton;
@@ -46,11 +47,11 @@ function accelerateNodes() {
       bAccel.sub(spring.b.position);
       bAccel.normalize();
       bAccel.mult(lengthDiff * spring.springStiff);
-      if (spring.a != activeNode) {
+      if (spring.a != tempNode) {
           bAccel.mult(0.5);
       }
       spring.b.velocity.add(bAccel);
-      if (spring.b != activeNode) {
+      if (spring.b != tempNode) {
           aAccel.mult(0.5);
       }
       spring.a.velocity.add(aAccel);
@@ -59,7 +60,7 @@ function accelerateNodes() {
 
 function moveNodes() {
   for (let node of nodes) {
-      if (node == activeNode) {
+      if (node == tempNode) {
           continue;
       }
       node.velocity.mult(node.damp);
@@ -87,10 +88,10 @@ function touchStarted() {
 }
 
 function mouseDragged() {
-    if (activeNode) {
+    if (tempNode) {
         if (state === STATE_MOVE) {
-            activeNode.position.x = mouseX;
-            activeNode.position.y = mouseY;
+            tempNode.position.x = mouseX;
+            tempNode.position.y = mouseY;
         }
     }
 }
@@ -115,6 +116,20 @@ function handleClick() {
     }
     if (state === STATE_IDLE) {
         state = STATE_CREATE;
+    } else if (state === STATE_MOVE) {
+        tempNode = {
+          position: createVector(mouseX, mouseY),
+          weight: 20,
+          velocity: createVector(0,0),
+          acceleration: createVector(0,0),
+          damp: 0.95,
+        };
+        springs.push({
+          a: activeNode,
+          b: tempNode,
+          springLength: 0,
+          springStiff: 1.5,
+        });
     }
 }
 
@@ -135,7 +150,7 @@ function handleRelease() {
                     a: activeNode,
                     b: node,
                     springLength: activeNode.position.dist(node.position),
-                    springStiff: 0.8,
+                    springStiff: 1.5,
                 });
             }
         }
@@ -147,6 +162,8 @@ function handleRelease() {
        }
     }
     activeNode = null;
+    springs = springs.filter(sp => sp.b != tempNode);
+    tempNode = null;
     if (state === STATE_CREATE || state === STATE_CONNECT) {
       state = STATE_IDLE;
     }
