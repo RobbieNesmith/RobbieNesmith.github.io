@@ -63,7 +63,9 @@ function moveNodes() {
           continue;
       }
       node.velocity.mult(node.damp);
-      node.position.add(node.velocity);
+      const scaledVelocity = node.velocity.copy();
+      scaledVelocity.mult(deltaTime/1000);
+      node.position.add(scaledVelocity);
   }
 }
 
@@ -124,7 +126,7 @@ function handleRelease() {
           weight: 20,
           velocity: createVector(0,0),
           acceleration: createVector(0,0),
-          damp: 0.9,
+          damp: 0.95,
         });
     } else if (state === STATE_CONNECT) {
         for (let node of nodes) {
@@ -133,7 +135,7 @@ function handleRelease() {
                     a: activeNode,
                     b: node,
                     springLength: activeNode.position.dist(node.position),
-                    springStiff: 0.2,
+                    springStiff: 0.8,
                 });
             }
         }
