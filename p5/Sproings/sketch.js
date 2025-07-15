@@ -47,11 +47,11 @@ function accelerateNodes() {
       bAccel.sub(spring.b.position);
       bAccel.normalize();
       bAccel.mult(lengthDiff * spring.springStiff);
-      if (spring.a != tempNode) {
+      if (!spring.a.pinned) {
           bAccel.mult(0.5);
       }
       spring.b.velocity.add(bAccel);
-      if (spring.b != tempNode) {
+      if (!spring.b.pinned) {
           aAccel.mult(0.5);
       }
       spring.a.velocity.add(aAccel);
@@ -60,7 +60,7 @@ function accelerateNodes() {
 
 function moveNodes() {
   for (let node of nodes) {
-      if (node == tempNode) {
+      if (node.pinned) {
           continue;
       }
       node.velocity.mult(node.damp);
@@ -123,6 +123,7 @@ function handleClick() {
           velocity: createVector(0,0),
           acceleration: createVector(0,0),
           damp: 0.95,
+          pinned: true,
         };
         springs.push({
           a: activeNode,
@@ -142,6 +143,7 @@ function handleRelease() {
           velocity: createVector(0,0),
           acceleration: createVector(0,0),
           damp: 0.95,
+          pinned: false,
         });
     } else if (state === STATE_CONNECT) {
         for (let node of nodes) {
