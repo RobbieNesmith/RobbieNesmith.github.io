@@ -147,14 +147,18 @@ function handleRelease() {
         });
     } else if (state === STATE_CONNECT) {
         for (let node of nodes) {
-            if (clickEnd.dist(node.position) < node.weight) {
-                springs.push({
-                    a: activeNode,
-                    b: node,
-                    springLength: activeNode.position.dist(node.position),
-                    springStiff: 1.5,
-                });
+          if (clickEnd.dist(node.position) < node.weight) {
+            if (node == activeNode) {
+              node.pinned = !node.pinned;
+            } else {
+              springs.push({
+                a: activeNode,
+                b: node,
+                springLength: activeNode.position.dist(node.position),
+                springStiff: 1.5,
+              });
             }
+          }
         }
     } else if (state === STATE_DELETE) {
        if (activeNode && clickEnd.dist(clickStart) < TOUCH_SLOP &&
@@ -181,9 +185,16 @@ function render() {
     if (state === STATE_CONNECT) {
       line(activeNode.position.x, activeNode.position.y, mouseX, mouseY);
     }
+    push();
     for (let node of nodes) {
+        if (node.pinned) {
+            fill(0);
+        } else {
+            fill(255);
+        }
         circle(node.position.x, node.position.y, node.weight);
     }
+    pop();
 }
 
 function setGrab() {
