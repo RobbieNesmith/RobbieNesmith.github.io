@@ -29,7 +29,42 @@ function setup() {
 }
 
 function draw() {
-	
+	accelerateNodes();
+  moveNodes();
+  render();
+}
+
+function accelerateNodes() {
+  for (let spring of springs) {
+      const springLength = spring.b.position.dist(spring.a.position);
+      const lengthDiff = springLength - spring.springLength;
+      const aAccel = spring.b.position.copy();
+      const bAccel = spring.a.position.copy();
+      aAccel.sub(spring.a.position);
+      aAccel.normalize();
+      aAccel.mult(lengthDiff * spring.springStiff);
+      bAccel.sub(spring.b.position);
+      bAccel.normalize();
+      bAccel.mult(lengthDiff * spring.springStiff);
+      if (spring.a != activeNode) {
+          bAccel.mult(0.5);
+      }
+      spring.b.velocity.add(bAccel);
+      if (spring.b != activeNode) {
+          aAccel.mult(0.5);
+      }
+      spring.a.velocity.add(aAccel);
+  }
+}
+
+function moveNodes() {
+  for (let node of nodes) {
+      if (node == activeNode) {
+          continue;
+      }
+      node.velocity.mult(node.damp);
+      node.position.add(node.velocity);
+  }
 }
 
 function windowResized() {
@@ -51,14 +86,9 @@ function touchStarted() {
 
 function mouseDragged() {
     if (activeNode) {
-        if (state === STATE_CONNECT) {
-          render();
-          line(activeNode.position.x, activeNode.position.y, mouseX, mouseY);
-        }
         if (state === STATE_MOVE) {
             activeNode.position.x = mouseX;
             activeNode.position.y = mouseY;
-            render();
         }
     }
 }
@@ -91,7 +121,10 @@ function handleRelease() {
     if (state === STATE_CREATE) {
         nodes.push({
           position: createVector(mouseX, mouseY),
-          weight: 20
+          weight: 20,
+          velocity: createVector(0,0),
+          acceleration: createVector(0,0),
+          damp: 0.9,
         });
     } else if (state === STATE_CONNECT) {
         for (let node of nodes) {
@@ -100,7 +133,7 @@ function handleRelease() {
                     a: activeNode,
                     b: node,
                     springLength: activeNode.position.dist(node.position),
-                    springStiff: 0.5
+                    springStiff: 0.2,
                 });
             }
         }
@@ -111,7 +144,6 @@ function handleRelease() {
            nodes = nodes.filter(n => n != activeNode);
        }
     }
-    render();
     activeNode = null;
     if (state === STATE_CREATE || state === STATE_CONNECT) {
       state = STATE_IDLE;
@@ -124,6 +156,9 @@ function render() {
         line(
           spring.a.position.x, spring.a.position.y,
           spring.b.position.x, spring.b.position.y);
+    }
+    if (state === STATE_CONNECT) {
+      line(activeNode.position.x, activeNode.position.y, mouseX, mouseY);
     }
     for (let node of nodes) {
         circle(node.position.x, node.position.y, node.weight);
