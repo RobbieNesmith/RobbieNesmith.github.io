@@ -17,6 +17,7 @@ let state = STATE_IDLE;
 let activeNode = null;
 let tempNode = null;
 let clickStart = null;
+let gravityVector;
 let paused = true;
 
 let grabButton;
@@ -29,6 +30,7 @@ function setup() {
 	scaleContent();
   render();
   setupGui();
+  gravityVector = createVector(0,10);
 }
 
 function draw() {
@@ -59,6 +61,9 @@ function accelerateNodes() {
           aAccel.mult(0.5);
       }
       spring.a.velocity.add(aAccel);
+  }
+  for (let node of nodes) {
+      node.velocity.add(gravityVector);
   }
 }
 
