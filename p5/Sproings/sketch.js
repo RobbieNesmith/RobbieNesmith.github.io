@@ -17,10 +17,12 @@ let state = STATE_IDLE;
 let activeNode = null;
 let tempNode = null;
 let clickStart = null;
+let paused = true;
 
 let grabButton;
 let editButton;
 let deleteButton;
+let pauseButton;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -30,8 +32,10 @@ function setup() {
 }
 
 function draw() {
-	accelerateNodes();
-  moveNodes();
+  if (!paused) {
+	  accelerateNodes();
+    moveNodes();
+  }
   render();
 }
 
@@ -209,6 +213,11 @@ function setDelete() {
     state = STATE_DELETE;
 }
 
+function playPause() {
+  paused = !paused;
+  pauseButton.elt.innerText = paused ? "Play" : "Pause";
+}
+
 function setupGui () {
   grabButton = createButton("Grab");
   grabButton.mousePressed(setGrab);
@@ -216,6 +225,8 @@ function setupGui () {
   editButton.mousePressed(setEdit);
   deleteButton = createButton("Delete");
   deleteButton.mousePressed(setDelete);
+  pauseButton = createButton("Play");
+  pauseButton.mousePressed(playPause);
   updateGui();
 }
 
@@ -227,4 +238,5 @@ function updateGui() {
   editButton.size(paddedSpace / 3);
   deleteButton.position(width - 16 - paddedSpace / 3, height - 32);
   deleteButton.size(paddedSpace / 3);
+  pauseButton.position(16, 16);
 }
