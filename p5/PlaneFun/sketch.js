@@ -109,9 +109,11 @@ function renderCircle(x, y, diameter, mode="DRAW") {
   if (mode === "DRAW") {
     circle(x, y, diameter);
   } else if (mode === "HPGL") {
-    outputDiv.elt.innerText += `CI ${x},${y},${diameter/2};\n`;
+    outputDiv.elt.innerText += `PU ${x},${y};\n`
+    outputDiv.elt.innerText += `CI ${diameter/2};\n`;
   } else if (mode === "BOTH") {
     circle(x, y, diameter);
-    outputDiv.elt.innerText += `CI ${x},${y},${diameter/2};\n`;
+    outputDiv.elt.innerText += `PU ${x},${y};\n`
+    outputDiv.elt.innerText += `CI ${diameter/2};\n`;
   }
 }
