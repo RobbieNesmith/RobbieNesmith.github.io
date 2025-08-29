@@ -903,5 +903,154 @@
     "categories": [
       "Learning"
     ]
+  },
+  {
+    "title": "Radium DAWg",
+    "link": "https://users.notam02.no/~kjetism/radium/",
+    "categories": [
+      "Music"
+    ]
+  },
+  {
+    "title": "Byte Magazine Visual Archive",
+    "link": "https://byte.tsundoku.io/",
+    "categories": [
+      "RetroComputing",
+      "Programming"
+    ]
+  },
+  {
+    "title": "Strange CW Keys",
+    "link": "https://sites.google.com/site/oh6dccw/strangecwkeys",
+    "categories": [
+      "Radio",
+      "Electronics"
+    ]
+  },
+  {
+    "title": "RapidRAW Image Editor",
+    "link": "https://github.com/CyberTimon/RapidRAW?tab=readme-ov-file",
+    "categories": [
+      "Graphics",
+      "Art"
+    ]
+  },
+  {
+    "title": "Annotations for the Story of Mel",
+    "link": "https://users.cs.utah.edu/~elb/folklore/mel-annotated/node2.html",
+    "categories": [
+      "RetroComputing",
+      "Learning",
+      "Programming"
+    ]
+  },
+  {
+    "title": "Git By Hand",
+    "link": "https://drew.silcock.dev/blog/artisanal-git/",
+    "categories": [
+      "Programming",
+      "Learning"
+    ]
+  },
+  {
+    "title": "Systems Correctness at AWS",
+    "link": "https://cacm.acm.org/practice/systems-correctness-practices-at-amazon-web-services/",
+    "categories": [
+      "Programming",
+      "Security",
+      "Learning"
+    ]
+  },
+  {
+    "title": "Chili3D Web Based CAD",
+    "link": "https://github.com/xiangechen/chili3d",
+    "categories": [
+      "Graphics",
+      "Learning"
+    ]
+  },
+  {
+    "title": "Types of DDR Cabinet",
+    "link": "https://jeffreyatw.com/blog/2019/03/types-of-ddr-cabinets-and-pcbs/#system-573",
+    "categories": [
+      "Games",
+      "RetroComputing",
+      "Electronics"
+    ]
+  },
+  {
+    "title": "SUMO Transit Simulator",
+    "link": "https://sumo.dlr.de/docs/index.html",
+    "categories": [
+      "Data",
+      "Geospatial"
+    ]
+  },
+  {
+    "title": "How Game Boy Cartridges Work",
+    "link": "https://abc.decontextualize.com/more-than-you-wanted-to-know/",
+    "categories": [
+      "Electronics",
+      "RetroComputing",
+      "Learning",
+      "Games"
+    ]
+  },
+  {
+    "title": "98.css",
+    "link": "https://jdan.github.io/98.css/",
+    "categories": [
+      "RetroComputing",
+      "Programming"
+    ]
+  },
+  {
+    "title": "XP.css",
+    "link": "https://botoxparty.github.io/XP.css/",
+    "categories": [
+      "RetroComputing",
+      "Programming"
+    ]
+  },
+  {
+    "title": "7.css",
+    "link": "https://khang-nd.github.io/7.css/",
+    "categories": [
+      "RetroComputing",
+      "Programming"
+    ]
+  },
+  {
+    "title": "CIDCO Mailstation Development",
+    "link": "https://jcs.org/2019/05/03/mailstation",
+    "categories": [
+      "RetroComputing",
+      "Programming"
+    ]
+  },
+  {
+    "title": "HPGL Plotter Reference",
+    "link": "https://www.isoplotec.co.jp/HPGL/eHPGL.htm",
+    "categories": [
+      "RetroComputing",
+      "Programming",
+      "Graphics",
+      "Art"
+    ]
+  },
+  {
+    "title": "The Hardest Working Font in Manhattan",
+    "link": "https://aresluna.org/the-hardest-working-font-in-manhattan/",
+    "categories": [
+      "Art"
+    ]
+  },
+  {
+    "title": "Webring Starter",
+    "link": "https://github.com/krusynth/webring-starter?tab=readme-ov-file",
+    "categories": [
+      "Programming",
+      "RetroComputing"
+    ]
   }
 ]
