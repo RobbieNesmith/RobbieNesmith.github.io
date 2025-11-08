@@ -1028,5 +1028,56 @@
       "Programming",
       "RetroComputing"
     ]
+  },
+  {
+    "title": "Messenger Browser Game",
+    "link": "https://messenger.abeto.co",
+    "categories": [
+      "Games",
+      "Art"
+    ]
+  },
+  {
+    "title": "3M Diskette Reference",
+    "link": "https://retrocmp.de/fdd/diskette/3M_Diskette_Reference_Manual_May83.pdf",
+    "categories": [
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Color Names Collection",
+    "link": "https://github.com/meodai/color-names",
+    "categories": [
+      "Graphics",
+      "Programming",
+      "Art"
+    ]
+  },
+  {
+    "title": "CSS Terrain Generator",
+    "link": "https://terra.layoutit.com",
+    "categories": [
+      "Graphics",
+      "Programming",
+      "Art"
+    ]
+  },
+  {
+    "title": "Acryllic Paint Color Matcher",
+    "link": "https://acrylicmatch.com",
+    "categories": [
+      "Graphics",
+      "Programming",
+      "Art"
+    ]
+  },
+  {
+    "title": "Engaging Data",
+    "link": "https://engaging-data.com/",
+    "categories": [
+      "Graphics",
+      "Geospatial",
+      "Data"
+    ]
   }
 ]
