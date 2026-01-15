@@ -24,6 +24,30 @@ function readSimFile() {
 	reader.readAsText(theFile);
 }
 
+async function readSimFileLink(evt) {
+	evt.preventDefault();
+	values = [];
+	notes = {};
+	clearElement("stepsArea");
+	document.getElementById("stepsArea").style.height = 0;
+	clearElement("songInfo");
+	let theLink = document.getElementById('linkInput');
+	
+	const requestUrls = [
+		`https://corsproxy.io/?url=${theLink.value}`,
+		`https://api.cors.lol/?url=${theLink.value}`,
+		`https://api.codetabs.com/v1/proxy/?quest=${theLink.value}`,
+	];
+
+	let simFileResponse = await fetch(requestUrls[Math.floor(Math.random() * requestUrls.length)]);
+
+	let simFileData = await simFileResponse.text();
+	parseSimFile(simFileData);
+	renderSongInfo(values);
+	notes = getNotesEntries(values);
+	setupModeSelection(notes);
+}
+
 function getValue(values, keyName) {
 	return values.filter(v => v[0] == keyName);
 }

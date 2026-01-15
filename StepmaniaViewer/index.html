@@ -30,8 +30,25 @@ image: /img/stepmania.png
 	<section id="fileSelect" class="limitWidth">
 		<h2>File Selection</h2>
 		<div>
+			Local File
+		</div>
+		<div>
 			<input id="fileInput" type="file" onchange="readSimFile();"></input>
 		</div>
+		<div>
+			or
+		</div>
+		<div>
+			Web URL
+		</div>
+		<form onsubmit="readSimFileLink(event);">
+			<div>
+				<input id="linkInput"></input>
+			</div>
+			<div>
+				<button>Load from URL</button>
+			</div>
+		</form>
 	</section>
 	<section id="fileInfo" class="limitWidth">
 		<h2>Song Information</h2>
