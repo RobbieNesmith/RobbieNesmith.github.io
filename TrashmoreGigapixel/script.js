@@ -8,7 +8,7 @@ const panoList = [
 ];
 
 function setup() {
-  map = L.map("map", { crs: L.CRS.Simple }).setView([0, 0], 1);
+  map = L.map("map", { crs: L.CRS.Simple }).setView([-4, 6.5], 7);
   layer = L.tileLayer(panoList[activePano || 0], { maxZoom: 10 }).addTo(map);
   map.on("moveend", setUrlPosition);
   map.on("zoomend", setUrlPosition);
