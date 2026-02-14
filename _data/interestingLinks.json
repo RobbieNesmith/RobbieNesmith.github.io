@@ -1079,5 +1079,46 @@
       "Geospatial",
       "Data"
     ]
+  },
+  {
+    "title": "Sandwich Bill of Materials",
+    "link": "https://nesbitt.io/2026/02/08/sandwich-bill-of-materials.html",
+    "categories": [
+      "Programming",
+      "Files",
+      "Humor"
+    ]
+  },
+  {
+    "title": "ASCII Shader-Like Playground",
+    "link": "https://play.ertdfgcvb.xyz/abc.html#livecoding:bangs",
+    "categories": [
+      "Programming",
+      "Graphics"
+    ]
+  },
+  {
+    "title": "ASCII Characters Are Not Pixels",
+    "link": "https://alexharri.com/blog/ascii-rendering",
+    "categories": [
+      "Programming",
+      "Graphics"
+    ]
+  },
+  {
+    "title": "TiXL Open Source Motion Graphics",
+    "link": "https://tixl.app/",
+    "categories": [
+      "Programming",
+      "Graphics",
+      "Art"
+    ]
+  },
+  {
+    "title": "Hacker News Personal Websites",
+    "link": "https://hnpwd.github.io/",
+    "categories": [
+      "Programming"
+    ]
   }
 ]
