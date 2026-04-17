@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="setup()">
+  <div class="dashboard">
+    <div class="dashboardRow">
+      <img src="https://radar.weather.gov/ridge/standard/KDVN_loop.gif"/>
+      <img src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/SECTOR/umv/GEOCOLOR/GOES19-UMV-GEOCOLOR-600x600.gif"/>
+    </div>
+    <div class="dashboardRow">
+      <img src="https://graphical.weather.gov/GraphicalNDFD.php?width=720&timezone=CDT&sector=UPPERMISSVLY&element=maxt&n=1"/>
+      <img src="https://graphical.weather.gov/GraphicalNDFD.php?width=720&timezone=CDT&sector=UPPERMISSVLY&element=pop12&n=1"/>
+    </div>
+  </div>
+</body>
+</html>
