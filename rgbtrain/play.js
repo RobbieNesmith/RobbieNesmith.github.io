@@ -56,4 +56,7 @@ function startRound() {
     holder.appendChild(guessed);
     history.appendChild(holder);
   }
+
+  const aboutLink = document.getElementById("aboutLink");
+  aboutLink.href = `${aboutLink.href}?cspace=${cspace}`;
 }
