@@ -228,25 +228,43 @@ function reveal(guessedCity) {
   answerMap
     .fitBounds([city1Coords, city2Coords]);
 
+  let city1Name = city1.properties.CITY_NAME;
+  if (guessedCity.properties.OBJECTID === city1.properties.OBJECTID) {
+    if (rightCity.properties.OBJECTID === city1.properties.OBJECTID) {
+      city1Name = "✔ " + city1.properties.CITY_NAME;
+    } else {
+      city1Name = "✘ " + city1.properties.CITY_NAME;
+    }
+  }
+
+  let city2Name = city2.properties.CITY_NAME;
+  if (guessedCity.properties.OBJECTID === city2.properties.OBJECTID) {
+    if (rightCity.properties.OBJECTID === city2.properties.OBJECTID) {
+      city2Name = "✔ " + city2.properties.CITY_NAME;
+    } else {
+      city2Name = "✘ " + city2.properties.CITY_NAME;
+    }
+  }
+
   if (city1AnswerPopup === null) {
     city1AnswerPopup = L.popup()
       .setLatLng(city1Coords)
-      .setContent(generateContent(city1.properties.CITY_NAME, city1Coords, city2Coords, direction))
+      .setContent(generateContent(city1Name, city1Coords, city2Coords, direction))
       .addTo(answerMap);
   } else {
     city1AnswerPopup
       .setLatLng(city1Coords)
-      .setContent(generateContent(city1.properties.CITY_NAME, city1Coords, city2Coords, direction));
+      .setContent(generateContent(city1Name, city1Coords, city2Coords, direction));
   }
 
   if (city2AnswerPopup === null) {
     city2AnswerPopup = L.popup()
       .setLatLng(city2Coords)
-      .setContent(generateContent(city2.properties.CITY_NAME, city2Coords, city1Coords, direction))
+      .setContent(generateContent(city2Name, city2Coords, city1Coords, direction))
       .addTo(answerMap);
   } else {
     city2AnswerPopup
       .setLatLng(city2Coords)
-      .setContent(generateContent(city2.properties.CITY_NAME, city2Coords, city1Coords, direction));
+      .setContent(generateContent(city2Name, city2Coords, city1Coords, direction));
   }
 }
