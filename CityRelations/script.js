@@ -226,7 +226,7 @@ function reveal(guessedCity) {
     }).addTo(answerMap);
   }
   answerMap
-    .fitBounds([city1Coords, city2Coords]);
+    .fitBounds([city1Coords, city2Coords], {padding: [50, 50]});
 
   let city1Name = city1.properties.CITY_NAME;
   if (guessedCity.properties.OBJECTID === city1.properties.OBJECTID) {
