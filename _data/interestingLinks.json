@@ -229,7 +229,8 @@
     "link": "https://virtualvault.neocities.org/",
     "categories": [
       "Programming",
-      "Oddball"
+      "Oddball",
+      "Aggregator"
     ]
   },
   {
@@ -829,7 +830,8 @@
     "link": "https://gamedev.city",
     "categories": [
       "Games",
-      "Programming"
+      "Programming",
+      "Aggregator"
     ]
   },
   {
@@ -862,7 +864,8 @@
     "categories": [
         "Games",
         "Programming",
-        "RetroComputing"
+        "RetroComputing",
+        "Aggregator"
       ]
   },
   {
@@ -1118,7 +1121,8 @@
     "title": "Hacker News Personal Websites",
     "link": "https://hnpwd.github.io/",
     "categories": [
-      "Programming"
+      "Programming",
+      "Aggregator"
     ]
   },
   {
@@ -1153,6 +1157,81 @@
       "Programming",
       "Learning",
       "Security"
+    ]
+  },
+  {
+    "title": "Interactive QR code error correction",
+    "link": "https://qris.cool/",
+    "categories": [
+      "Programming",
+      "Learning"
+    ]
+  },
+  {
+    "title": "Warranty Void if Regenerated",
+    "link": "https://nearzero.software/p/warranty-void-if-regenerated",
+    "categories": [
+      "Programming",
+      "AI",
+      "Humor"
+    ]
+  },
+  {
+    "title": "Indie Internet Index",
+    "link": "https://iii.social",
+    "categories": [
+      "Indie",
+      "Aggregator"
+    ]
+  },
+  {
+    "title": "Blogosphere feed",
+    "link": "https://text.blogosphere.app/",
+    "categories": [
+      "Indie",
+      "Aggregator"
+    ]
+  },
+  {
+    "title": "Wander Console",
+    "link": "https://susam.net/wander/",
+    "categories": [
+      "Indie"
+    ]
+  },
+  {
+    "title": "Texture Town",
+    "link": "https://textures.neocities.org/",
+    "categories": [
+      "Graphics",
+      "Art",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Intro to Nintendo DS Programming",
+    "link": "https://www.patater.com/files/projects/manual/manual.html#id2543881",
+    "categories": [
+      "Programming",
+      "Learning",
+      "Games",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Amiga Graphics Archive",
+    "link": "https://amiga.lychesis.net/artists.html",
+    "categories": [
+      "Art",
+      "Graphics",
+      "RetroComputing"
+    ]
+  },
+  {
+    "title": "Childhood Computing",
+    "link": "https://susam.net/childhood-computing.html",
+    "categories": [
+      "RetroComputing"
     ]
   }
 ]
