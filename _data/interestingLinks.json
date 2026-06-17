@@ -1233,5 +1233,20 @@
     "categories": [
       "RetroComputing"
     ]
+  },
+  {
+    "title": "Screen Toys",
+    "link": "https://screen.toys",
+    "categories": [
+      "Graphics",
+      "Games"
+    ]
+  },
+  {
+    "title": "How A Mechanical Watch Works",
+    "link": "https://ciechanow.ski/mechanical-watch/",
+    "categories": [
+      "Learning"
+    ]
   }
 ]
