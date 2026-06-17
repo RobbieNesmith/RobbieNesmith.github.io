@@ -1,5 +1,6 @@
 let closeThreshold = 5;
 let dataset = "world_10k";
+let basemapName = "osm";
 
 let city1 = null;
 let city2 = null;
@@ -18,6 +19,21 @@ let worldCities = null;
 
 let direction = null;
 let directions = ["North", "South", "East", "West"];
+
+let basemaps = {
+  "osm": {
+    name: "Open Street Map",
+    tiles: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  },
+  "google": {
+    name: "Google Maps",
+    tiles: "http://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}",
+    attribution: '&copy; Google and 3rd party partners'
+  }
+}
+
+let basemap = basemaps[basemapName];
 
 let correctGuessCount = 0;
 let totalGuessCount = 0;
@@ -89,7 +105,17 @@ function getCloseThreshold(difficulty, dataset) {
 async function setup() {
   const usp = new URLSearchParams(location.search);
   const difficulty = usp.get("difficulty");
-  dataset = usp.get("dataset");
+  datasetFromUSP = usp.get("dataset");
+  basemapNameFromUSP = usp.get("basemap");
+
+  if (datasetFromUSP) {
+    dataset = datasetFromUSP;
+  }
+
+  if (basemapNameFromUSP) {
+    basemapName = basemapNameFromUSP;
+    basemap = basemaps[basemapName];
+  }
 
   closeThreshold = getCloseThreshold(difficulty, dataset);
 
@@ -133,10 +159,10 @@ async function setup() {
 
   if (city1Map === null) {
     city1Map = L.map("city1");
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer(basemap.tiles, {
       minZoom: 10,
       maxZoom: 19,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      attribution: basemap.attribution
     }).addTo(city1Map);
   }
   city1Map
@@ -145,10 +171,10 @@ async function setup() {
 
   if (city2Map === null) {
      city2Map = L.map("city2");
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer(basemap.tiles, {
       minZoom: 10,
       maxZoom: 19,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      attribution: basemap.attribution
     }).addTo(city2Map);
   }
   city2Map
@@ -220,9 +246,9 @@ function reveal(guessedCity) {
 
   if (answerMap === null) {
     answerMap = L.map("answer-map")
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer(basemap.tiles, {
       maxZoom: 19,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      attribution: basemap.attribution
     }).addTo(answerMap);
   }
   answerMap
